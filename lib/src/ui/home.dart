@@ -14,7 +14,7 @@ class MyHomePage extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final count = ref.watch(counterProvider);
-
+    
     return Scaffold(
       appBar: AppBar(
         title: const Text('Riverpod counter example'),
