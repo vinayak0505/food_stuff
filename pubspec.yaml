@@ -39,6 +39,9 @@ dependencies:
   flutter_hooks: ^0.18.1
   hooks_riverpod: ^1.0.0
   device_preview: ^0.7.4
+  build_runner: ^2.1.5
+  json_serializable: ^6.0.1
+  json_annotation: ^4.3.0
 
 dev_dependencies:
   flutter_test:
