@@ -1,8 +1,4 @@
-import 'dart:io';
-
 import 'package:dio/adapter.dart';
-
-import 'package:dio/adapter_browser.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -27,7 +23,7 @@ class DioClient with DioMixin implements Dio {
     }
 
     if (kIsWeb) {
-      httpClientAdapter = BrowserHttpClientAdapter();
+      // httpClientAdapter = BrowserHttpClientAdapter();
     } else {
       httpClientAdapter = DefaultHttpClientAdapter();
     }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_stuff/src/ui/home.dart';
+import 'package:food_stuff/src/ui/home_detail.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 void main() {
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: MyHomePage(),
+      // home: HomeDetailPage(id:716427),
     );
   }
 }
