@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:food_stuff/src/data/model/res_search.dart';
+import 'package:food_stuff/src/ui/home_detail.dart';
 import 'package:food_stuff/src/ui/home_viewmodel.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -10,6 +11,8 @@ class MyHomePage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    
+
     final homeState = ref.watch(homeProvider);
 
     var screenSize = MediaQuery.of(context).size;
@@ -29,7 +32,7 @@ class MyHomePage extends HookConsumerWidget {
                 itemBuilder: (BuildContext context, int index) =>
                     GridTile(child: Tile(result: data[index])),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: (screenSize.width/303.0).ceil()));
+                    crossAxisCount: screenSize.width ~/ 202.0));
           },
           loading: () => const Loading(),
           error: (obj, trace) => ErrorWidget(obj),
@@ -43,8 +46,15 @@ class Tile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [Image.network(result.image), Text(result.title)],
+    return InkWell(
+      onTap: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => HomeDetailPage(id: result.id,)));
+        },
+      child: Card(
+        child: Column(
+          children: [Image.network(result.image), Text(result.title)],
+        ),
+      ),
     );
   }
 }
