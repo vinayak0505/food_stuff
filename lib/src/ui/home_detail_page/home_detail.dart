@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_stuff/src/ui/home.dart';
-import 'package:food_stuff/src/ui/home_detail_viewmodel.dart';
+import 'package:food_stuff/src/ui/home_page/home.dart';
+import 'package:food_stuff/src/ui/home_detail_page/home_detail_viewmodel.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -19,8 +19,7 @@ class HomeDetailPage extends HookConsumerWidget {
     // final ResSearchDetail result;
 
     return Scaffold(
-        appBar: AppBar(
-        ),
+        appBar: AppBar(),
         body: homeDetailState.when(
           data: (data) {
             return SingleChildScrollView(

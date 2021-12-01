@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:food_stuff/src/ui/home.dart';
-import 'package:food_stuff/src/ui/home_detail.dart';
+import 'package:food_stuff/src/ui/home_page/home.dart';
+import 'package:food_stuff/src/ui/home_page/home_page.dart';
+import 'package:food_stuff/src/ui/login_page.dart';
+import 'package:food_stuff/src/ui/widgets/theme.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:food_stuff/src/utils/routes.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -12,9 +15,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: MyHomePage(),
-      // home: HomeDetailPage(id:716427),
+    return MaterialApp(
+      // home: MyHomePage(),
+      themeMode: ThemeMode.light,
+      theme: MyTheme.lightTheme(context),
+      darkTheme: MyTheme.darkTheme(context),
+      debugShowCheckedModeBanner: false,
+      initialRoute: MyRoutes.homeRoute,
+      routes: {
+        "/": (context) => const LoginPage(),
+        MyRoutes.homeRoute: (context) => const HomePage(),
+        MyRoutes.loginRoute: (context) => const LoginPage(),
+      },
     );
   }
 }

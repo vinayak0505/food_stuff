@@ -126,8 +126,7 @@ mixin _$ResSearchDetail {
   String? get license => throw _privateConstructorUsedError;
   String? get sourceName => throw _privateConstructorUsedError;
   double? get pricePerServing => throw _privateConstructorUsedError;
-  List<ExtendedIngredient> get extendedIngredients =>
-      throw _privateConstructorUsedError;
+  List<ExtendedIngredient> get extendedIngredients => throw _privateConstructorUsedError;
   int? get id => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
   int? get readyInMinutes => throw _privateConstructorUsedError;
@@ -148,14 +147,12 @@ mixin _$ResSearchDetail {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ResSearchDetailCopyWith<ResSearchDetail> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ResSearchDetailCopyWith<ResSearchDetail> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ResSearchDetailCopyWith<$Res> {
-  factory $ResSearchDetailCopyWith(
-          ResSearchDetail value, $Res Function(ResSearchDetail) then) =
+  factory $ResSearchDetailCopyWith(ResSearchDetail value, $Res Function(ResSearchDetail) then) =
       _$ResSearchDetailCopyWithImpl<$Res>;
   $Res call(
       {bool? vegetarian,
@@ -199,8 +196,7 @@ abstract class $ResSearchDetailCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ResSearchDetailCopyWithImpl<$Res>
-    implements $ResSearchDetailCopyWith<$Res> {
+class _$ResSearchDetailCopyWithImpl<$Res> implements $ResSearchDetailCopyWith<$Res> {
   _$ResSearchDetailCopyWithImpl(this._value, this._then);
 
   final ResSearchDetail _value;
@@ -407,10 +403,8 @@ class _$ResSearchDetailCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$ResSearchDetailCopyWith<$Res>
-    implements $ResSearchDetailCopyWith<$Res> {
-  factory _$ResSearchDetailCopyWith(
-          _ResSearchDetail value, $Res Function(_ResSearchDetail) then) =
+abstract class _$ResSearchDetailCopyWith<$Res> implements $ResSearchDetailCopyWith<$Res> {
+  factory _$ResSearchDetailCopyWith(_ResSearchDetail value, $Res Function(_ResSearchDetail) then) =
       __$ResSearchDetailCopyWithImpl<$Res>;
   @override
   $Res call(
@@ -456,11 +450,9 @@ abstract class _$ResSearchDetailCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ResSearchDetailCopyWithImpl<$Res>
-    extends _$ResSearchDetailCopyWithImpl<$Res>
+class __$ResSearchDetailCopyWithImpl<$Res> extends _$ResSearchDetailCopyWithImpl<$Res>
     implements _$ResSearchDetailCopyWith<$Res> {
-  __$ResSearchDetailCopyWithImpl(
-      _ResSearchDetail _value, $Res Function(_ResSearchDetail) _then)
+  __$ResSearchDetailCopyWithImpl(_ResSearchDetail _value, $Res Function(_ResSearchDetail) _then)
       : super(_value, (v) => _then(v as _ResSearchDetail));
 
   @override
@@ -695,8 +687,7 @@ class _$_ResSearchDetail implements _ResSearchDetail {
       required this.originalId,
       this.spoonacularSourceUrl});
 
-  factory _$_ResSearchDetail.fromJson(Map<String, dynamic> json) =>
-      _$$_ResSearchDetailFromJson(json);
+  factory _$_ResSearchDetail.fromJson(Map<String, dynamic> json) => _$$_ResSearchDetailFromJson(json);
 
   @override
   final bool? vegetarian;
@@ -781,78 +772,66 @@ class _$_ResSearchDetail implements _ResSearchDetail {
     return identical(this, other) ||
         (other is _ResSearchDetail &&
             (identical(other.vegetarian, vegetarian) ||
-                const DeepCollectionEquality()
-                    .equals(other.vegetarian, vegetarian)) &&
-            (identical(other.vegan, vegan) ||
-                const DeepCollectionEquality().equals(other.vegan, vegan)) &&
+                const DeepCollectionEquality().equals(other.vegetarian, vegetarian)) &&
+            (identical(other.vegan, vegan) || const DeepCollectionEquality().equals(other.vegan, vegan)) &&
             (identical(other.glutenFree, glutenFree) ||
-                const DeepCollectionEquality()
-                    .equals(other.glutenFree, glutenFree)) &&
+                const DeepCollectionEquality().equals(other.glutenFree, glutenFree)) &&
             (identical(other.dairyFree, dairyFree) ||
-                const DeepCollectionEquality()
-                    .equals(other.dairyFree, dairyFree)) &&
+                const DeepCollectionEquality().equals(other.dairyFree, dairyFree)) &&
             (identical(other.veryHealthy, veryHealthy) ||
-                const DeepCollectionEquality()
-                    .equals(other.veryHealthy, veryHealthy)) &&
-            (identical(other.cheap, cheap) ||
-                const DeepCollectionEquality().equals(other.cheap, cheap)) &&
+                const DeepCollectionEquality().equals(other.veryHealthy, veryHealthy)) &&
+            (identical(other.cheap, cheap) || const DeepCollectionEquality().equals(other.cheap, cheap)) &&
             (identical(other.veryPopular, veryPopular) ||
-                const DeepCollectionEquality()
-                    .equals(other.veryPopular, veryPopular)) &&
+                const DeepCollectionEquality().equals(other.veryPopular, veryPopular)) &&
             (identical(other.sustainable, sustainable) ||
-                const DeepCollectionEquality()
-                    .equals(other.sustainable, sustainable)) &&
+                const DeepCollectionEquality().equals(other.sustainable, sustainable)) &&
             (identical(other.weightWatcherSmartPoints, weightWatcherSmartPoints) ||
-                const DeepCollectionEquality().equals(
-                    other.weightWatcherSmartPoints,
-                    weightWatcherSmartPoints)) &&
-            (identical(other.gaps, gaps) ||
-                const DeepCollectionEquality().equals(other.gaps, gaps)) &&
+                const DeepCollectionEquality().equals(other.weightWatcherSmartPoints, weightWatcherSmartPoints)) &&
+            (identical(other.gaps, gaps) || const DeepCollectionEquality().equals(other.gaps, gaps)) &&
             (identical(other.lowFodmap, lowFodmap) ||
-                const DeepCollectionEquality()
-                    .equals(other.lowFodmap, lowFodmap)) &&
+                const DeepCollectionEquality().equals(other.lowFodmap, lowFodmap)) &&
             (identical(other.aggregateLikes, aggregateLikes) ||
-                const DeepCollectionEquality()
-                    .equals(other.aggregateLikes, aggregateLikes)) &&
+                const DeepCollectionEquality().equals(other.aggregateLikes, aggregateLikes)) &&
             (identical(other.spoonacularScore, spoonacularScore) ||
-                const DeepCollectionEquality()
-                    .equals(other.spoonacularScore, spoonacularScore)) &&
+                const DeepCollectionEquality().equals(other.spoonacularScore, spoonacularScore)) &&
             (identical(other.healthScore, healthScore) ||
-                const DeepCollectionEquality()
-                    .equals(other.healthScore, healthScore)) &&
+                const DeepCollectionEquality().equals(other.healthScore, healthScore)) &&
             (identical(other.creditsText, creditsText) ||
-                const DeepCollectionEquality()
-                    .equals(other.creditsText, creditsText)) &&
-            (identical(other.license, license) ||
-                const DeepCollectionEquality()
-                    .equals(other.license, license)) &&
+                const DeepCollectionEquality().equals(other.creditsText, creditsText)) &&
+            (identical(other.license, license) || const DeepCollectionEquality().equals(other.license, license)) &&
             (identical(other.sourceName, sourceName) ||
-                const DeepCollectionEquality()
-                    .equals(other.sourceName, sourceName)) &&
+                const DeepCollectionEquality().equals(other.sourceName, sourceName)) &&
             (identical(other.pricePerServing, pricePerServing) ||
-                const DeepCollectionEquality()
-                    .equals(other.pricePerServing, pricePerServing)) &&
+                const DeepCollectionEquality().equals(other.pricePerServing, pricePerServing)) &&
             (identical(other.extendedIngredients, extendedIngredients) ||
-                const DeepCollectionEquality()
-                    .equals(other.extendedIngredients, extendedIngredients)) &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
+                const DeepCollectionEquality().equals(other.extendedIngredients, extendedIngredients)) &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
             (identical(other.title, title) || const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.readyInMinutes, readyInMinutes) || const DeepCollectionEquality().equals(other.readyInMinutes, readyInMinutes)) &&
+            (identical(other.readyInMinutes, readyInMinutes) ||
+                const DeepCollectionEquality().equals(other.readyInMinutes, readyInMinutes)) &&
             (identical(other.servings, servings) || const DeepCollectionEquality().equals(other.servings, servings)) &&
-            (identical(other.sourceUrl, sourceUrl) || const DeepCollectionEquality().equals(other.sourceUrl, sourceUrl)) &&
+            (identical(other.sourceUrl, sourceUrl) ||
+                const DeepCollectionEquality().equals(other.sourceUrl, sourceUrl)) &&
             (identical(other.image, image) || const DeepCollectionEquality().equals(other.image, image)) &&
-            (identical(other.imageType, imageType) || const DeepCollectionEquality().equals(other.imageType, imageType)) &&
+            (identical(other.imageType, imageType) ||
+                const DeepCollectionEquality().equals(other.imageType, imageType)) &&
             (identical(other.summary, summary) || const DeepCollectionEquality().equals(other.summary, summary)) &&
             (identical(other.cuisines, cuisines) || const DeepCollectionEquality().equals(other.cuisines, cuisines)) &&
-            (identical(other.dishTypes, dishTypes) || const DeepCollectionEquality().equals(other.dishTypes, dishTypes)) &&
+            (identical(other.dishTypes, dishTypes) ||
+                const DeepCollectionEquality().equals(other.dishTypes, dishTypes)) &&
             (identical(other.diets, diets) || const DeepCollectionEquality().equals(other.diets, diets)) &&
-            (identical(other.occasions, occasions) || const DeepCollectionEquality().equals(other.occasions, occasions)) &&
-            (identical(other.winePairing, winePairing) || const DeepCollectionEquality().equals(other.winePairing, winePairing)) &&
-            (identical(other.instructions, instructions) || const DeepCollectionEquality().equals(other.instructions, instructions)) &&
-            (identical(other.analyzedInstructions, analyzedInstructions) || const DeepCollectionEquality().equals(other.analyzedInstructions, analyzedInstructions)) &&
-            (identical(other.originalId, originalId) || const DeepCollectionEquality().equals(other.originalId, originalId)) &&
-            (identical(other.spoonacularSourceUrl, spoonacularSourceUrl) || const DeepCollectionEquality().equals(other.spoonacularSourceUrl, spoonacularSourceUrl)));
+            (identical(other.occasions, occasions) ||
+                const DeepCollectionEquality().equals(other.occasions, occasions)) &&
+            (identical(other.winePairing, winePairing) ||
+                const DeepCollectionEquality().equals(other.winePairing, winePairing)) &&
+            (identical(other.instructions, instructions) ||
+                const DeepCollectionEquality().equals(other.instructions, instructions)) &&
+            (identical(other.analyzedInstructions, analyzedInstructions) ||
+                const DeepCollectionEquality().equals(other.analyzedInstructions, analyzedInstructions)) &&
+            (identical(other.originalId, originalId) ||
+                const DeepCollectionEquality().equals(other.originalId, originalId)) &&
+            (identical(other.spoonacularSourceUrl, spoonacularSourceUrl) ||
+                const DeepCollectionEquality().equals(other.spoonacularSourceUrl, spoonacularSourceUrl)));
   }
 
   @override
@@ -945,8 +924,7 @@ abstract class _ResSearchDetail implements ResSearchDetail {
       required dynamic originalId,
       String? spoonacularSourceUrl}) = _$_ResSearchDetail;
 
-  factory _ResSearchDetail.fromJson(Map<String, dynamic> json) =
-      _$_ResSearchDetail.fromJson;
+  factory _ResSearchDetail.fromJson(Map<String, dynamic> json) = _$_ResSearchDetail.fromJson;
 
   @override
   bool? get vegetarian => throw _privateConstructorUsedError;
@@ -985,8 +963,7 @@ abstract class _ResSearchDetail implements ResSearchDetail {
   @override
   double? get pricePerServing => throw _privateConstructorUsedError;
   @override
-  List<ExtendedIngredient> get extendedIngredients =>
-      throw _privateConstructorUsedError;
+  List<ExtendedIngredient> get extendedIngredients => throw _privateConstructorUsedError;
   @override
   int? get id => throw _privateConstructorUsedError;
   @override
@@ -1023,8 +1000,7 @@ abstract class _ResSearchDetail implements ResSearchDetail {
   String? get spoonacularSourceUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ResSearchDetailCopyWith<_ResSearchDetail> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$ResSearchDetailCopyWith<_ResSearchDetail> get copyWith => throw _privateConstructorUsedError;
 }
 
 ExtendedIngredient _$ExtendedIngredientFromJson(Map<String, dynamic> json) {
@@ -1095,14 +1071,12 @@ mixin _$ExtendedIngredient {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $ExtendedIngredientCopyWith<ExtendedIngredient> get copyWith =>
-      throw _privateConstructorUsedError;
+  $ExtendedIngredientCopyWith<ExtendedIngredient> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $ExtendedIngredientCopyWith<$Res> {
-  factory $ExtendedIngredientCopyWith(
-          ExtendedIngredient value, $Res Function(ExtendedIngredient) then) =
+  factory $ExtendedIngredientCopyWith(ExtendedIngredient value, $Res Function(ExtendedIngredient) then) =
       _$ExtendedIngredientCopyWithImpl<$Res>;
   $Res call(
       {int? id,
@@ -1124,8 +1098,7 @@ abstract class $ExtendedIngredientCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ExtendedIngredientCopyWithImpl<$Res>
-    implements $ExtendedIngredientCopyWith<$Res> {
+class _$ExtendedIngredientCopyWithImpl<$Res> implements $ExtendedIngredientCopyWith<$Res> {
   _$ExtendedIngredientCopyWithImpl(this._value, this._then);
 
   final ExtendedIngredient _value;
@@ -1218,10 +1191,8 @@ class _$ExtendedIngredientCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$ExtendedIngredientCopyWith<$Res>
-    implements $ExtendedIngredientCopyWith<$Res> {
-  factory _$ExtendedIngredientCopyWith(
-          _ExtendedIngredient value, $Res Function(_ExtendedIngredient) then) =
+abstract class _$ExtendedIngredientCopyWith<$Res> implements $ExtendedIngredientCopyWith<$Res> {
+  factory _$ExtendedIngredientCopyWith(_ExtendedIngredient value, $Res Function(_ExtendedIngredient) then) =
       __$ExtendedIngredientCopyWithImpl<$Res>;
   @override
   $Res call(
@@ -1245,11 +1216,9 @@ abstract class _$ExtendedIngredientCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ExtendedIngredientCopyWithImpl<$Res>
-    extends _$ExtendedIngredientCopyWithImpl<$Res>
+class __$ExtendedIngredientCopyWithImpl<$Res> extends _$ExtendedIngredientCopyWithImpl<$Res>
     implements _$ExtendedIngredientCopyWith<$Res> {
-  __$ExtendedIngredientCopyWithImpl(
-      _ExtendedIngredient _value, $Res Function(_ExtendedIngredient) _then)
+  __$ExtendedIngredientCopyWithImpl(_ExtendedIngredient _value, $Res Function(_ExtendedIngredient) _then)
       : super(_value, (v) => _then(v as _ExtendedIngredient));
 
   @override
@@ -1352,8 +1321,7 @@ class _$_ExtendedIngredient implements _ExtendedIngredient {
       required this.metaInformation,
       required this.measures});
 
-  factory _$_ExtendedIngredient.fromJson(Map<String, dynamic> json) =>
-      _$$_ExtendedIngredientFromJson(json);
+  factory _$_ExtendedIngredient.fromJson(Map<String, dynamic> json) => _$$_ExtendedIngredientFromJson(json);
 
   @override
   final int? id;
@@ -1393,41 +1361,25 @@ class _$_ExtendedIngredient implements _ExtendedIngredient {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ExtendedIngredient &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.aisle, aisle) ||
-                const DeepCollectionEquality().equals(other.aisle, aisle)) &&
-            (identical(other.image, image) ||
-                const DeepCollectionEquality().equals(other.image, image)) &&
+            (identical(other.id, id) || const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.aisle, aisle) || const DeepCollectionEquality().equals(other.aisle, aisle)) &&
+            (identical(other.image, image) || const DeepCollectionEquality().equals(other.image, image)) &&
             (identical(other.consistency, consistency) ||
-                const DeepCollectionEquality()
-                    .equals(other.consistency, consistency)) &&
-            (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)) &&
+                const DeepCollectionEquality().equals(other.consistency, consistency)) &&
+            (identical(other.name, name) || const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.nameClean, nameClean) ||
-                const DeepCollectionEquality()
-                    .equals(other.nameClean, nameClean)) &&
-            (identical(other.original, original) ||
-                const DeepCollectionEquality()
-                    .equals(other.original, original)) &&
+                const DeepCollectionEquality().equals(other.nameClean, nameClean)) &&
+            (identical(other.original, original) || const DeepCollectionEquality().equals(other.original, original)) &&
             (identical(other.originalString, originalString) ||
-                const DeepCollectionEquality()
-                    .equals(other.originalString, originalString)) &&
+                const DeepCollectionEquality().equals(other.originalString, originalString)) &&
             (identical(other.originalName, originalName) ||
-                const DeepCollectionEquality()
-                    .equals(other.originalName, originalName)) &&
-            (identical(other.amount, amount) ||
-                const DeepCollectionEquality().equals(other.amount, amount)) &&
-            (identical(other.unit, unit) ||
-                const DeepCollectionEquality().equals(other.unit, unit)) &&
-            (identical(other.meta, meta) ||
-                const DeepCollectionEquality().equals(other.meta, meta)) &&
+                const DeepCollectionEquality().equals(other.originalName, originalName)) &&
+            (identical(other.amount, amount) || const DeepCollectionEquality().equals(other.amount, amount)) &&
+            (identical(other.unit, unit) || const DeepCollectionEquality().equals(other.unit, unit)) &&
+            (identical(other.meta, meta) || const DeepCollectionEquality().equals(other.meta, meta)) &&
             (identical(other.metaInformation, metaInformation) ||
-                const DeepCollectionEquality()
-                    .equals(other.metaInformation, metaInformation)) &&
-            (identical(other.measures, measures) ||
-                const DeepCollectionEquality()
-                    .equals(other.measures, measures)));
+                const DeepCollectionEquality().equals(other.metaInformation, metaInformation)) &&
+            (identical(other.measures, measures) || const DeepCollectionEquality().equals(other.measures, measures)));
   }
 
   @override
@@ -1476,8 +1428,7 @@ abstract class _ExtendedIngredient implements ExtendedIngredient {
       required List<String> metaInformation,
       required Measures measures}) = _$_ExtendedIngredient;
 
-  factory _ExtendedIngredient.fromJson(Map<String, dynamic> json) =
-      _$_ExtendedIngredient.fromJson;
+  factory _ExtendedIngredient.fromJson(Map<String, dynamic> json) = _$_ExtendedIngredient.fromJson;
 
   @override
   int? get id => throw _privateConstructorUsedError;
@@ -1509,8 +1460,7 @@ abstract class _ExtendedIngredient implements ExtendedIngredient {
   Measures get measures => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$ExtendedIngredientCopyWith<_ExtendedIngredient> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$ExtendedIngredientCopyWith<_ExtendedIngredient> get copyWith => throw _privateConstructorUsedError;
 }
 
 Measures _$MeasuresFromJson(Map<String, dynamic> json) {
@@ -1543,14 +1493,12 @@ mixin _$Measures {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $MeasuresCopyWith<Measures> get copyWith =>
-      throw _privateConstructorUsedError;
+  $MeasuresCopyWith<Measures> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $MeasuresCopyWith<$Res> {
-  factory $MeasuresCopyWith(Measures value, $Res Function(Measures) then) =
-      _$MeasuresCopyWithImpl<$Res>;
+  factory $MeasuresCopyWith(Measures value, $Res Function(Measures) then) = _$MeasuresCopyWithImpl<$Res>;
   $Res call({Metric us, Metric metric});
 
   $MetricCopyWith<$Res> get us;
@@ -1599,8 +1547,7 @@ class _$MeasuresCopyWithImpl<$Res> implements $MeasuresCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$MeasuresCopyWith<$Res> implements $MeasuresCopyWith<$Res> {
-  factory _$MeasuresCopyWith(_Measures value, $Res Function(_Measures) then) =
-      __$MeasuresCopyWithImpl<$Res>;
+  factory _$MeasuresCopyWith(_Measures value, $Res Function(_Measures) then) = __$MeasuresCopyWithImpl<$Res>;
   @override
   $Res call({Metric us, Metric metric});
 
@@ -1611,8 +1558,7 @@ abstract class _$MeasuresCopyWith<$Res> implements $MeasuresCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$MeasuresCopyWithImpl<$Res> extends _$MeasuresCopyWithImpl<$Res>
-    implements _$MeasuresCopyWith<$Res> {
+class __$MeasuresCopyWithImpl<$Res> extends _$MeasuresCopyWithImpl<$Res> implements _$MeasuresCopyWith<$Res> {
   __$MeasuresCopyWithImpl(_Measures _value, $Res Function(_Measures) _then)
       : super(_value, (v) => _then(v as _Measures));
 
@@ -1642,8 +1588,7 @@ class __$MeasuresCopyWithImpl<$Res> extends _$MeasuresCopyWithImpl<$Res>
 class _$_Measures implements _Measures {
   const _$_Measures({required this.us, required this.metric});
 
-  factory _$_Measures.fromJson(Map<String, dynamic> json) =>
-      _$$_MeasuresFromJson(json);
+  factory _$_Measures.fromJson(Map<String, dynamic> json) => _$$_MeasuresFromJson(json);
 
   @override
   final Metric us;
@@ -1659,22 +1604,17 @@ class _$_Measures implements _Measures {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Measures &&
-            (identical(other.us, us) ||
-                const DeepCollectionEquality().equals(other.us, us)) &&
-            (identical(other.metric, metric) ||
-                const DeepCollectionEquality().equals(other.metric, metric)));
+            (identical(other.us, us) || const DeepCollectionEquality().equals(other.us, us)) &&
+            (identical(other.metric, metric) || const DeepCollectionEquality().equals(other.metric, metric)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(us) ^
-      const DeepCollectionEquality().hash(metric);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(us) ^ const DeepCollectionEquality().hash(metric);
 
   @JsonKey(ignore: true)
   @override
-  _$MeasuresCopyWith<_Measures> get copyWith =>
-      __$MeasuresCopyWithImpl<_Measures>(this, _$identity);
+  _$MeasuresCopyWith<_Measures> get copyWith => __$MeasuresCopyWithImpl<_Measures>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -1683,8 +1623,7 @@ class _$_Measures implements _Measures {
 }
 
 abstract class _Measures implements Measures {
-  const factory _Measures({required Metric us, required Metric metric}) =
-      _$_Measures;
+  const factory _Measures({required Metric us, required Metric metric}) = _$_Measures;
 
   factory _Measures.fromJson(Map<String, dynamic> json) = _$_Measures.fromJson;
 
@@ -1694,8 +1633,7 @@ abstract class _Measures implements Measures {
   Metric get metric => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$MeasuresCopyWith<_Measures> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$MeasuresCopyWith<_Measures> get copyWith => throw _privateConstructorUsedError;
 }
 
 Metric _$MetricFromJson(Map<String, dynamic> json) {
@@ -1706,10 +1644,7 @@ Metric _$MetricFromJson(Map<String, dynamic> json) {
 class _$MetricTearOff {
   const _$MetricTearOff();
 
-  _Metric call(
-      {required double amount,
-      required String unitShort,
-      required String unitLong}) {
+  _Metric call({required double amount, required String unitShort, required String unitLong}) {
     return _Metric(
       amount: amount,
       unitShort: unitShort,
@@ -1738,8 +1673,7 @@ mixin _$Metric {
 
 /// @nodoc
 abstract class $MetricCopyWith<$Res> {
-  factory $MetricCopyWith(Metric value, $Res Function(Metric) then) =
-      _$MetricCopyWithImpl<$Res>;
+  factory $MetricCopyWith(Metric value, $Res Function(Metric) then) = _$MetricCopyWithImpl<$Res>;
   $Res call({double amount, String unitShort, String unitLong});
 }
 
@@ -1776,17 +1710,14 @@ class _$MetricCopyWithImpl<$Res> implements $MetricCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$MetricCopyWith<$Res> implements $MetricCopyWith<$Res> {
-  factory _$MetricCopyWith(_Metric value, $Res Function(_Metric) then) =
-      __$MetricCopyWithImpl<$Res>;
+  factory _$MetricCopyWith(_Metric value, $Res Function(_Metric) then) = __$MetricCopyWithImpl<$Res>;
   @override
   $Res call({double amount, String unitShort, String unitLong});
 }
 
 /// @nodoc
-class __$MetricCopyWithImpl<$Res> extends _$MetricCopyWithImpl<$Res>
-    implements _$MetricCopyWith<$Res> {
-  __$MetricCopyWithImpl(_Metric _value, $Res Function(_Metric) _then)
-      : super(_value, (v) => _then(v as _Metric));
+class __$MetricCopyWithImpl<$Res> extends _$MetricCopyWithImpl<$Res> implements _$MetricCopyWith<$Res> {
+  __$MetricCopyWithImpl(_Metric _value, $Res Function(_Metric) _then) : super(_value, (v) => _then(v as _Metric));
 
   @override
   _Metric get _value => super._value as _Metric;
@@ -1817,11 +1748,9 @@ class __$MetricCopyWithImpl<$Res> extends _$MetricCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Metric implements _Metric {
-  const _$_Metric(
-      {required this.amount, required this.unitShort, required this.unitLong});
+  const _$_Metric({required this.amount, required this.unitShort, required this.unitLong});
 
-  factory _$_Metric.fromJson(Map<String, dynamic> json) =>
-      _$$_MetricFromJson(json);
+  factory _$_Metric.fromJson(Map<String, dynamic> json) => _$$_MetricFromJson(json);
 
   @override
   final double amount;
@@ -1839,14 +1768,10 @@ class _$_Metric implements _Metric {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Metric &&
-            (identical(other.amount, amount) ||
-                const DeepCollectionEquality().equals(other.amount, amount)) &&
+            (identical(other.amount, amount) || const DeepCollectionEquality().equals(other.amount, amount)) &&
             (identical(other.unitShort, unitShort) ||
-                const DeepCollectionEquality()
-                    .equals(other.unitShort, unitShort)) &&
-            (identical(other.unitLong, unitLong) ||
-                const DeepCollectionEquality()
-                    .equals(other.unitLong, unitLong)));
+                const DeepCollectionEquality().equals(other.unitShort, unitShort)) &&
+            (identical(other.unitLong, unitLong) || const DeepCollectionEquality().equals(other.unitLong, unitLong)));
   }
 
   @override
@@ -1858,8 +1783,7 @@ class _$_Metric implements _Metric {
 
   @JsonKey(ignore: true)
   @override
-  _$MetricCopyWith<_Metric> get copyWith =>
-      __$MetricCopyWithImpl<_Metric>(this, _$identity);
+  _$MetricCopyWith<_Metric> get copyWith => __$MetricCopyWithImpl<_Metric>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -1868,10 +1792,7 @@ class _$_Metric implements _Metric {
 }
 
 abstract class _Metric implements Metric {
-  const factory _Metric(
-      {required double amount,
-      required String unitShort,
-      required String unitLong}) = _$_Metric;
+  const factory _Metric({required double amount, required String unitShort, required String unitLong}) = _$_Metric;
 
   factory _Metric.fromJson(Map<String, dynamic> json) = _$_Metric.fromJson;
 
@@ -1913,9 +1834,7 @@ mixin _$WinePairing {
 
 /// @nodoc
 abstract class $WinePairingCopyWith<$Res> {
-  factory $WinePairingCopyWith(
-          WinePairing value, $Res Function(WinePairing) then) =
-      _$WinePairingCopyWithImpl<$Res>;
+  factory $WinePairingCopyWith(WinePairing value, $Res Function(WinePairing) then) = _$WinePairingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -1929,16 +1848,13 @@ class _$WinePairingCopyWithImpl<$Res> implements $WinePairingCopyWith<$Res> {
 
 /// @nodoc
 abstract class _$WinePairingCopyWith<$Res> {
-  factory _$WinePairingCopyWith(
-          _WinePairing value, $Res Function(_WinePairing) then) =
+  factory _$WinePairingCopyWith(_WinePairing value, $Res Function(_WinePairing) then) =
       __$WinePairingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$WinePairingCopyWithImpl<$Res> extends _$WinePairingCopyWithImpl<$Res>
-    implements _$WinePairingCopyWith<$Res> {
-  __$WinePairingCopyWithImpl(
-      _WinePairing _value, $Res Function(_WinePairing) _then)
+class __$WinePairingCopyWithImpl<$Res> extends _$WinePairingCopyWithImpl<$Res> implements _$WinePairingCopyWith<$Res> {
+  __$WinePairingCopyWithImpl(_WinePairing _value, $Res Function(_WinePairing) _then)
       : super(_value, (v) => _then(v as _WinePairing));
 
   @override
@@ -1950,8 +1866,7 @@ class __$WinePairingCopyWithImpl<$Res> extends _$WinePairingCopyWithImpl<$Res>
 class _$_WinePairing implements _WinePairing {
   const _$_WinePairing();
 
-  factory _$_WinePairing.fromJson(Map<String, dynamic> json) =>
-      _$$_WinePairingFromJson(json);
+  factory _$_WinePairing.fromJson(Map<String, dynamic> json) => _$$_WinePairingFromJson(json);
 
   @override
   String toString() {
@@ -1975,6 +1890,5 @@ class _$_WinePairing implements _WinePairing {
 abstract class _WinePairing implements WinePairing {
   const factory _WinePairing() = _$_WinePairing;
 
-  factory _WinePairing.fromJson(Map<String, dynamic> json) =
-      _$_WinePairing.fromJson;
+  factory _WinePairing.fromJson(Map<String, dynamic> json) = _$_WinePairing.fromJson;
 }

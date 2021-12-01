@@ -17,8 +17,6 @@ class HomeRepositoryImpl implements HomeRepository {
 
   @override
   Future<ResSearch> getSearch(int count) {
-    return _dio
-        .get<Map<String, dynamic>>("/recipes/complexSearch")
-        .then((value) => ResSearch.fromJson(value.data!));
+    return _dio.get<Map<String, dynamic>>("/recipes/complexSearch").then((value) => ResSearch.fromJson(value.data!));
   }
 }
