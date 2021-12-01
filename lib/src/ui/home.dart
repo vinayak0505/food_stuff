@@ -29,7 +29,7 @@ class MyHomePage extends HookConsumerWidget {
                 itemBuilder: (BuildContext context, int index) =>
                     GridTile(child: Tile(result: data[index])),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: screenSize.width~/202.0));
+                    crossAxisCount: (screenSize.width/303.0).ceil()));
           },
           loading: () => const Loading(),
           error: (obj, trace) => ErrorWidget(obj),
