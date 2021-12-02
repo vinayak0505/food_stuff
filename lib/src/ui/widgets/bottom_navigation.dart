@@ -1,39 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:food_stuff/src/ui/widgets/theme.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:food_stuff/src/utils/constants.dart';
 
-class BottomNavigation extends StatefulWidget {
+class BottomNavigation extends HookWidget {
   const BottomNavigation({Key? key}) : super(key: key);
 
   @override
-  State<BottomNavigation> createState() => _BottomNavigationState();
-}
-
-class _BottomNavigationState extends State<BottomNavigation> {
-  @override
   Widget build(BuildContext context) {
-    int _selectedIndex = 0;
-
-    void _onItemTapped(int index) {
-      setState(() {
-        _selectedIndex = index;
-      });
-    }
-
+    final _navigationIndex = useState(0);
     return BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-            backgroundColor: Color(0xFF3E3E49),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
-        type: BottomNavigationBarType.shifting,
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        elevation: 8);
+      currentIndex: _navigationIndex.value,
+      onTap: (int index) => _navigationIndex.value = index,
+      type: BottomNavigationBarType.shifting,
+      elevation: 8,
+      backgroundColor: darkColor,
+      items: const <BottomNavigationBarItem>[
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home),
+          label: 'Home',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.person),
+          label: 'Profile',
+        ),
+      ],
+    );
   }
 }

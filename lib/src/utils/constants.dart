@@ -7,6 +7,8 @@ double kScreenHeight(BuildContext context) =>
 const creamColor = Color(0xfff5f5f5);
 const darkCreamColor = Color(0xffd9d9d9);
 const darkBluishColor = Color(0xff403b58);
+//Bottom Navigation
+const darkColor = Color(0xFF3E3E49);
 
 const kTitleFontsStyle = TextStyle(fontSize: 38.0, fontWeight: FontWeight.bold);
 
