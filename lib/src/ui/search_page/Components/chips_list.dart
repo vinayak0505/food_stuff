@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:food_stuff/src/utils/constants.dart';
 
-class ChipsList extends StatelessWidget {
+class ChipsList extends StatefulWidget {
   ChipsList({Key? key, required this.title}) : super(key: key);
   final String title;
 
+  @override
+  State<ChipsList> createState() => _ChipsListState();
+}
+
+class _ChipsListState extends State<ChipsList> {
   var tags = [
     "love",
     "instagood",
@@ -23,34 +29,38 @@ class ChipsList extends StatelessWidget {
     "instadaily"
   ];
 
-  var selectedTags = ["love", "me", "summer"];
-
-  generate_tags() {
-    return tags.map((tag) => get_chip(tag)).toList();
-  }
-
-  get_chip(name) {
-    return FilterChip(
-      selected: selectedTags.contains(name),
-      selectedColor: Colors.blue.shade800,
-      disabledColor: Colors.blue.shade400,
-      labelStyle:
-          const TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-      label: Text("#$name"),
-      onSelected: (bool value) {},
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
+    int? _value = 1;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(title),
+        Text(
+          widget.title,
+          style: kSubtitleFontStyle,
+        ),
+        const SizedBox(
+          height: 8,
+        ),
         Wrap(
-          spacing: 8.0, // gap between adjacent chips
-          runSpacing: 4.0, // gap between lines
-          children: <Widget>[...generate_tags()],
+          children: List<Widget>.generate(
+            tags.length,
+            (int index) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                child: ChoiceChip(
+                  label: Text(tags[index]),
+                  selected: _value == index,
+                  onSelected: (bool selected) {
+                    setState(() {
+                      _value = selected ? index : null;
+                    });
+                  },
+                ),
+              );
+            },
+          ).toList(),
         ),
       ],
     );

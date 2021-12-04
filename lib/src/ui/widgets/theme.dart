@@ -6,18 +6,34 @@ class MyTheme {
   static ThemeData lightTheme(BuildContext context) => ThemeData(
         primarySwatch: Colors.deepPurple,
         fontFamily: GoogleFonts.lato().fontFamily,
-        cardColor: Colors.white,
-        canvasColor: creamColor,
-        indicatorColor: Colors.white70,
+        scaffoldBackgroundColor: scaffoldColor,
+        appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.transparent,
+            foregroundColor: Colors.deepPurple,
+            shadowColor: Colors.transparent),
+        cardColor: textFieldColor,
+        // canvasColor: textFieldColor,
         brightness: Brightness.light,
       );
 
   static ThemeData darkTheme(BuildContext context) => ThemeData(
         primarySwatch: Colors.deepPurple,
         fontFamily: GoogleFonts.lato().fontFamily,
+        scaffoldBackgroundColor: scaffoldColorDarkTheme,
+        canvasColor: textFieldColorDarkTheme,
+        appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.transparent,
+            foregroundColor: Colors.white,
+            shadowColor: Colors.transparent),
         cardColor: Colors.black,
-        canvasColor: Colors.white10,
-        indicatorColor: Colors.white70,
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          backgroundColor: bottomNavigationDarkTheme,
+          type: BottomNavigationBarType.shifting,
+          elevation: 8,
+          selectedItemColor: scaffoldColor,
+          unselectedItemColor: Colors.grey[600],
+          showUnselectedLabels: false,
+        ),
         brightness: Brightness.dark,
       );
 }

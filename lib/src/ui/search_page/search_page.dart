@@ -19,15 +19,16 @@ class SearchPage extends StatelessWidget {
       'Dessert'
     ];
     return GridView.count(
+      physics: const ScrollPhysics(),
       crossAxisCount: 2,
       childAspectRatio: ((kScreenWidth(context) / 2) / 100),
       shrinkWrap: true,
       scrollDirection: Axis.vertical,
       children: popularSearchList.map((String value) {
         return Container(
-          decoration: const BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.all(
+          decoration: BoxDecoration(
+            color: Theme.of(context).cardColor,
+            borderRadius: const BorderRadius.all(
               Radius.circular(kRoundedRectangleRadius),
             ),
           ),
@@ -45,30 +46,45 @@ class SearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: const <Widget>[
-                  Padding(
-                    padding: EdgeInsets.only(left: 16.0),
-                    child: Icon(Icons.arrow_back),
+      body: Hero(
+        tag: 'Search Bar',
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(left: 16.0),
+                        child: IconButton(
+                          icon: const Icon(Icons.arrow_back),
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                        ),
+                      ),
+                      Expanded(
+                        child: SearchBar(
+                          readOnly: false,
+                          autofocus: true,
+                          onClick: () {},
+                        ),
+                      ),
+                    ],
                   ),
-                  Expanded(
-                    child: SearchBar(),
+                  popularSearch(context),
+                  const SizedBox(
+                    height: 16,
                   ),
+                  ChipsList(title: 'Difficulty'),
+                  ChipsList(title: 'Meal'),
+                  ChipsList(title: 'Occasion'),
                 ],
               ),
-              popularSearch(context),
-              SizedBox(
-                height: 500,
-                width: kScreenWidth(context),
-                child: ChipsList(title: 'Difficulty'),
-              ),
-            ],
+            ),
           ),
         ),
       ),
