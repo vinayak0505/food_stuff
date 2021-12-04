@@ -16,67 +16,32 @@ class _IngredientsTableState extends State<IngredientsTable> {
     Ingredient('white chocolate chip', '3 cups'),
   ];
 
-  List<DataRow> ingredientsRow() {
-    // ingredientsRow().add(
-    //   DataRow(
-    //     cells: [
-    //       DataCell(
-    //         Text('Nutrition Info'),
-    //       ),
-    //       DataCell(
-    //         Text('View Info +'),
-    //       ),
-    //     ],
-    //   ),
-    // );
-    return List<DataRow>.generate(
-      ingredientList.length,
-      (int index) => DataRow(
-        cells: [
-          DataCell(
-            Text(ingredientList[index].name),
-          ),
-          DataCell(
-            Text(ingredientList[index].measure),
-          ),
-        ],
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
         children: [
-          ListView(
-            physics: const ScrollPhysics(),
+          ListView.separated(
+            itemCount: ingredientList.length,
+            itemBuilder: itemBuilder,
             shrinkWrap: true,
-            children: <Widget>[
-              DataTable(
-                showBottomBorder: true,
-                columns: const [
-                  DataColumn(label: Text('Name')),
-                  DataColumn(label: Text('Amount')),
-                ],
-                rows: ingredientsRow(),
-              ),
-            ],
+            physics: const ScrollPhysics(),
+            separatorBuilder: (c,i) => const Divider(),
           ),
-          DataTable(
-            columnSpacing: 150,
-            showBottomBorder: true,
-            columns: const [
-              DataColumn(
-                label: Text('Nutrition Info'),
-              ),
-              DataColumn(
-                label: Text('View Info +'),
-              ),
-            ],
-            rows: [],
-          ),
+        ],
+      ),
+    );
+  }
+
+  Widget itemBuilder(BuildContext context, int index) {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(ingredientList[index].name),
+          Text(ingredientList[index].measure),
         ],
       ),
     );

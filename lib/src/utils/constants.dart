@@ -28,7 +28,7 @@ double kScreenHeight(BuildContext context) =>
 
 /// Constant Values
 
-const kRoundedRectangleRadius = 16.0;
+const kRoundedRectangleRadius = 8.0;
 
 /// Colors
 

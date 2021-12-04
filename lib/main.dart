@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: MyTheme.lightTheme(context),
       darkTheme: MyTheme.darkTheme(context),
       debugShowCheckedModeBanner: false,
-      initialRoute: MyRoutes.bottomNavigationRoute,
+      initialRoute: MyRoutes.homeRoute,
       routes: {
         MyRoutes.bottomNavigationRoute: (context) => const BottomNavigation(),
         MyRoutes.personalRoute: (context) => const PersonalPage(),
