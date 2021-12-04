@@ -19,59 +19,44 @@ class HomePage extends HookWidget {
     }
 
     return Scaffold(
-      body: Hero(
-        tag: 'Search Bar',
-        child: SafeArea(
-          child: SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                AppBar(),
-                SearchBar(
-                  readOnly: true,
-                  autofocus: false,
-                  onClick: navigation,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SearchBar(
+                readOnly: true,
+                autofocus: false,
+                onClick: navigation,
+              ),
+              const ViewPager(),
+              const Gap,
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                child: Text('Trending', style: kSubtitleFontStyle),
+              ),
+              const CategoryHorizontalView(),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                child: Text('Popular Recipes This Week',
+                    style: kSubtitleFontStyle),
+              ),
+              const CategoryHorizontalView(),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                child: Text(
+                  'Fall Produce Recipes',
+                  style: kSubtitleFontStyle,
                 ),
-
-                const ViewPager(),
-                const SizedBox(
-                  height: 6,
-                ),
-                const Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                  child: Text(
-                    'Trending',
-                    style: kSubtitleFontStyle,
-                  ),
-                ),
-                const CategoryHorizontalView(),
-                const Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                  child: Text(
-                    'Popular Recipes This Week',
-                    style: kSubtitleFontStyle,
-                  ),
-                ),
-                const CategoryHorizontalView(),
-                const Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                  child: Text(
-                    'Fall Produce Recipes',
-                    style: kSubtitleFontStyle,
-                  ),
-                ),
-                // Random
-                const MoreFoodItems(),
-              ],
-            ),
+              ),
+              // Random
+              const MoreFoodItems(),
+            ],
           ),
         ),
       ),
-      // bottomNavigationBar: const BottomNavigation(),
+      bottomNavigationBar: const BottomNavigation(),
     );
   }
 }

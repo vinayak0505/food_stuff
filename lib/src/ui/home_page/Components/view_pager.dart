@@ -11,36 +11,24 @@ class ViewPager extends HookWidget {
   Widget build(BuildContext context) {
     String foodTitle = 'Buko Pie (Filipino young Pie)';
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-      child: SizedBox(
-        width: kScreenWidth(context),
-        child: Column(
-          children: [
-            ClipRRect(
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(30),
-                topRight: Radius.circular(30),
-              ),
-              child: Image.network(
+      padding: const EdgeInsets.all(12.0),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(8),
+        child: Container(
+          color: Colors.lightBlue,
+          child: Column(
+            children: [
+              Image.network(
                 image,
                 fit: BoxFit.scaleDown,
               ),
-            ),
-            Container(
-              padding: const EdgeInsets.all(16.0),
-              child: Text(
+              Text(
                 foodTitle,
+                textAlign:TextAlign.center,
                 style: kTitleFontsStyle,
               ),
-              decoration: const BoxDecoration(
-                color: Colors.lightBlue,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(30),
-                  bottomRight: Radius.circular(30),
-                ),
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
