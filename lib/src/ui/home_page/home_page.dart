@@ -9,9 +9,14 @@ import 'package:food_stuff/src/ui/home_page/Components/view_pager.dart';
 import 'package:food_stuff/src/utils/constants.dart';
 import 'package:food_stuff/src/utils/routes.dart';
 
-class HomePage extends HookWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     void navigation() {
@@ -71,7 +76,6 @@ class HomePage extends HookWidget {
           ),
         ),
       ),
-      // bottomNavigationBar: const BottomNavigation(),
     );
   }
 }
