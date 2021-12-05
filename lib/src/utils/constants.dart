@@ -1,19 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// Constant String
-
-//Home Page
-
-// Personal page
-const String toLogin =
-    'Log in or create an account to save your favorite recipes';
-const String loginFacebookButton = 'Log in with Facebook';
-const String loginGoogleButton = 'Log in with Google';
-const String agreeingPolicy = 'By signing up, you are agreeing to our ';
-const String userAgreement = 'User Agreement';
-const String privacyPolicy = 'Privacy Policy';
-const String and = ' and ';
-
 /// Image
 // to be removed
 
@@ -37,6 +23,7 @@ double kScreenHeight(BuildContext context) =>
 /// Constant Values
 
 const kRoundedRectangleRadius = 8.0;
+const kImageSize = 200.0;
 
 /// Colors
 

@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food_stuff/src/utils/constants.dart';
 
 class Instructions extends StatelessWidget {
   const Instructions({Key? key}) : super(key: key);
@@ -15,22 +17,40 @@ class Instructions extends StatelessWidget {
     ];
 
     Widget _instructionStep(String step) {
-      return Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            Text(step),
-            const Divider(),
-          ],
-        ),
+      return Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
+            child: Container(
+              height: 8,
+              width: 8,
+              decoration: const BoxDecoration(
+                color: Colors.orange,
+                shape: BoxShape.circle,
+              ),
+            ),
+          ),
+          const SizedBox(
+            width: 4,
+          ),
+          Flexible(
+            child: Text(
+              step,
+            ),
+          ),
+        ],
       );
     }
 
-    return ListView.builder(
+    return ListView.separated(
       physics: const ScrollPhysics(),
       shrinkWrap: true,
       itemCount: stepList.length,
       itemBuilder: (context, index) => _instructionStep(stepList[index]),
+      separatorBuilder: (context, index) {
+        return const Divider();
+      },
     );
   }
 }

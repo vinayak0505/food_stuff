@@ -1,3 +1,4 @@
+import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class MyCustomClipper extends CustomClipper<Path> {
@@ -6,7 +7,7 @@ class MyCustomClipper extends CustomClipper<Path> {
     final Path path = Path();
     path.lineTo(size.width / 2, size.height);
     path.lineTo(size.width / 2, 0.0);
-    path.lineTo(size.width, size.height / 2);
+    // path.lineTo(size.width, 0);
     return path;
   }
 
