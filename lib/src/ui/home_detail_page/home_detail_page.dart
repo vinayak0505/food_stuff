@@ -7,7 +7,6 @@ import 'package:food_stuff/src/ui/home_detail_page/Components/food_intro.dart';
 import 'package:food_stuff/src/ui/home_detail_page/Components/ingredients_table.dart';
 import 'package:food_stuff/src/ui/home_detail_page/Components/instructions.dart';
 import 'package:food_stuff/src/ui/home_detail_page/home_detail_viewmodel.dart';
-import 'package:food_stuff/src/ui/home_page/Components/more_food_items.dart';
 import 'package:food_stuff/src/ui/home_page/Components/category_view.dart';
 import 'package:food_stuff/src/utils/constants.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -30,8 +29,6 @@ class HomeDetailPage extends HookConsumerWidget {
       });
     }, []);
 
-    String image = 'https://en.pimg.jp/062/142/310/1/62142310.jpg';
-  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -46,37 +43,34 @@ class HomeDetailPage extends HookConsumerWidget {
           padding: const EdgeInsets.all(16.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              FoodIntro(),
+            children: [
+              FoodIntro(
+                foodTitle: _details.value?.title ?? "",
+              ),
               Text(ingredients, style: kSubtitleFontStyle),
               IngredientsTable(),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 16.0),
+
+              /// to be change
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 8.0),
                 child: Text(
-                  _details.value?.title ?? "",
                   'Preparation',
-                  style: kTitleFontsStyle,
+                  style: kSubtitleFontStyle,
                 ),
               ),
-              Instructions(),
-              Padding(
-                padding: EdgeInsets.symmetric(vertical: 16.0),
+              // Instructions(),
+              Html(data: _details.value?.summary ?? ""),
+              const SizedBox(
+                height: 16,
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 8.0),
                 child: Text(
                   similarRecipies,
                   style: kSubtitleFontStyle,
                 ),
               ),
               const CategoryHorizontalView(),
-              const Padding(
-                padding: EdgeInsets.all(16.0),
-                child: Text(
-                  'Preparation',
-                  style: kTitleFontsStyle,
-                ),
-              ),
-              Instructions(),
-              Html(data:_details.value?.summary??""),
-              CategoryHorizontalView(),
             ],
           ),
         ),

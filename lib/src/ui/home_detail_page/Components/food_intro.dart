@@ -4,7 +4,9 @@ import 'package:food_stuff/src/utils/constants.dart';
 import 'package:food_stuff/src/utils/strings.dart';
 
 class FoodIntro extends StatelessWidget {
-  const FoodIntro({Key? key}) : super(key: key);
+  const FoodIntro({Key? key, required this.foodTitle}) : super(key: key);
+
+  final String foodTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -13,10 +15,9 @@ class FoodIntro extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       children: [
         Container(
-          width: kScreenWidth(context) / 1.5,
+          width: kScreenWidth(context),
           alignment: Alignment.topLeft,
-          padding: const EdgeInsets.all(16.0),
-          child: const Text(
+          child: Text(
             foodTitle,
             style: kTitleFontsStyle,
           ),
@@ -57,14 +58,17 @@ class FoodIntro extends StatelessWidget {
           ),
         ),
         Container(
-          margin: const EdgeInsets.only(left: 50, top: 100),
+          margin: const EdgeInsets.only(left: 50, top: 130),
           alignment: Alignment.bottomRight,
           child: SizedBox(
             width: kImageSize,
             height: kImageSize,
-            child: Image.network(
-              image,
-              fit: BoxFit.cover,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(kRoundedRectangleRadius),
+              child: Image.network(
+                image,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ),

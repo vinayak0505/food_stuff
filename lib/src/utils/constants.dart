@@ -23,7 +23,7 @@ double kScreenHeight(BuildContext context) =>
 /// Constant Values
 
 const kRoundedRectangleRadius = 8.0;
-const kImageSize = 200.0;
+const kImageSize = 170.0;
 
 /// Colors
 

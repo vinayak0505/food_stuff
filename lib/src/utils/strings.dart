@@ -1,5 +1,5 @@
 //Home Page
-const String foodTitle = 'Peppermint Bark';
+
 const String servings = 'Servings';
 const String healthScore = 'Health Score';
 const String score = 'Score';
