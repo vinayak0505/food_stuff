@@ -31,7 +31,6 @@ class HomePage extends HookWidget {
                 onClick: navigation,
               ),
               const ViewPager(),
-              const Gap,
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                 child: Text('Trending', style: kSubtitleFontStyle),

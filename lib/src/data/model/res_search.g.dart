@@ -6,22 +6,24 @@ part of 'res_search.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ResSearch _$$_ResSearchFromJson(Map json) => _$_ResSearch(
-      results:
-          (json['results'] as List<dynamic>).map((e) => Result.fromJson(Map<String, dynamic>.from(e as Map))).toList(),
+_$_ResSearch _$$_ResSearchFromJson(Map<String, dynamic> json) => _$_ResSearch(
+      results: (json['results'] as List<dynamic>)
+          .map((e) => Result.fromJson(e as Map<String, dynamic>))
+          .toList(),
       offset: json['offset'] as int,
       number: json['number'] as int,
       totalResults: json['totalResults'] as int,
     );
 
-Map<String, dynamic> _$$_ResSearchToJson(_$_ResSearch instance) => <String, dynamic>{
+Map<String, dynamic> _$$_ResSearchToJson(_$_ResSearch instance) =>
+    <String, dynamic>{
       'results': instance.results,
       'offset': instance.offset,
       'number': instance.number,
       'totalResults': instance.totalResults,
     };
 
-_$_Result _$$_ResultFromJson(Map json) => _$_Result(
+_$_Result _$$_ResultFromJson(Map<String, dynamic> json) => _$_Result(
       id: json['id'] as int,
       title: json['title'] as String,
       image: json['image'] as String,
