@@ -4,27 +4,44 @@ import 'package:flutter/widgets.dart';
 import 'package:food_stuff/src/ui/home_page/home_page.dart';
 import 'package:food_stuff/src/ui/personal_page/personal_page.dart';
 
-class BottomNavigation extends StatefulWidget {
-  const BottomNavigation({Key? key}) : super(key: key);
+class MainPage extends StatefulWidget {
+  const MainPage({Key? key}) : super(key: key);
 
   @override
-  State<BottomNavigation> createState() => _BottomNavigationState();
+  State<MainPage> createState() => _MainPageState();
 }
 
-class _BottomNavigationState extends State<BottomNavigation> {
+class _MainPageState extends State<MainPage> {
+  int _index = 1;
+
+  void toggle(int value) {
+    _index = value;
+    setState(() {});
+  }
+
+  final _pages = [
+    const HomePage(),
+    const PersonalPage(),
+  ];
+
   @override
   Widget build(BuildContext context) {
-    int currentIndex = 0;
-
-    final _pages = [
-      HomePage(),
-      PersonalPage(),
-    ];
     return Scaffold(
-      body: _pages[currentIndex],
+      body: IndexedStack(
+        index: _index,
+        children: _pages,
+      ),
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: currentIndex,
-        onTap: (index) => setState(() => currentIndex = index),
+        currentIndex: _index,
+        unselectedIconTheme: const IconThemeData(
+          size: 26,
+          opacity: 0.8,
+        ),
+        selectedIconTheme: const IconThemeData(
+          size: 34,
+          opacity: 1,
+        ),
+        onTap: toggle,
         showSelectedLabels: false,
         showUnselectedLabels: false,
         items: const <BottomNavigationBarItem>[

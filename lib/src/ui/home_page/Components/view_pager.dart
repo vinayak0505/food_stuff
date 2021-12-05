@@ -13,7 +13,7 @@ class ViewPager extends HookWidget {
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(kRoundedRectangleRadius),
         child: Container(
           color: Colors.lightBlue,
           child: Column(
@@ -24,7 +24,7 @@ class ViewPager extends HookWidget {
               ),
               Text(
                 foodTitle,
-                textAlign:TextAlign.center,
+                textAlign: TextAlign.center,
                 style: kTitleFontsStyle,
               ),
             ],
@@ -43,13 +43,7 @@ class ViewPager extends HookWidget {
 // }
 //
 // class _ViewPagerState extends State<ViewPager> {
-//   List foodImageList = [
-//     'https://media.smallbiztrends.com/2021/05/fast-food-restaurants.png',
-//     'https://www.qsrmagazine.com/sites/default/files/styles/slideshow_image/public/slideshow-images/slides/mcdonaldsglobal.jpg?itok=X8uup3iY',
-//     'https://st.depositphotos.com/1005682/2476/i/600/depositphotos_24762569-stock-photo-fast-food-hamburger-hot-dog.jpg',
-//     'https://upload.wikimedia.org/wikipedia/commons/7/7a/Domino%27s_Pizza_-_20191105.jpg',
-//     'https://res.cloudinary.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/pjyrruezbzofdtomlzpi',
-//   ];
+
 //
 //   List selectedInterests = [];
 //

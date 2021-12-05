@@ -46,44 +46,41 @@ class SearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Hero(
-        tag: 'Search Bar',
-        child: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.only(left: 16.0),
-                        child: IconButton(
-                          icon: const Icon(Icons.arrow_back),
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                        ),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(left: 16.0),
+                      child: IconButton(
+                        icon: const Icon(Icons.arrow_back),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
                       ),
-                      Expanded(
-                        child: SearchBar(
-                          readOnly: false,
-                          autofocus: true,
-                          onClick: () {},
-                        ),
+                    ),
+                    Expanded(
+                      child: SearchBar(
+                        readOnly: false,
+                        autofocus: true,
+                        onClick: () {},
                       ),
-                    ],
-                  ),
-                  popularSearch(context),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  ChipsList(title: 'Difficulty'),
-                  ChipsList(title: 'Meal'),
-                  ChipsList(title: 'Occasion'),
-                ],
-              ),
+                    ),
+                  ],
+                ),
+                popularSearch(context),
+                const SizedBox(
+                  height: 16,
+                ),
+                ChipsList(title: 'Difficulty'),
+                ChipsList(title: 'Meal'),
+                ChipsList(title: 'Occasion'),
+              ],
             ),
           ),
         ),

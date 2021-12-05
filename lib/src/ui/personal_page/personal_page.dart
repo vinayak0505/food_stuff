@@ -17,6 +17,8 @@ class _PersonalPageState extends State<PersonalPage> {
   @override
   void initState() {
     super.initState();
+
+    print('------------------------------Personal page');
     _termsConditionRecognizer = TapGestureRecognizer()
       ..onTap = () {
         print("Terms and condition tapped");

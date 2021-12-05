@@ -1,10 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:food_stuff/src/ui/home_page/Components/categoryl_view.dart';
 import 'package:food_stuff/src/ui/home_page/Components/more_food_items.dart';
 import 'package:food_stuff/src/ui/search_page/Components/search_bar.dart';
-import 'package:food_stuff/src/ui/widgets/bottom_navigation.dart';
 import 'package:food_stuff/src/ui/home_page/Components/view_pager.dart';
 import 'package:food_stuff/src/utils/constants.dart';
 import 'package:food_stuff/src/utils/routes.dart';
@@ -36,7 +35,6 @@ class _HomePageState extends State<HomePage> {
                 onClick: navigation,
               ),
               const ViewPager(),
-              const Gap,
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                 child: Text('Trending', style: kSubtitleFontStyle),
