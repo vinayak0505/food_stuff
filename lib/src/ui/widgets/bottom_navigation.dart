@@ -29,7 +29,7 @@ class BottomNavigation extends HookWidget {
     }
 
     List<Widget> _pages = [
-      first(),
+      HomePage(),
       second(),
     ];
     return Scaffold(

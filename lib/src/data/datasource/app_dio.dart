@@ -1,4 +1,5 @@
 import 'package:dio/adapter.dart';
+// import 'package:dio/adapter_browser.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';

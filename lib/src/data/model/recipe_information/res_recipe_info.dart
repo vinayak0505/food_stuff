@@ -1,4 +1,3 @@
-import 'package:meta/meta.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'dart:convert';
 
@@ -24,12 +23,12 @@ abstract class ResRecipeInfo with _$ResRecipeInfo {
         required String gaps,
         required bool lowFodmap,
         required int aggregateLikes,
-        required int spoonacularScore,
-        required int healthScore,
+        // required double spoonacularScore,
+        // required double healthScore,
         required String creditsText,
         required String license,
         required String sourceName,
-        required double pricePerServing,
+        // required double pricePerServing,
         required List<ExtendedIngredient> extendedIngredients,
         required int id,
         required String title,
@@ -43,7 +42,6 @@ abstract class ResRecipeInfo with _$ResRecipeInfo {
         required List<String> dishTypes,
         required List<String> diets,
         required List<dynamic> occasions,
-        required WinePairing winePairing,
         required String instructions,
         required List<dynamic> analyzedInstructions,
         required dynamic originalId,
@@ -65,40 +63,12 @@ abstract class ExtendedIngredient with _$ExtendedIngredient {
         required String original,
         required String originalString,
         required String originalName,
-        required double amount,
+        // required double amount,
         required String unit,
         required List<String> meta,
         required List<String> metaInformation,
-        required Measures measures,
     }) = _ExtendedIngredient;
 
     factory ExtendedIngredient.fromJson(Map<String, dynamic> json) => _$ExtendedIngredientFromJson(json);
 }
 
-@freezed
-abstract class Measures with _$Measures {
-    const factory Measures({
-        required Metric us,
-        required Metric metric,
-    }) = _Measures;
-
-    factory Measures.fromJson(Map<String, dynamic> json) => _$MeasuresFromJson(json);
-}
-
-@freezed
-abstract class Metric with _$Metric {
-    const factory Metric({
-        required double amount,
-        required String unitShort,
-        required String unitLong,
-    }) = _Metric;
-
-    factory Metric.fromJson(Map<String, dynamic> json) => _$MetricFromJson(json);
-}
-
-@freezed
-abstract class WinePairing with _$WinePairing {
-    const factory WinePairing() = _WinePairing;
-
-    factory WinePairing.fromJson(Map<String, dynamic> json) => _$WinePairingFromJson(json);
-}
