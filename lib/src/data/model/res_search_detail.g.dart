@@ -6,7 +6,8 @@ part of 'res_search_detail.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ResSearchDetail _$$_ResSearchDetailFromJson(Map json) => _$_ResSearchDetail(
+_$_ResSearchDetail _$$_ResSearchDetailFromJson(Map<String, dynamic> json) =>
+    _$_ResSearchDetail(
       vegetarian: json['vegetarian'] as bool?,
       vegan: json['vegan'] as bool?,
       glutenFree: json['glutenFree'] as bool?,
@@ -26,7 +27,7 @@ _$_ResSearchDetail _$$_ResSearchDetailFromJson(Map json) => _$_ResSearchDetail(
       sourceName: json['sourceName'] as String?,
       pricePerServing: (json['pricePerServing'] as num?)?.toDouble(),
       extendedIngredients: (json['extendedIngredients'] as List<dynamic>)
-          .map((e) => ExtendedIngredient.fromJson(Map<String, dynamic>.from(e as Map)))
+          .map((e) => ExtendedIngredient.fromJson(e as Map<String, dynamic>))
           .toList(),
       id: json['id'] as int?,
       title: json['title'] as String?,
@@ -37,19 +38,21 @@ _$_ResSearchDetail _$$_ResSearchDetailFromJson(Map json) => _$_ResSearchDetail(
       imageType: json['imageType'] as String?,
       summary: json['summary'] as String?,
       cuisines: json['cuisines'] as List<dynamic>,
-      dishTypes: (json['dishTypes'] as List<dynamic>).map((e) => e as String).toList(),
+      dishTypes:
+          (json['dishTypes'] as List<dynamic>).map((e) => e as String).toList(),
       diets: (json['diets'] as List<dynamic>).map((e) => e as String).toList(),
       occasions: json['occasions'] as List<dynamic>,
       winePairing: json['winePairing'] == null
           ? null
-          : WinePairing.fromJson(Map<String, dynamic>.from(json['winePairing'] as Map)),
+          : WinePairing.fromJson(json['winePairing'] as Map<String, dynamic>),
       instructions: json['instructions'] as String?,
       analyzedInstructions: json['analyzedInstructions'] as List<dynamic>,
       originalId: json['originalId'],
       spoonacularSourceUrl: json['spoonacularSourceUrl'] as String?,
     );
 
-Map<String, dynamic> _$$_ResSearchDetailToJson(_$_ResSearchDetail instance) => <String, dynamic>{
+Map<String, dynamic> _$$_ResSearchDetailToJson(_$_ResSearchDetail instance) =>
+    <String, dynamic>{
       'vegetarian': instance.vegetarian,
       'vegan': instance.vegan,
       'glutenFree': instance.glutenFree,
@@ -88,7 +91,9 @@ Map<String, dynamic> _$$_ResSearchDetailToJson(_$_ResSearchDetail instance) => <
       'spoonacularSourceUrl': instance.spoonacularSourceUrl,
     };
 
-_$_ExtendedIngredient _$$_ExtendedIngredientFromJson(Map json) => _$_ExtendedIngredient(
+_$_ExtendedIngredient _$$_ExtendedIngredientFromJson(
+        Map<String, dynamic> json) =>
+    _$_ExtendedIngredient(
       id: json['id'] as int?,
       aisle: json['aisle'] as String?,
       image: json['image'] as String?,
@@ -101,11 +106,15 @@ _$_ExtendedIngredient _$$_ExtendedIngredientFromJson(Map json) => _$_ExtendedIng
       amount: (json['amount'] as num?)?.toDouble(),
       unit: json['unit'] as String?,
       meta: (json['meta'] as List<dynamic>).map((e) => e as String).toList(),
-      metaInformation: (json['metaInformation'] as List<dynamic>).map((e) => e as String).toList(),
-      measures: Measures.fromJson(Map<String, dynamic>.from(json['measures'] as Map)),
+      metaInformation: (json['metaInformation'] as List<dynamic>)
+          .map((e) => e as String)
+          .toList(),
+      measures: Measures.fromJson(json['measures'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_ExtendedIngredientToJson(_$_ExtendedIngredient instance) => <String, dynamic>{
+Map<String, dynamic> _$$_ExtendedIngredientToJson(
+        _$_ExtendedIngredient instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'aisle': instance.aisle,
       'image': instance.image,
@@ -122,17 +131,18 @@ Map<String, dynamic> _$$_ExtendedIngredientToJson(_$_ExtendedIngredient instance
       'measures': instance.measures,
     };
 
-_$_Measures _$$_MeasuresFromJson(Map json) => _$_Measures(
-      us: Metric.fromJson(Map<String, dynamic>.from(json['us'] as Map)),
-      metric: Metric.fromJson(Map<String, dynamic>.from(json['metric'] as Map)),
+_$_Measures _$$_MeasuresFromJson(Map<String, dynamic> json) => _$_Measures(
+      us: Metric.fromJson(json['us'] as Map<String, dynamic>),
+      metric: Metric.fromJson(json['metric'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_MeasuresToJson(_$_Measures instance) => <String, dynamic>{
+Map<String, dynamic> _$$_MeasuresToJson(_$_Measures instance) =>
+    <String, dynamic>{
       'us': instance.us,
       'metric': instance.metric,
     };
 
-_$_Metric _$$_MetricFromJson(Map json) => _$_Metric(
+_$_Metric _$$_MetricFromJson(Map<String, dynamic> json) => _$_Metric(
       amount: (json['amount'] as num).toDouble(),
       unitShort: json['unitShort'] as String,
       unitLong: json['unitLong'] as String,
@@ -144,6 +154,8 @@ Map<String, dynamic> _$$_MetricToJson(_$_Metric instance) => <String, dynamic>{
       'unitLong': instance.unitLong,
     };
 
-_$_WinePairing _$$_WinePairingFromJson(Map json) => _$_WinePairing();
+_$_WinePairing _$$_WinePairingFromJson(Map<String, dynamic> json) =>
+    _$_WinePairing();
 
-Map<String, dynamic> _$$_WinePairingToJson(_$_WinePairing instance) => <String, dynamic>{};
+Map<String, dynamic> _$$_WinePairingToJson(_$_WinePairing instance) =>
+    <String, dynamic>{};
