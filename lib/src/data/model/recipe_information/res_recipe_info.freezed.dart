@@ -34,6 +34,7 @@ class _$ResRecipeInfoTearOff {
       required String gaps,
       required bool lowFodmap,
       required int aggregateLikes,
+      required double healthScore,
       required String creditsText,
       required String license,
       required String sourceName,
@@ -67,6 +68,7 @@ class _$ResRecipeInfoTearOff {
       gaps: gaps,
       lowFodmap: lowFodmap,
       aggregateLikes: aggregateLikes,
+      healthScore: healthScore,
       creditsText: creditsText,
       license: license,
       sourceName: sourceName,
@@ -113,7 +115,7 @@ mixin _$ResRecipeInfo {
   bool get lowFodmap => throw _privateConstructorUsedError;
   int get aggregateLikes =>
       throw _privateConstructorUsedError; // required double spoonacularScore,
-// required double healthScore,
+  double get healthScore => throw _privateConstructorUsedError;
   String get creditsText => throw _privateConstructorUsedError;
   String get license => throw _privateConstructorUsedError;
   String get sourceName =>
@@ -161,6 +163,7 @@ abstract class $ResRecipeInfoCopyWith<$Res> {
       String gaps,
       bool lowFodmap,
       int aggregateLikes,
+      double healthScore,
       String creditsText,
       String license,
       String sourceName,
@@ -206,6 +209,7 @@ class _$ResRecipeInfoCopyWithImpl<$Res>
     Object? gaps = freezed,
     Object? lowFodmap = freezed,
     Object? aggregateLikes = freezed,
+    Object? healthScore = freezed,
     Object? creditsText = freezed,
     Object? license = freezed,
     Object? sourceName = freezed,
@@ -276,6 +280,10 @@ class _$ResRecipeInfoCopyWithImpl<$Res>
           ? _value.aggregateLikes
           : aggregateLikes // ignore: cast_nullable_to_non_nullable
               as int,
+      healthScore: healthScore == freezed
+          ? _value.healthScore
+          : healthScore // ignore: cast_nullable_to_non_nullable
+              as double,
       creditsText: creditsText == freezed
           ? _value.creditsText
           : creditsText // ignore: cast_nullable_to_non_nullable
@@ -380,6 +388,7 @@ abstract class _$ResRecipeInfoCopyWith<$Res>
       String gaps,
       bool lowFodmap,
       int aggregateLikes,
+      double healthScore,
       String creditsText,
       String license,
       String sourceName,
@@ -427,6 +436,7 @@ class __$ResRecipeInfoCopyWithImpl<$Res>
     Object? gaps = freezed,
     Object? lowFodmap = freezed,
     Object? aggregateLikes = freezed,
+    Object? healthScore = freezed,
     Object? creditsText = freezed,
     Object? license = freezed,
     Object? sourceName = freezed,
@@ -497,6 +507,10 @@ class __$ResRecipeInfoCopyWithImpl<$Res>
           ? _value.aggregateLikes
           : aggregateLikes // ignore: cast_nullable_to_non_nullable
               as int,
+      healthScore: healthScore == freezed
+          ? _value.healthScore
+          : healthScore // ignore: cast_nullable_to_non_nullable
+              as double,
       creditsText: creditsText == freezed
           ? _value.creditsText
           : creditsText // ignore: cast_nullable_to_non_nullable
@@ -597,6 +611,7 @@ class _$_ResRecipeInfo implements _ResRecipeInfo {
       required this.gaps,
       required this.lowFodmap,
       required this.aggregateLikes,
+      required this.healthScore,
       required this.creditsText,
       required this.license,
       required this.sourceName,
@@ -646,7 +661,8 @@ class _$_ResRecipeInfo implements _ResRecipeInfo {
   @override
   final int aggregateLikes;
   @override // required double spoonacularScore,
-// required double healthScore,
+  final double healthScore;
+  @override
   final String creditsText;
   @override
   final String license;
@@ -689,7 +705,7 @@ class _$_ResRecipeInfo implements _ResRecipeInfo {
 
   @override
   String toString() {
-    return 'ResRecipeInfo(vegetarian: $vegetarian, vegan: $vegan, glutenFree: $glutenFree, dairyFree: $dairyFree, veryHealthy: $veryHealthy, cheap: $cheap, veryPopular: $veryPopular, sustainable: $sustainable, weightWatcherSmartPoints: $weightWatcherSmartPoints, gaps: $gaps, lowFodmap: $lowFodmap, aggregateLikes: $aggregateLikes, creditsText: $creditsText, license: $license, sourceName: $sourceName, extendedIngredients: $extendedIngredients, id: $id, title: $title, readyInMinutes: $readyInMinutes, servings: $servings, sourceUrl: $sourceUrl, image: $image, imageType: $imageType, summary: $summary, cuisines: $cuisines, dishTypes: $dishTypes, diets: $diets, occasions: $occasions, instructions: $instructions, analyzedInstructions: $analyzedInstructions, originalId: $originalId, spoonacularSourceUrl: $spoonacularSourceUrl)';
+    return 'ResRecipeInfo(vegetarian: $vegetarian, vegan: $vegan, glutenFree: $glutenFree, dairyFree: $dairyFree, veryHealthy: $veryHealthy, cheap: $cheap, veryPopular: $veryPopular, sustainable: $sustainable, weightWatcherSmartPoints: $weightWatcherSmartPoints, gaps: $gaps, lowFodmap: $lowFodmap, aggregateLikes: $aggregateLikes, healthScore: $healthScore, creditsText: $creditsText, license: $license, sourceName: $sourceName, extendedIngredients: $extendedIngredients, id: $id, title: $title, readyInMinutes: $readyInMinutes, servings: $servings, sourceUrl: $sourceUrl, image: $image, imageType: $imageType, summary: $summary, cuisines: $cuisines, dishTypes: $dishTypes, diets: $diets, occasions: $occasions, instructions: $instructions, analyzedInstructions: $analyzedInstructions, originalId: $originalId, spoonacularSourceUrl: $spoonacularSourceUrl)';
   }
 
   @override
@@ -730,6 +746,9 @@ class _$_ResRecipeInfo implements _ResRecipeInfo {
             (identical(other.aggregateLikes, aggregateLikes) ||
                 const DeepCollectionEquality()
                     .equals(other.aggregateLikes, aggregateLikes)) &&
+            (identical(other.healthScore, healthScore) ||
+                const DeepCollectionEquality()
+                    .equals(other.healthScore, healthScore)) &&
             (identical(other.creditsText, creditsText) ||
                 const DeepCollectionEquality()
                     .equals(other.creditsText, creditsText)) &&
@@ -750,10 +769,8 @@ class _$_ResRecipeInfo implements _ResRecipeInfo {
                 const DeepCollectionEquality()
                     .equals(other.readyInMinutes, readyInMinutes)) &&
             (identical(other.servings, servings) ||
-                const DeepCollectionEquality()
-                    .equals(other.servings, servings)) &&
-            (identical(other.sourceUrl, sourceUrl) ||
-                const DeepCollectionEquality().equals(other.sourceUrl, sourceUrl)) &&
+                const DeepCollectionEquality().equals(other.servings, servings)) &&
+            (identical(other.sourceUrl, sourceUrl) || const DeepCollectionEquality().equals(other.sourceUrl, sourceUrl)) &&
             (identical(other.image, image) || const DeepCollectionEquality().equals(other.image, image)) &&
             (identical(other.imageType, imageType) || const DeepCollectionEquality().equals(other.imageType, imageType)) &&
             (identical(other.summary, summary) || const DeepCollectionEquality().equals(other.summary, summary)) &&
@@ -782,6 +799,7 @@ class _$_ResRecipeInfo implements _ResRecipeInfo {
       const DeepCollectionEquality().hash(gaps) ^
       const DeepCollectionEquality().hash(lowFodmap) ^
       const DeepCollectionEquality().hash(aggregateLikes) ^
+      const DeepCollectionEquality().hash(healthScore) ^
       const DeepCollectionEquality().hash(creditsText) ^
       const DeepCollectionEquality().hash(license) ^
       const DeepCollectionEquality().hash(sourceName) ^
@@ -828,6 +846,7 @@ abstract class _ResRecipeInfo implements ResRecipeInfo {
       required String gaps,
       required bool lowFodmap,
       required int aggregateLikes,
+      required double healthScore,
       required String creditsText,
       required String license,
       required String sourceName,
@@ -877,7 +896,8 @@ abstract class _ResRecipeInfo implements ResRecipeInfo {
   @override
   int get aggregateLikes => throw _privateConstructorUsedError;
   @override // required double spoonacularScore,
-// required double healthScore,
+  double get healthScore => throw _privateConstructorUsedError;
+  @override
   String get creditsText => throw _privateConstructorUsedError;
   @override
   String get license => throw _privateConstructorUsedError;
@@ -942,6 +962,7 @@ class _$ExtendedIngredientTearOff {
       required String original,
       required String originalString,
       required String originalName,
+      required double amount,
       required String unit,
       required List<String> meta,
       required List<String> metaInformation}) {
@@ -955,6 +976,7 @@ class _$ExtendedIngredientTearOff {
       original: original,
       originalString: originalString,
       originalName: originalName,
+      amount: amount,
       unit: unit,
       meta: meta,
       metaInformation: metaInformation,
@@ -979,8 +1001,8 @@ mixin _$ExtendedIngredient {
   String get nameClean => throw _privateConstructorUsedError;
   String get original => throw _privateConstructorUsedError;
   String get originalString => throw _privateConstructorUsedError;
-  String get originalName =>
-      throw _privateConstructorUsedError; // required double amount,
+  String get originalName => throw _privateConstructorUsedError;
+  double get amount => throw _privateConstructorUsedError;
   String get unit => throw _privateConstructorUsedError;
   List<String> get meta => throw _privateConstructorUsedError;
   List<String> get metaInformation => throw _privateConstructorUsedError;
@@ -1006,6 +1028,7 @@ abstract class $ExtendedIngredientCopyWith<$Res> {
       String original,
       String originalString,
       String originalName,
+      double amount,
       String unit,
       List<String> meta,
       List<String> metaInformation});
@@ -1031,6 +1054,7 @@ class _$ExtendedIngredientCopyWithImpl<$Res>
     Object? original = freezed,
     Object? originalString = freezed,
     Object? originalName = freezed,
+    Object? amount = freezed,
     Object? unit = freezed,
     Object? meta = freezed,
     Object? metaInformation = freezed,
@@ -1072,6 +1096,10 @@ class _$ExtendedIngredientCopyWithImpl<$Res>
           ? _value.originalName
           : originalName // ignore: cast_nullable_to_non_nullable
               as String,
+      amount: amount == freezed
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as double,
       unit: unit == freezed
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
@@ -1105,6 +1133,7 @@ abstract class _$ExtendedIngredientCopyWith<$Res>
       String original,
       String originalString,
       String originalName,
+      double amount,
       String unit,
       List<String> meta,
       List<String> metaInformation});
@@ -1132,6 +1161,7 @@ class __$ExtendedIngredientCopyWithImpl<$Res>
     Object? original = freezed,
     Object? originalString = freezed,
     Object? originalName = freezed,
+    Object? amount = freezed,
     Object? unit = freezed,
     Object? meta = freezed,
     Object? metaInformation = freezed,
@@ -1173,6 +1203,10 @@ class __$ExtendedIngredientCopyWithImpl<$Res>
           ? _value.originalName
           : originalName // ignore: cast_nullable_to_non_nullable
               as String,
+      amount: amount == freezed
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as double,
       unit: unit == freezed
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
@@ -1202,6 +1236,7 @@ class _$_ExtendedIngredient implements _ExtendedIngredient {
       required this.original,
       required this.originalString,
       required this.originalName,
+      required this.amount,
       required this.unit,
       required this.meta,
       required this.metaInformation});
@@ -1227,7 +1262,9 @@ class _$_ExtendedIngredient implements _ExtendedIngredient {
   final String originalString;
   @override
   final String originalName;
-  @override // required double amount,
+  @override
+  final double amount;
+  @override
   final String unit;
   @override
   final List<String> meta;
@@ -1236,7 +1273,7 @@ class _$_ExtendedIngredient implements _ExtendedIngredient {
 
   @override
   String toString() {
-    return 'ExtendedIngredient(id: $id, aisle: $aisle, image: $image, consistency: $consistency, name: $name, nameClean: $nameClean, original: $original, originalString: $originalString, originalName: $originalName, unit: $unit, meta: $meta, metaInformation: $metaInformation)';
+    return 'ExtendedIngredient(id: $id, aisle: $aisle, image: $image, consistency: $consistency, name: $name, nameClean: $nameClean, original: $original, originalString: $originalString, originalName: $originalName, amount: $amount, unit: $unit, meta: $meta, metaInformation: $metaInformation)';
   }
 
   @override
@@ -1266,6 +1303,8 @@ class _$_ExtendedIngredient implements _ExtendedIngredient {
             (identical(other.originalName, originalName) ||
                 const DeepCollectionEquality()
                     .equals(other.originalName, originalName)) &&
+            (identical(other.amount, amount) ||
+                const DeepCollectionEquality().equals(other.amount, amount)) &&
             (identical(other.unit, unit) ||
                 const DeepCollectionEquality().equals(other.unit, unit)) &&
             (identical(other.meta, meta) ||
@@ -1287,6 +1326,7 @@ class _$_ExtendedIngredient implements _ExtendedIngredient {
       const DeepCollectionEquality().hash(original) ^
       const DeepCollectionEquality().hash(originalString) ^
       const DeepCollectionEquality().hash(originalName) ^
+      const DeepCollectionEquality().hash(amount) ^
       const DeepCollectionEquality().hash(unit) ^
       const DeepCollectionEquality().hash(meta) ^
       const DeepCollectionEquality().hash(metaInformation);
@@ -1313,6 +1353,7 @@ abstract class _ExtendedIngredient implements ExtendedIngredient {
       required String original,
       required String originalString,
       required String originalName,
+      required double amount,
       required String unit,
       required List<String> meta,
       required List<String> metaInformation}) = _$_ExtendedIngredient;
@@ -1338,7 +1379,9 @@ abstract class _ExtendedIngredient implements ExtendedIngredient {
   String get originalString => throw _privateConstructorUsedError;
   @override
   String get originalName => throw _privateConstructorUsedError;
-  @override // required double amount,
+  @override
+  double get amount => throw _privateConstructorUsedError;
+  @override
   String get unit => throw _privateConstructorUsedError;
   @override
   List<String> get meta => throw _privateConstructorUsedError;

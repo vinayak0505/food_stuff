@@ -2,27 +2,28 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:food_stuff/src/data/model/ingredient_model.dart';
+import 'package:food_stuff/src/data/model/recipe_information/res_recipe_info.dart';
 
 class IngredientsTable extends StatefulWidget {
-  const IngredientsTable({Key? key}) : super(key: key);
+  const IngredientsTable({Key? key, required this.ingredientList})
+      : super(key: key);
+
+  final List<ExtendedIngredient> ingredientList;
+
   @override
   _IngredientsTableState createState() => _IngredientsTableState();
 }
 
 class _IngredientsTableState extends State<IngredientsTable> {
-  List<Ingredient> ingredientList = [
-    Ingredient('mini candy cane', '25'),
-    Ingredient('choco chips', '4 cups'),
-    Ingredient('peppermint extract', '1/2 teaspoon'),
-    Ingredient('white chocolate chip', '3 cups'),
-  ];
+  late List<Ingredient> myIngredientList;
+
   late List<Widget> ingredientListWidget;
 
   Widget customStyleIngredients(Ingredient index) {
     return Row(
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(vertical: 5, horizontal: 8),
+          padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 8),
           child: Container(
             height: 8,
             width: 8,
@@ -32,18 +33,25 @@ class _IngredientsTableState extends State<IngredientsTable> {
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 4,
         ),
-        Text('${index.measure} ${index.name}')
+        Text('${index.measure} ${index.unit} ${index.name}')
       ],
     );
   }
 
+  Ingredient ingredientsData(ExtendedIngredient index) {
+    return Ingredient(index.name, index.amount.toString(), index.unit);
+  }
+
   @override
   void initState() {
+    myIngredientList =
+        widget.ingredientList.map((e) => ingredientsData(e)).toList();
+
     ingredientListWidget =
-        ingredientList.map((e) => customStyleIngredients(e)).toList();
+        myIngredientList.map((e) => customStyleIngredients(e)).toList();
     super.initState();
   }
 

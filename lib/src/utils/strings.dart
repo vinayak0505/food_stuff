@@ -1,10 +1,12 @@
-//Home Page
+// Home Detail page
 
-const String servings = 'Servings';
-const String healthScore = 'Health Score';
-const String score = 'Score';
+const String servings = 'Servings :';
+const String healthScore = 'Health Score :';
+const String weightWatcherSmartPoints = 'Weight Watcher Smart Points :';
 const String ingredients = 'Ingredients';
 const String similarRecipies = 'Similar Recipies';
+
+const String preparation = 'Preparation';
 
 // Personal page
 const String toLogin =
