@@ -12,7 +12,7 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  int _index = 1;
+  int _index = 0;
 
   void toggle(int value) {
     _index = value;

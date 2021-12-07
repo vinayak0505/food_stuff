@@ -22,10 +22,11 @@ class MoreFoodItems extends HookConsumerWidget {
       ref.read(homeProvider.notifier).getRandomRecipe().then((value) {
         listOfFoodItems.value = value.recipes;
       });
-    });
+    }, []);
 
     void onlyVegetarian(bool value) {
-      if (isSwitched.value != value) isSwitched.value = value;
+      if (isSwitched.value == value) return;
+      isSwitched.value = value;
       listOfFoodItems.value = List.empty();
       ref.read(homeProvider.notifier).getRandomRecipe().then((value) {
         listOfFoodItems.value = value.recipes;
@@ -54,12 +55,14 @@ class MoreFoodItems extends HookConsumerWidget {
               itemBuilder: (BuildContext context, int index) => Flexible(
                 child: Column(
                   children: [
+                    (index%3 == 0)?SizedBox(height:0):SizedBox(height: 100),
                     ClipRRect(
                       borderRadius:
                           BorderRadius.circular(kRoundedRectangleRadius),
                       child: Image.network(
                         listOfFoodItems.value[index].image ?? '',
-                        fit: BoxFit.contain,
+                        errorBuilder: (_,__,___) => const Center(child: Icon(Icons.error)),
+                        fit: BoxFit.fitWidth,
                       ),
                     ),
                     Center(
@@ -83,7 +86,7 @@ class MoreFoodItems extends HookConsumerWidget {
                               listOfFoodItems.value[index].servings.toString(),
                               style: kFoodNameFontStyle,
                             ),
-                            const Icon(Icons.rice_bowl)
+                            const Icon(Icons.lunch_dining)
                           ],
                         )
                       ],

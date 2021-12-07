@@ -13,45 +13,10 @@ class HomeViewModel extends StateNotifier<AsyncValue<RandomRecipe>> {
   late final RandomRecipeIdImpl _idRepository =
       _reader.read(randomRecipeIdProvider);
 
-  Future<RandomRecipe> getRandomViewPagerRecipe(
-      {int number = 20, String tag = 'date'}) {
-    return _idRepository
-        .getRecipeInformation(number: number, tag: tag)
-        .then((value) {
-      return value;
-    });
-  }
-
   Future<RandomRecipe> getRandomRecipe(
-      {bool isVegetarian = false, int number = 20}) {
-    return _idRepository
-        .getRecipeInformation(
-          number: number,
-          tag: isVegetarian ? "vegetarian" : "",
-        )
-        .then((value) => value);
-  }
+      {int number = 20, String tag = '', bool isVegetarian = false}) {
 
-  Future<RandomRecipe> getRandomVegetarianRecipe(
-      {int number = 20, String tag = 'vegetarian'}) {
-    return _idRepository
-        .getRecipeInformation(number: number, tag: tag)
-        .then((value) {
-      return value;
-    });
-  }
-
-  Future<RandomRecipe> getRandomSweetsRecipe(
-      {int number = 20, String tag = 'sweets'}) {
-    return _idRepository
-        .getRecipeInformation(number: number, tag: tag)
-        .then((value) {
-      return value;
-    });
-  }
-
-  Future<RandomRecipe> getRandomVegetableRecipe(
-      {int number = 20, String tag = 'vegetables'}) {
+    if (isVegetarian) tag = tag + ", vegetarian";
     return _idRepository
         .getRecipeInformation(number: number, tag: tag)
         .then((value) {

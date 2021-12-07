@@ -9,6 +9,6 @@ class LoadingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return (data.isEmpty) ? const CircularProgressIndicator() : child;
+    return (data.isEmpty) ? const Center(child: CircularProgressIndicator()) : child;
   }
 }

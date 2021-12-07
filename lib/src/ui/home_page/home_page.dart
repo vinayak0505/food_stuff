@@ -21,7 +21,7 @@ class HomePage extends HookConsumerWidget {
     final ValueNotifier<RandomRecipe?> _viewPagerDetails = useState(null);
 
     useEffect(() {
-      ref.read(homeProvider.notifier).getRandomViewPagerRecipe().then((value) {
+      ref.read(homeProvider.notifier).getRandomRecipe().then((value) {
         _viewPagerDetails.value = value;
       });
     }, []);
@@ -33,7 +33,6 @@ class HomePage extends HookConsumerWidget {
     return Scaffold(
       body: SafeArea(
           child: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -42,21 +41,17 @@ class HomePage extends HookConsumerWidget {
               autofocus: false,
               onClick: navigation,
             ),
-            ViewPager(_viewPagerDetails.value?.recipes ?? []),
+            // ViewPager(_viewPagerDetails.value?.recipes ?? []),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
               child: Text(sweets, style: kSubtitleFontStyle),
             ),
-            CategoryHorizontalView(
-              randomFood: _sweetsDetails.value?.recipes ?? [],
-            ),
+            // const CategoryHorizontalView(tag:"sweets"),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
               child: Text(healthyFoods, style: kSubtitleFontStyle),
             ),
-            CategoryHorizontalView(
-              randomFood: _vegetableDetails.value?.recipes ?? [],
-            ),
+            // const CategoryHorizontalView(tag:"vegetables"),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
               child: Text(
@@ -64,7 +59,6 @@ class HomePage extends HookConsumerWidget {
                 style: kSubtitleFontStyle,
               ),
             ),
-            // Random
             const MoreFoodItems(),
           ],
         ),

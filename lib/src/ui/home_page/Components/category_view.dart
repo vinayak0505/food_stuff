@@ -9,60 +9,56 @@ import 'package:food_stuff/src/utils/routes.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class CategoryHorizontalView extends HookConsumerWidget {
-  const CategoryHorizontalView({Key? key}) : super(key: key);
+  const CategoryHorizontalView({required this.tag, Key? key}) : super(key: key);
+  final String tag;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final ValueNotifier<RandomRecipe?> _listOfGoodItems =
-        useState(List.empty());
+    final ValueNotifier<List<Recipe>> _listOfGoodItems = useState(List.empty());
 
     useEffect(() {
-      ref.read(homeProvider.notifier).getRandomSweetsRecipe().then((value) {
-        _listOfGoodItems.value = value;
+      ref.read(homeProvider.notifier).getRandomRecipe(tag: tag).then((value) {
+        _listOfGoodItems.value = value.recipes;
       });
-    });
+    }, []);
 
     return LoadingScreen(
       data: _listOfGoodItems.value,
       child: SizedBox(
-        height: 200,
+        height: 140,
         child: ListView.builder(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
           shrinkWrap: true,
           scrollDirection: Axis.horizontal,
-          itemCount: 20,
+          itemCount: _listOfGoodItems.value.length,
           itemBuilder: (context, index) => GestureDetector(
-            child: (_listOfGoodItems.value[index].image != null &&
-                    randomFood[index].title != null)
-                ? Column(
-                    children: [
-                      Container(
-                        width: 160,
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: ClipRRect(
-                          borderRadius: const BorderRadius.all(
-                            Radius.circular(16.0),
-                          ),
-                          child: Image.network(
-                            randomFood[index].image!,
-                            fit: BoxFit.fitHeight,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        width: 160,
-                        alignment: Alignment.center,
-                        child: Text(
-                          randomFood[index].title!,
-                          textAlign: TextAlign.center,
-                          style: kFoodNameFontStyle,
-                        ),
-                      ),
-                    ],
-                  )
-                : const Center(
-                    child: CircularProgressIndicator(),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  width: 160,
+                  height: 100,
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                  child: ClipRRect(
+                    borderRadius: const BorderRadius.all(Radius.circular(16.0)),
+                    child: Image.network(
+                        _listOfGoodItems.value[index].image ?? "",
+                        errorBuilder: (context, error, stackTrace) =>
+                            const Center(child: Icon(Icons.error)),
+                        fit: BoxFit.fill),
                   ),
+                ),
+                SizedBox(
+                  width: 160,
+                  child: Text(
+                    _listOfGoodItems.value[index].title ?? "",
+                    textAlign: TextAlign.center,
+                    maxLines: 2,
+                    style: kFoodNameFontStyle,
+                  ),
+                ),
+              ],
+            ),
             onTap: () {
               Navigator.pushNamed(context, MyRoutes.homeDetailRoute);
             },
