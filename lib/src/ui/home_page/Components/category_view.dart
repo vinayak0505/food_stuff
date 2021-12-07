@@ -13,7 +13,8 @@ class CategoryHorizontalView extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final ValueNotifier<RandomRecipe?> _listOfGoodItems = useState(List.empty());
+    final ValueNotifier<RandomRecipe?> _listOfGoodItems =
+        useState(List.empty());
 
     useEffect(() {
       ref.read(homeProvider.notifier).getRandomSweetsRecipe().then((value) {
