@@ -1,64 +1,74 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:food_stuff/src/data/model/random_recipe/random_recipe.dart';
 import 'package:food_stuff/src/ui/home_page/Components/category_view.dart';
 import 'package:food_stuff/src/ui/home_page/Components/more_food_items.dart';
+import 'package:food_stuff/src/ui/home_page/home_viewmodel.dart';
 import 'package:food_stuff/src/ui/search_page/Components/search_bar.dart';
 import 'package:food_stuff/src/ui/home_page/Components/view_pager.dart';
 import 'package:food_stuff/src/utils/constants.dart';
 import 'package:food_stuff/src/utils/routes.dart';
+import 'package:food_stuff/src/utils/strings.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends HookConsumerWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
-}
+  Widget build(BuildContext context, WidgetRef ref) {
+    final ValueNotifier<RandomRecipe?> _viewPagerDetails = useState(null);
 
-class _HomePageState extends State<HomePage> {
-  @override
-  Widget build(BuildContext context) {
+    useEffect(() {
+      ref.read(homeProvider.notifier).getRandomViewPagerRecipe().then((value) {
+        _viewPagerDetails.value = value;
+      });
+    }, []);
+
     void navigation() {
       Navigator.pushNamed(context, MyRoutes.searchRoute);
     }
 
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SearchBar(
-                readOnly: true,
-                autofocus: false,
-                onClick: navigation,
+          child: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SearchBar(
+              readOnly: true,
+              autofocus: false,
+              onClick: navigation,
+            ),
+            ViewPager(_viewPagerDetails.value?.recipes ?? []),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              child: Text(sweets, style: kSubtitleFontStyle),
+            ),
+            CategoryHorizontalView(
+              randomFood: _sweetsDetails.value?.recipes ?? [],
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              child: Text(healthyFoods, style: kSubtitleFontStyle),
+            ),
+            CategoryHorizontalView(
+              randomFood: _vegetableDetails.value?.recipes ?? [],
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              child: Text(
+                otherFoods,
+                style: kSubtitleFontStyle,
               ),
-              const ViewPager(),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                child: Text('Trending', style: kSubtitleFontStyle),
-              ),
-              const CategoryHorizontalView(),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                child: Text('Popular Recipes This Week',
-                    style: kSubtitleFontStyle),
-              ),
-              const CategoryHorizontalView(),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                child: Text(
-                  'Fall Produce Recipes',
-                  style: kSubtitleFontStyle,
-                ),
-              ),
-              // Random
-              const MoreFoodItems(),
-            ],
-          ),
+            ),
+            // Random
+            const MoreFoodItems(),
+          ],
         ),
-      ),
+      )),
       // bottomNavigationBar: const BottomNavigation(),
     );
   }

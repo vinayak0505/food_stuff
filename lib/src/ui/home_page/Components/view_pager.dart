@@ -1,15 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:food_stuff/src/data/model/image_model.dart';
+import 'package:food_stuff/src/data/model/random_recipe/random_recipe.dart';
 import 'package:food_stuff/src/utils/constants.dart';
 
 class ViewPager extends HookWidget {
-  const ViewPager({Key? key}) : super(key: key);
+  const ViewPager(this.randomFood, {Key? key}) : super(key: key);
+
+  final List<Recipe> randomFood;
 
   @override
   Widget build(BuildContext context) {
-    String foodTitle = 'Buko Pie (Filipino young Pie)';
+    String foodTitle = randomFood[0].title ?? '';
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: ClipRRect(
@@ -19,7 +21,7 @@ class ViewPager extends HookWidget {
           child: Column(
             children: [
               Image.network(
-                image,
+                randomFood[0].image ?? '',
                 fit: BoxFit.scaleDown,
               ),
               Text(

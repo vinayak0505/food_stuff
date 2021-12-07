@@ -59,7 +59,6 @@ class HomeDetailPage extends HookConsumerWidget {
                       ingredientList: _details.value!.extendedIngredients,
                     ),
 
-                    /// to be change
                     const Padding(
                       padding:
                           EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
@@ -84,7 +83,7 @@ class HomeDetailPage extends HookConsumerWidget {
                         style: kSubtitleFontStyle,
                       ),
                     ),
-                    const CategoryHorizontalView(),
+                    // const CategoryHorizontalView(),
                   ],
                 ),
               )

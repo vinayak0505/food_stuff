@@ -1,4 +1,10 @@
-// Home Detail page
+// Home Page
+
+const String sweets = 'Sweets :';
+const String healthyFoods = 'Healthy Dishes :';
+const String otherFoods = 'Other Dishes :';
+
+// Home Detail Page
 
 const String servings = 'Servings :';
 const String healthScore = 'Health Score :';
@@ -8,7 +14,7 @@ const String similarRecipies = 'Similar Recipies';
 
 const String preparation = 'Preparation';
 
-// Personal page
+// Personal Page
 const String toLogin =
     'Log in or create an account to save your favorite recipes';
 const String loginFacebookButton = 'Log in with Facebook';

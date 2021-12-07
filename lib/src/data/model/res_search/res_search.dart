@@ -16,7 +16,8 @@ abstract class ResSearch with _$ResSearch {
     required int totalResults,
   }) = _ResSearch;
 
-  factory ResSearch.fromJson(Map<String, dynamic> json) => _$ResSearchFromJson(json);
+  factory ResSearch.fromJson(Map<String, dynamic> json) =>
+      _$ResSearchFromJson(json);
 }
 
 @freezed

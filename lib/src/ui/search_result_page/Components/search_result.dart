@@ -35,28 +35,24 @@ class SearchResult extends StatelessWidget {
         itemCount: imageList.length,
         itemBuilder: (BuildContext context, int index) => Column(
           children: [
-            Column(
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(kRoundedRectangleRadius),
-                  child: Image.network(
-                    imageList[index],
-                    fit: BoxFit.contain,
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 4.0),
-                  child: Text(
-                    'Food very tasty',
-                    textAlign: TextAlign.center,
-                    style: kFoodNameFontStyle,
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(bottom: 16.0),
-                  child: Text('Under 30 min'),
-                ),
-              ],
+            ClipRRect(
+              borderRadius: BorderRadius.circular(kRoundedRectangleRadius),
+              child: Image.network(
+                imageList[index],
+                fit: BoxFit.contain,
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 4.0),
+              child: Text(
+                'Food very tasty',
+                textAlign: TextAlign.center,
+                style: kFoodNameFontStyle,
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(bottom: 16.0),
+              child: Text('Under 30 min'),
             ),
           ],
         ),
