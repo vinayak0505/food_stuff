@@ -48,8 +48,9 @@ class CategoryHorizontalView extends HookConsumerWidget {
                         fit: BoxFit.fill),
                   ),
                 ),
+                const SizedBox(height: 4),
                 SizedBox(
-                  width: 160,
+                  width: 140,
                   child: Text(
                     _listOfGoodItems.value[index].title ?? "",
                     textAlign: TextAlign.center,

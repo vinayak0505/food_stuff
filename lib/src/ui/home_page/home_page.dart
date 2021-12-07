@@ -46,19 +46,12 @@ class HomePage extends HookConsumerWidget {
               padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
               child: Text(sweets, style: kSubtitleFontStyle),
             ),
-            // const CategoryHorizontalView(tag:"sweets"),
+            const CategoryHorizontalView(tag:"sweets"),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
               child: Text(healthyFoods, style: kSubtitleFontStyle),
             ),
-            // const CategoryHorizontalView(tag:"vegetables"),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-              child: Text(
-                otherFoods,
-                style: kSubtitleFontStyle,
-              ),
-            ),
+            const CategoryHorizontalView(tag:"vegetables"),
             const MoreFoodItems(),
           ],
         ),

@@ -12,7 +12,7 @@ class MyTheme {
             foregroundColor: Colors.deepPurple,
             shadowColor: Colors.transparent),
         cardColor: textFieldColor,
-        // canvasColor: textFieldColor,
+        canvasColor: Colors.black12,
         brightness: Brightness.light,
       );
 
@@ -20,12 +20,12 @@ class MyTheme {
         primarySwatch: Colors.deepPurple,
         fontFamily: GoogleFonts.lato().fontFamily,
         scaffoldBackgroundColor: scaffoldColorDarkTheme,
-        canvasColor: textFieldColorDarkTheme,
+        cardColor: textFieldColorDarkTheme,
         appBarTheme: const AppBarTheme(
             backgroundColor: Colors.transparent,
             foregroundColor: Colors.white,
             shadowColor: Colors.transparent),
-        cardColor: Colors.black,
+        canvasColor: Colors.black38,
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           backgroundColor: bottomNavigationDarkTheme,
           type: BottomNavigationBarType.shifting,
