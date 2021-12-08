@@ -13,8 +13,8 @@ class SearchResultViewModel extends StateNotifier<AsyncValue<List<Result>>> {
   late final SearchRepository _repository =
       _reader(searchResultRepositoryProvider);
 
-  Future<ResSearch> getItems() {
-    return _repository.getSearch(10).then((value) {
+  Future<ResSearch> getItems({required String query}) {
+    return _repository.getSearch(query: query).then((value) {
       return value;
     });
   }

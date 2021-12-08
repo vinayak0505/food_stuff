@@ -2,38 +2,21 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:food_stuff/src/data/model/autocomplete_recipe_search/autocomplete_recipe_search.dart';
-import 'package:food_stuff/src/ui/search_page/search_viewmodel.dart';
-import 'package:food_stuff/src/ui/search_result_page/Components/search_result.dart';
 import 'package:food_stuff/src/ui/search_result_page/search_result_page.dart';
-import 'package:food_stuff/src/ui/widgets/loading_screen.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class AutoCompleteList extends HookConsumerWidget {
-  const AutoCompleteList({Key? key}) : super(key: key);
+class AutoCompleteList extends HookWidget {
+  const AutoCompleteList({required this.autoCompleteSearchList, Key? key}) : super(key: key);
 
+  final List<AutocompleteRecipeSearch> autoCompleteSearchList;
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final ValueNotifier _autoCompleteSearchList = useState(List.empty());
-
-    useEffect(() {
-      ref
-          .read(searchProvider.notifier)
-          .getAutocompleteSearch(query: 'bur')
-          .then((value) {
-        _autoCompleteSearchList.value = value;
-      });
-    }, []);
-
-    return LoadingScreen(
-      data: _autoCompleteSearchList.value,
-      child: ListView.separated(
-        physics: const ScrollPhysics(),
-        shrinkWrap: true,
-        itemCount: _autoCompleteSearchList.value.length,
-        separatorBuilder: (_, __) => const Divider(),
-        itemBuilder: (context, index) =>
-            listOfFoodSearch(index, _autoCompleteSearchList.value, context),
-      ),
+  Widget build(BuildContext context) {
+    return ListView.separated(
+      physics: const ScrollPhysics(),
+      shrinkWrap: true,
+      itemCount: autoCompleteSearchList.length,
+      separatorBuilder: (_, __) => const Divider(),
+      itemBuilder: (context, index) =>
+          listOfFoodSearch(index, autoCompleteSearchList, context),
     );
   }
 
@@ -47,10 +30,11 @@ class AutoCompleteList extends HookConsumerWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(
-              builder: (context) => SearchResultPage(
-                    userSearch: searchList[index].title,
-                  )),
+          MaterialPageRoute(builder: (context) {
+            return SearchResultPage(
+              userSearch: searchList[index].title,
+            );
+          }),
         );
       },
     );

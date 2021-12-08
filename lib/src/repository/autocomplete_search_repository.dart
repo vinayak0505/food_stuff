@@ -6,6 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 abstract class AutocompleteSearchRepository {
   Future<List<AutocompleteRecipeSearch>> getRecipeInformation(
       {int number, String query});
+      
 }
 
 final autocompleteSearchProvider =

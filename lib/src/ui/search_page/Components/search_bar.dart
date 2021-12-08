@@ -9,23 +9,20 @@ class SearchBar extends HookWidget {
     required this.readOnly,
     required this.autofocus,
     required this.onClick,
+    this.searchController
   }) : super(key: key);
   final bool readOnly, autofocus;
   final void Function() onClick;
+  final TextEditingController? searchController;
+
 
   @override
   Widget build(BuildContext context) {
-    final controller = useTextEditingController();
-    // final update = useValueListenable(myTextControllerUpdates);
-
-    // useEffect(() {
-    //   controller.text = update;
-    // }, [update]);
-
+   
     return Container(
       padding: const EdgeInsets.all(16.0),
       child: TextField(
-        controller: controller,
+        controller: searchController,
         onTap: onClick,
         autofocus: autofocus,
         readOnly: readOnly,

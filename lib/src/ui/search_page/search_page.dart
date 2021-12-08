@@ -1,16 +1,30 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:food_stuff/src/data/model/autocomplete_recipe_search/autocomplete_recipe_search.dart';
 import 'package:food_stuff/src/ui/search_page/Components/auto_complete_list.dart';
 import 'package:food_stuff/src/ui/search_page/Components/chips_list.dart';
 import 'package:food_stuff/src/ui/search_page/Components/popular_search.dart';
 import 'package:food_stuff/src/ui/search_page/Components/search_bar.dart';
+import 'package:food_stuff/src/ui/search_page/search_viewmodel.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class SearchPage extends HookWidget {
+class SearchPage extends HookConsumerWidget {
   const SearchPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final searchController = useTextEditingController();
+    final ValueNotifier<List<AutocompleteRecipeSearch>> listOfAutoComplete =
+        useState(List.empty());
+    useEffect(() {
+      ref
+          .read(searchProvider.notifier)
+          .getAutocompleteSearch(query: searchController.text)
+          .then((value) {
+        listOfAutoComplete.value = value;
+      });
+    }, [searchController]);
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -30,10 +44,15 @@ class SearchPage extends HookWidget {
                     ),
                     Expanded(
                         child: SearchBar(
-                            readOnly: false, autofocus: true, onClick: () {})),
+                      readOnly: false,
+                      autofocus: true,
+                      onClick: () {},
+                      searchController: searchController,
+                    )),
                   ],
                 ),
-                const AutoCompleteList(),
+                AutoCompleteList(
+                    autoCompleteSearchList: listOfAutoComplete.value),
                 const SizedBox(height: 16),
                 PopularSearch(context: context),
                 const SizedBox(height: 16),

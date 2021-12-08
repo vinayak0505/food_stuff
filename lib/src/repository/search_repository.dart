@@ -4,7 +4,7 @@ import 'package:food_stuff/src/data/model/res_search/res_search.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 abstract class SearchRepository {
-  Future<ResSearch> getSearch(int count);
+  Future<ResSearch> getSearch({int count, String query});
 }
 
 final searchResultRepositoryProvider =
@@ -17,9 +17,11 @@ class SearchResultRepositoryImpl implements SearchRepository {
   late final Dio _dio = _reader(dioProvider);
 
   @override
-  Future<ResSearch> getSearch(int count) {
-    return _dio
-        .get<Map<String, dynamic>>("/recipes/complexSearch")
-        .then((value) => ResSearch.fromJson(value.data!));
+  Future<ResSearch> getSearch({int count = 25, String query = ''}) {
+    return _dio.get<Map<String, dynamic>>("/recipes/complexSearch",
+        queryParameters: {
+          'query': query,
+          'number': count
+        }).then((value) => ResSearch.fromJson(value.data!));
   }
 }

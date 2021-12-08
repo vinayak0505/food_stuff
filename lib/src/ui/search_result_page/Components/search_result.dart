@@ -15,30 +15,16 @@ class SearchResult extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final ValueNotifier<List<Result>> listOfFoodItems = useState(List.empty());
+    final ValueNotifier<List<Result>?> listOfFoodItems = useState(null);
 
     useEffect(() {
-      ref.read(searchResultProvider.notifier).getItems().then((value) {
+      ref
+          .read(searchResultProvider.notifier)
+          .getItems(query: userSearch)
+          .then((value) {
         listOfFoodItems.value = value.results;
       });
     }, []);
-    List imageList = [
-      'https://media.smallbiztrends.com/2021/05/fast-food-restaurants.png',
-      'https://www.qsrmagazine.com/sites/default/files/styles/slideshow_image/public/slideshow-images/slides/mcdonaldsglobal.jpg?itok=X8uup3iY',
-      'https://st.depositphotos.com/1005682/2476/i/600/depositphotos_24762569-stock-photo-fast-food-hamburger-hot-dog.jpg',
-      'https://upload.wikimedia.org/wikipedia/commons/7/7a/Domino%27s_Pizza_-_20191105.jpg',
-      'https://res.cloudinary.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/pjyrruezbzofdtomlzpi',
-      'https://media.smallbiztrends.com/2021/05/fast-food-restaurants.png',
-      'https://www.qsrmagazine.com/sites/default/files/styles/slideshow_image/public/slideshow-images/slides/mcdonaldsglobal.jpg?itok=X8uup3iY',
-      'https://st.depositphotos.com/1005682/2476/i/600/depositphotos_24762569-stock-photo-fast-food-hamburger-hot-dog.jpg',
-      'https://upload.wikimedia.org/wikipedia/commons/7/7a/Domino%27s_Pizza_-_20191105.jpg',
-      'https://res.cloudinary.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/pjyrruezbzofdtomlzpi',
-      'https://media.smallbiztrends.com/2021/05/fast-food-restaurants.png',
-      'https://www.qsrmagazine.com/sites/default/files/styles/slideshow_image/public/slideshow-images/slides/mcdonaldsglobal.jpg?itok=X8uup3iY',
-      'https://st.depositphotos.com/1005682/2476/i/600/depositphotos_24762569-stock-photo-fast-food-hamburger-hot-dog.jpg',
-      'https://upload.wikimedia.org/wikipedia/commons/7/7a/Domino%27s_Pizza_-_20191105.jpg',
-      'https://res.cloudinary.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/pjyrruezbzofdtomlzpi',
-    ];
 
     return LoadingScreen(
       data: listOfFoodItems.value,
@@ -48,20 +34,20 @@ class SearchResult extends HookConsumerWidget {
           physics: const ScrollPhysics(),
           shrinkWrap: true,
           crossAxisCount: 2,
-          itemCount: listOfFoodItems.value.length,
+          itemCount: listOfFoodItems.value!.length,
           itemBuilder: (BuildContext context, int index) => Column(
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(kRoundedRectangleRadius),
                 child: Image.network(
-                  listOfFoodItems.value[index].image,
+                  listOfFoodItems.value![index].image,
                   fit: BoxFit.contain,
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 4.0),
                 child: Text(
-                  listOfFoodItems.value[index].title,
+                  listOfFoodItems.value![index].title,
                   textAlign: TextAlign.center,
                   style: kFoodNameFontStyle,
                 ),
