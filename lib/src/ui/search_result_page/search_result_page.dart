@@ -19,23 +19,11 @@ class SearchResultPage extends HookConsumerWidget {
             child: SearchBar(
               readOnly: false,
               autofocus: false,
-              onClick: () {},
+              onClick: () {Navigator.pop(context);},
             ),
           ),
-          // flexibleSpace: userSearchByTap ? Chip(
-          //   useDeleteButtonTooltip: true,
-          //   label: 'abc',
-          //   // label: Consumer(
-          //   //   builder: (context, ref, child) {
-          //   //     final userSearch = ref.watch(userSearchProvider);
-          //   //     return Text(userSearch ?? '');
-          //   //   },
-          //   ) :
-          // ),
         ),
-        body: SearchResult(
-          userSearch: userSearch,
-        ),
+        body: SearchResult(userSearch: userSearch),
       ),
     );
   }
