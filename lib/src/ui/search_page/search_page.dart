@@ -15,16 +15,18 @@ class SearchPage extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final searchController = useTextEditingController();
+    final update = useValueListenable(searchController);
     final ValueNotifier<List<AutocompleteRecipeSearch>> listOfAutoComplete =
         useState(List.empty());
+        
     useEffect(() {
       ref
           .read(searchProvider.notifier)
-          .getAutocompleteSearch(query: searchController.text)
+          .getAutocompleteSearch(query: update.text)
           .then((value) {
         listOfAutoComplete.value = value;
       });
-    }, [searchController]);
+    }, [update]);
     return Scaffold(
       body: SafeArea(
         child: Padding(

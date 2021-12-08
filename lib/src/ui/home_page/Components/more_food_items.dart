@@ -18,7 +18,7 @@ class MoreFoodItems extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isSwitched = useState(false);
-    final ValueNotifier<List<Recipe>> listOfFoodItems = useState(List.empty());
+    final ValueNotifier<List<Recipe>?> listOfFoodItems = useState(null);
 
     useEffect(() {
       ref.read(homeProvider.notifier).getRandomRecipe().then((value) {
@@ -29,47 +29,46 @@ class MoreFoodItems extends HookConsumerWidget {
     void onlyVegetarian(bool value) {
       if (isSwitched.value == value) return;
       isSwitched.value = value;
-      listOfFoodItems.value = List.empty();
+      listOfFoodItems.value = null;
       ref.read(homeProvider.notifier).getRandomRecipe().then((value) {
         listOfFoodItems.value = value.recipes;
       });
     }
 
-    return LoadingScreen(
-      data: listOfFoodItems.value,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-            child: Row(
-              children: [
-                const Text(
-                  otherFoods,
-                  style: kSubtitleFontStyle,
-                ),
-                const Spacer(),
-                Switch(
-                  value: isSwitched.value,
-                  onChanged: onlyVegetarian,
-                  activeTrackColor: Colors.lightGreenAccent,
-                  activeColor: Colors.green,
-                ),
-                const SizedBox(width: 8),
-                const Text("Veg Only")
-              ],
-            ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding:
+              const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+          child: Row(
+            children: [
+              const Text(
+                otherFoods,
+                style: kSubtitleFontStyle,
+              ),
+              const Spacer(),
+              Switch(
+                value: isSwitched.value,
+                onChanged: onlyVegetarian,
+                activeTrackColor: Colors.lightGreenAccent,
+                activeColor: Colors.green,
+              ),
+              const SizedBox(width: 8),
+              const Text("Veg Only")
+            ],
           ),
-          Padding(
-            padding: const EdgeInsets.all(16.0),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: LoadingScreen(
+            data: listOfFoodItems.value,
             child: StaggeredGridView.countBuilder(
               scrollDirection: Axis.vertical,
               physics: const ScrollPhysics(),
               shrinkWrap: true,
               crossAxisCount: 2,
-              // itemCount: listOfFoodItems.value.length,
-              itemCount: 1,
+              itemCount: listOfFoodItems.value?.length,
               itemBuilder: (BuildContext context, int index) => ClipRRect(
                 borderRadius: BorderRadius.circular(kRoundedRectangleRadius),
                 child: Container(
@@ -77,13 +76,9 @@ class MoreFoodItems extends HookConsumerWidget {
                   child: Column(
                     children: [
                       Image.network(
-                        listOfFoodItems.value[index].image!,
+                        listOfFoodItems.value?[index].image??"",
                         errorBuilder: (_, __, ___) => Container(
                           height: 150,
-                          decoration: BoxDecoration(
-                              border: Border.all(
-                            color: Theme.of(context).dividerColor,
-                          )),
                           alignment: Alignment.center,
                           child: const Icon(Icons.error),
                         ),
@@ -94,12 +89,12 @@ class MoreFoodItems extends HookConsumerWidget {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(listOfFoodItems.value[index].readyInMinutes
+                            Text(listOfFoodItems.value![index].readyInMinutes
                                     .toString() +
                                 " "),
                             const Icon(Icons.alarm, size: 16.0),
                             const Spacer(),
-                            Text(listOfFoodItems.value[index].servings
+                            Text(listOfFoodItems.value![index].servings
                                     .toString() +
                                 " "),
                             const Icon(Icons.star, size: 16.0),
@@ -109,7 +104,7 @@ class MoreFoodItems extends HookConsumerWidget {
                       Padding(
                         padding: const EdgeInsets.fromLTRB(8, 0, 8, 12),
                         child: Text(
-                          listOfFoodItems.value[index].title ?? '',
+                          listOfFoodItems.value![index].title ?? '',
                           textAlign: TextAlign.center,
                           style: kFoodNameFontStyle,
                         ),
@@ -123,8 +118,8 @@ class MoreFoodItems extends HookConsumerWidget {
               crossAxisSpacing: 16,
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

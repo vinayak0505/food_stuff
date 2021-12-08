@@ -34,20 +34,20 @@ class SearchResult extends HookConsumerWidget {
           physics: const ScrollPhysics(),
           shrinkWrap: true,
           crossAxisCount: 2,
-          itemCount: listOfFoodItems.value!.length,
+          itemCount: listOfFoodItems.value?.length,
           itemBuilder: (BuildContext context, int index) => Column(
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(kRoundedRectangleRadius),
                 child: Image.network(
-                  listOfFoodItems.value![index].image,
+                  listOfFoodItems.value?[index].image??"",
                   fit: BoxFit.contain,
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 4.0),
                 child: Text(
-                  listOfFoodItems.value![index].title,
+                  listOfFoodItems.value?[index].title??"",
                   textAlign: TextAlign.center,
                   style: kFoodNameFontStyle,
                 ),
