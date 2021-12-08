@@ -6,8 +6,7 @@ part of 'res_recipe_info.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ResRecipeInfo _$$_ResRecipeInfoFromJson(Map<String, dynamic> json) =>
-    _$_ResRecipeInfo(
+_$_ResRecipeInfo _$$_ResRecipeInfoFromJson(Map json) => _$_ResRecipeInfo(
       vegetarian: json['vegetarian'] as bool,
       vegan: json['vegan'] as bool,
       glutenFree: json['glutenFree'] as bool,
@@ -25,7 +24,8 @@ _$_ResRecipeInfo _$$_ResRecipeInfoFromJson(Map<String, dynamic> json) =>
       license: json['license'] as String,
       sourceName: json['sourceName'] as String,
       extendedIngredients: (json['extendedIngredients'] as List<dynamic>)
-          .map((e) => ExtendedIngredient.fromJson(e as Map<String, dynamic>))
+          .map((e) =>
+              ExtendedIngredient.fromJson(Map<String, dynamic>.from(e as Map)))
           .toList(),
       id: json['id'] as int,
       title: json['title'] as String,
@@ -83,8 +83,7 @@ Map<String, dynamic> _$$_ResRecipeInfoToJson(_$_ResRecipeInfo instance) =>
       'spoonacularSourceUrl': instance.spoonacularSourceUrl,
     };
 
-_$_ExtendedIngredient _$$_ExtendedIngredientFromJson(
-        Map<String, dynamic> json) =>
+_$_ExtendedIngredient _$$_ExtendedIngredientFromJson(Map json) =>
     _$_ExtendedIngredient(
       id: json['id'] as int,
       aisle: json['aisle'] as String,

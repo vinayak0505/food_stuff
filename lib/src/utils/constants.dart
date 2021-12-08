@@ -57,22 +57,17 @@ const kTextButtonStyle = TextStyle(color: Colors.deepPurpleAccent);
 
 const kTextFieldDecoration = InputDecoration(
   border: InputBorder.none,
+  // focusedBorder: InputBorder.none,
   hintText: 'Enter a value',
   hintStyle: TextStyle(fontSize: 20),
   contentPadding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 20.0),
   enabledBorder: OutlineInputBorder(
-    borderSide: BorderSide(
-      color: scaffoldColor,
-    ),
-    borderRadius: BorderRadius.all(
-      Radius.circular(20.0),
-    ),
+    borderSide: BorderSide.none,
+    borderRadius: BorderRadius.all(Radius.circular(20.0)),
   ),
   focusedBorder: OutlineInputBorder(
-    borderSide: BorderSide(color: scaffoldColor, width: 2.0),
-    borderRadius: BorderRadius.all(
-      Radius.circular(15.0),
-    ),
+    borderSide: BorderSide.none,
+    borderRadius: BorderRadius.all(Radius.circular(15.0)),
   ),
   fillColor: darkCreamColor,
   filled: true,

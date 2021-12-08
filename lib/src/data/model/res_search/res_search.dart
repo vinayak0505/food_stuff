@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'dart:convert';
+
 part 'res_search.freezed.dart';
 part 'res_search.g.dart';
 

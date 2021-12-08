@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:food_stuff/src/ui/search_page/Components/chips_list.dart';
 import 'package:food_stuff/src/ui/search_page/Components/search_bar.dart';
 import 'package:food_stuff/src/ui/search_result_page/Components/search_result.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-bool userSearchByTap = false;
+class SearchResultPage extends HookConsumerWidget {
+  const SearchResultPage({required this.userSearch, Key? key})
+      : super(key: key);
 
-class SearchResultPage extends HookWidget {
-  const SearchResultPage({Key? key}) : super(key: key);
+  final String userSearch;
 
-  
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -35,7 +33,9 @@ class SearchResultPage extends HookWidget {
           //   ) :
           // ),
         ),
-        body: const SearchResult(),
+        body: SearchResult(
+          userSearch: userSearch,
+        ),
       ),
     );
   }

@@ -35,39 +35,41 @@ class MoreFoodItems extends HookConsumerWidget {
       });
     }
 
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-          child: Row(
-            children: [
-              const Text(
-                otherFoods,
-                style: kSubtitleFontStyle,
-              ),
-              const Spacer(),
-              Switch(
-                value: isSwitched.value,
-                onChanged: onlyVegetarian,
-                activeTrackColor: Colors.lightGreenAccent,
-                activeColor: Colors.green,
-              ),
-              const SizedBox(width: 8),
-              const Text("Veg Only")
-            ],
+    return LoadingScreen(
+      data: listOfFoodItems.value,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+            child: Row(
+              children: [
+                const Text(
+                  otherFoods,
+                  style: kSubtitleFontStyle,
+                ),
+                const Spacer(),
+                Switch(
+                  value: isSwitched.value,
+                  onChanged: onlyVegetarian,
+                  activeTrackColor: Colors.lightGreenAccent,
+                  activeColor: Colors.green,
+                ),
+                const SizedBox(width: 8),
+                const Text("Veg Only")
+              ],
+            ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: LoadingScreen(
-            data: listOfFoodItems.value,
+          Padding(
+            padding: const EdgeInsets.all(16.0),
             child: StaggeredGridView.countBuilder(
               scrollDirection: Axis.vertical,
               physics: const ScrollPhysics(),
               shrinkWrap: true,
               crossAxisCount: 2,
-              itemCount: listOfFoodItems.value.length,
+              // itemCount: listOfFoodItems.value.length,
+              itemCount: 1,
               itemBuilder: (BuildContext context, int index) => ClipRRect(
                 borderRadius: BorderRadius.circular(kRoundedRectangleRadius),
                 child: Container(
@@ -75,9 +77,16 @@ class MoreFoodItems extends HookConsumerWidget {
                   child: Column(
                     children: [
                       Image.network(
-                        listOfFoodItems.value[index].image ?? '',
-                        errorBuilder: (_, __, ___) =>
-                            const Center(child: Icon(Icons.error)),
+                        listOfFoodItems.value[index].image!,
+                        errorBuilder: (_, __, ___) => Container(
+                          height: 150,
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                            color: Theme.of(context).dividerColor,
+                          )),
+                          alignment: Alignment.center,
+                          child: const Icon(Icons.error),
+                        ),
                         fit: BoxFit.fitWidth,
                       ),
                       Padding(
@@ -114,8 +123,8 @@ class MoreFoodItems extends HookConsumerWidget {
               crossAxisSpacing: 16,
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

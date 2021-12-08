@@ -2,16 +2,24 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:food_stuff/src/data/model/random_recipe/random_recipe.dart';
+import 'package:food_stuff/src/ui/home_page/home_viewmodel.dart';
 import 'package:food_stuff/src/utils/constants.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class ViewPager extends HookWidget {
-  const ViewPager(this.randomFood, {Key? key}) : super(key: key);
-
-  final List<Recipe> randomFood;
+class ViewPager extends HookConsumerWidget {
+  const ViewPager({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    String foodTitle = randomFood[0].title ?? '';
+  Widget build(BuildContext context, WidgetRef ref) {
+    final ValueNotifier<List<Recipe>> _listOfFoodItems = useState(List.empty());
+
+    useEffect(() {
+      ref.read(homeProvider.notifier).getRandomRecipe().then((value) {
+        _listOfFoodItems.value = value.recipes;
+      });
+    }, []);
+
+    String foodTitle = _listOfFoodItems.value[0].title ?? '';
     return Padding(
       padding: const EdgeInsets.all(12.0),
       child: ClipRRect(
@@ -21,7 +29,7 @@ class ViewPager extends HookWidget {
           child: Column(
             children: [
               Image.network(
-                randomFood[0].image ?? '',
+                _listOfFoodItems.value[0].image ?? '',
                 fit: BoxFit.scaleDown,
               ),
               Text(

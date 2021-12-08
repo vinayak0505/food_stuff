@@ -18,16 +18,8 @@ class _PersonalPageState extends State<PersonalPage> {
   @override
   void initState() {
     super.initState();
-
-    print('------------------------------Personal page');
-    _termsConditionRecognizer = TapGestureRecognizer()
-      ..onTap = () {
-        print("Terms and condition tapped");
-      };
-    _privacyPolicyRecognizer = TapGestureRecognizer()
-      ..onTap = () {
-        print("Provacy Policy tapped");
-      };
+    _termsConditionRecognizer = TapGestureRecognizer()..onTap = () {};
+    _privacyPolicyRecognizer = TapGestureRecognizer()..onTap = () {};
   }
 
   @override

@@ -7,10 +7,11 @@ abstract class SearchRepository {
   Future<ResSearch> getSearch(int count);
 }
 
-final homeRepositoryProvider = Provider((ref) => HomeRepositoryImpl(ref.read));
+final searchResultRepositoryProvider =
+    Provider((ref) => SearchResultRepositoryImpl(ref.read));
 
-class HomeRepositoryImpl implements SearchRepository {
-  HomeRepositoryImpl(this._reader);
+class SearchResultRepositoryImpl implements SearchRepository {
+  SearchResultRepositoryImpl(this._reader);
 
   final Reader _reader;
   late final Dio _dio = _reader(dioProvider);

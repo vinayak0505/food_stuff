@@ -32,7 +32,6 @@ class MyApp extends StatelessWidget {
         MyRoutes.homeRoute: (context) => HomePage(),
         MyRoutes.homeDetailRoute: (context) => const HomeDetailPage(),
         MyRoutes.searchRoute: (context) => const SearchPage(),
-        MyRoutes.searchResultRoute: (context) => const SearchResultPage(),
       },
     );
   }

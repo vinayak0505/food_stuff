@@ -14,6 +14,10 @@ const String similarRecipies = 'Similar Recipies';
 
 const String preparation = 'Preparation';
 
+// Search Page
+
+const hintText = 'Search for Recipes';
+
 // Personal Page
 const String toLogin =
     'Log in or create an account to save your favorite recipes';
