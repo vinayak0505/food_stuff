@@ -39,8 +39,7 @@ class MoreFoodItems extends HookConsumerWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding:
-              const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
           child: Row(
             children: [
               const Text(
@@ -71,17 +70,30 @@ class MoreFoodItems extends HookConsumerWidget {
               itemCount: listOfFoodItems.value?.length,
               itemBuilder: (BuildContext context, int index) => ClipRRect(
                 borderRadius: BorderRadius.circular(kRoundedRectangleRadius),
-                child: Container(
+                child: AnimatedContainer(
                   color: Theme.of(context).canvasColor,
+                  duration: const Duration(seconds: 1),
+                  curve: Curves.fastOutSlowIn,
                   child: Column(
                     children: [
                       Image.network(
-                        listOfFoodItems.value?[index].image??"",
+                        listOfFoodItems.value?[index].image ?? "",
                         errorBuilder: (_, __, ___) => Container(
                           height: 150,
                           alignment: Alignment.center,
                           child: const Icon(Icons.error),
                         ),
+                        loadingBuilder: (BuildContext context, Widget child,
+                            ImageChunkEvent? loadingProgress) {
+                          if (loadingProgress == null) {
+                            return child;
+                          }
+                          return Container(
+                            height: 150,
+                            // alignment: Alignment.center,
+                            // child: const Icon(Icons.error),
+                          );
+                        },
                         fit: BoxFit.fitWidth,
                       ),
                       Padding(
