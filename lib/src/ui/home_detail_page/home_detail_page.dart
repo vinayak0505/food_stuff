@@ -25,7 +25,7 @@ class HomeDetailPage extends HookConsumerWidget {
     useEffect(() {
       ref
           .read(homeDetailProvider.notifier)
-          .getRecipeInformation(id: 716601)
+          .getRecipeInformation()
           .then((value) {
         _details.value = value;
       });

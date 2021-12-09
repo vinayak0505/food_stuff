@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 
-class LoadingScreen extends StatelessWidget {
+class LoadingScreen extends HookWidget {
   const LoadingScreen({Key? key, required this.data, required this.child})
       : super(key: key);
 
@@ -9,6 +10,14 @@ class LoadingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return (data == null) ? const Center(child: CircularProgressIndicator()) : child;
+    print('---------------------------------$data');
+
+    final ValueNotifier<dynamic> fakeData = useState(data);
+
+    if (data != null) fakeData.value = [1, 1];
+
+    return (fakeData.value == null)
+        ? const Center(child: CircularProgressIndicator())
+        : child;
   }
 }
