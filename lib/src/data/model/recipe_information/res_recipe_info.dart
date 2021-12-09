@@ -12,41 +12,41 @@ String resRecipeInfoToJson(ResRecipeInfo data) => json.encode(data.toJson());
 @freezed
 abstract class ResRecipeInfo with _$ResRecipeInfo {
   const factory ResRecipeInfo({
-    required bool vegetarian,
-    required bool vegan,
-    required bool glutenFree,
-    required bool dairyFree,
-    required bool veryHealthy,
-    required bool cheap,
-    required bool veryPopular,
-    required bool sustainable,
-    required int weightWatcherSmartPoints,
-    required String gaps,
-    required bool lowFodmap,
-    required int aggregateLikes,
-    // required double spoonacularScore,
-    required double healthScore,
-    required String creditsText,
-    required String license,
-    required String sourceName,
-    // required double pricePerServing,
+    bool? vegetarian,
+    bool? vegan,
+    bool? glutenFree,
+    bool? dairyFree,
+    bool? veryHealthy,
+    bool? cheap,
+    bool? veryPopular,
+    bool? sustainable,
+    int? weightWatcherSmartPoints,
+    String? gaps,
+    bool? lowFodmap,
+    int? aggregateLikes,
+    // double? spoonacularScore,
+    double? healthScore,
+    String? creditsText,
+    String? license,
+    String? sourceName,
+    // double? pricePerServing,
     required List<ExtendedIngredient> extendedIngredients,
-    required int id,
-    required String title,
-    required int readyInMinutes,
-    required int servings,
-    required String sourceUrl,
-    required String image,
-    required String imageType,
-    required String summary,
+    int? id,
+    String? title,
+    int? readyInMinutes,
+    int? servings,
+    String? sourceUrl,
+    String? image,
+    String? imageType,
+    String? summary,
     required List<dynamic> cuisines,
     required List<String> dishTypes,
     required List<String> diets,
     required List<dynamic> occasions,
-    required String instructions,
+    String? instructions,
     required List<AnalysedInstructions> analyzedInstructions,
-    required dynamic originalId,
-    required String spoonacularSourceUrl,
+    dynamic? originalId,
+    String? spoonacularSourceUrl,
   }) = _ResRecipeInfo;
 
   factory ResRecipeInfo.fromJson(Map<String, dynamic> json) =>
@@ -56,17 +56,17 @@ abstract class ResRecipeInfo with _$ResRecipeInfo {
 @freezed
 abstract class ExtendedIngredient with _$ExtendedIngredient {
   const factory ExtendedIngredient({
-    required int id,
-    required String aisle,
-    required String image,
-    required String consistency,
-    required String name,
-    required String nameClean,
-    required String original,
-    required String originalString,
-    required String originalName,
-    required double amount,
-    required String unit,
+    int? id,
+    String? aisle,
+    String? image,
+    String? consistency,
+    String? name,
+    String? nameClean,
+    String? original,
+    String? originalString,
+    String? originalName,
+    double? amount,
+    String? unit,
     required List<String> meta,
     required List<String> metaInformation,
   }) = _ExtendedIngredient;
@@ -83,7 +83,7 @@ String analysedInstructionsToJson(List<AnalysedInstructions> data) => json.encod
 @freezed
 abstract class AnalysedInstructions with _$AnalysedInstructions {
     const factory AnalysedInstructions({
-        required String name,
+        String? name,
         required List<Step> steps,
     }) = _AnalysedInstructions;
 
@@ -93,11 +93,11 @@ abstract class AnalysedInstructions with _$AnalysedInstructions {
 @freezed
 abstract class Step with _$Step {
     const factory Step({
-        required int number,
-        required String step,
+        int? number,
+        String? step,
         required List<Ent> ingredients,
         required List<Ent> equipment,
-        required Length length,
+        // Length? length,
     }) = _Step;
 
     factory Step.fromJson(Map<String, dynamic> json) => _$StepFromJson(json);
@@ -106,10 +106,10 @@ abstract class Step with _$Step {
 @freezed
 abstract class Ent with _$Ent {
     const factory Ent({
-        required int id,
-        required String name,
-        required String localizedName,
-        required String image,
+        int? id,
+        String? name,
+        String? localizedName,
+        String? image,
     }) = _Ent;
 
     factory Ent.fromJson(Map<String, dynamic> json) => _$EntFromJson(json);
@@ -118,8 +118,8 @@ abstract class Ent with _$Ent {
 @freezed
 abstract class Length with _$Length {
     const factory Length({
-        required int number,
-        required String unit,
+        int? number,
+        String? unit,
     }) = _Length;
 
     factory Length.fromJson(Map<String, dynamic> json) => _$LengthFromJson(json);

@@ -22,39 +22,39 @@ class _$ResRecipeInfoTearOff {
   const _$ResRecipeInfoTearOff();
 
   _ResRecipeInfo call(
-      {required bool vegetarian,
-      required bool vegan,
-      required bool glutenFree,
-      required bool dairyFree,
-      required bool veryHealthy,
-      required bool cheap,
-      required bool veryPopular,
-      required bool sustainable,
-      required int weightWatcherSmartPoints,
-      required String gaps,
-      required bool lowFodmap,
-      required int aggregateLikes,
-      required double healthScore,
-      required String creditsText,
-      required String license,
-      required String sourceName,
+      {bool? vegetarian,
+      bool? vegan,
+      bool? glutenFree,
+      bool? dairyFree,
+      bool? veryHealthy,
+      bool? cheap,
+      bool? veryPopular,
+      bool? sustainable,
+      int? weightWatcherSmartPoints,
+      String? gaps,
+      bool? lowFodmap,
+      int? aggregateLikes,
+      double? healthScore,
+      String? creditsText,
+      String? license,
+      String? sourceName,
       required List<ExtendedIngredient> extendedIngredients,
-      required int id,
-      required String title,
-      required int readyInMinutes,
-      required int servings,
-      required String sourceUrl,
-      required String image,
-      required String imageType,
-      required String summary,
+      int? id,
+      String? title,
+      int? readyInMinutes,
+      int? servings,
+      String? sourceUrl,
+      String? image,
+      String? imageType,
+      String? summary,
       required List<dynamic> cuisines,
       required List<String> dishTypes,
       required List<String> diets,
       required List<dynamic> occasions,
-      required String instructions,
+      String? instructions,
       required List<AnalysedInstructions> analyzedInstructions,
-      required dynamic originalId,
-      required String spoonacularSourceUrl}) {
+      dynamic? originalId,
+      String? spoonacularSourceUrl}) {
     return _ResRecipeInfo(
       vegetarian: vegetarian,
       vegan: vegan,
@@ -102,43 +102,43 @@ const $ResRecipeInfo = _$ResRecipeInfoTearOff();
 
 /// @nodoc
 mixin _$ResRecipeInfo {
-  bool get vegetarian => throw _privateConstructorUsedError;
-  bool get vegan => throw _privateConstructorUsedError;
-  bool get glutenFree => throw _privateConstructorUsedError;
-  bool get dairyFree => throw _privateConstructorUsedError;
-  bool get veryHealthy => throw _privateConstructorUsedError;
-  bool get cheap => throw _privateConstructorUsedError;
-  bool get veryPopular => throw _privateConstructorUsedError;
-  bool get sustainable => throw _privateConstructorUsedError;
-  int get weightWatcherSmartPoints => throw _privateConstructorUsedError;
-  String get gaps => throw _privateConstructorUsedError;
-  bool get lowFodmap => throw _privateConstructorUsedError;
-  int get aggregateLikes =>
-      throw _privateConstructorUsedError; // required double spoonacularScore,
-  double get healthScore => throw _privateConstructorUsedError;
-  String get creditsText => throw _privateConstructorUsedError;
-  String get license => throw _privateConstructorUsedError;
-  String get sourceName =>
-      throw _privateConstructorUsedError; // required double pricePerServing,
+  bool? get vegetarian => throw _privateConstructorUsedError;
+  bool? get vegan => throw _privateConstructorUsedError;
+  bool? get glutenFree => throw _privateConstructorUsedError;
+  bool? get dairyFree => throw _privateConstructorUsedError;
+  bool? get veryHealthy => throw _privateConstructorUsedError;
+  bool? get cheap => throw _privateConstructorUsedError;
+  bool? get veryPopular => throw _privateConstructorUsedError;
+  bool? get sustainable => throw _privateConstructorUsedError;
+  int? get weightWatcherSmartPoints => throw _privateConstructorUsedError;
+  String? get gaps => throw _privateConstructorUsedError;
+  bool? get lowFodmap => throw _privateConstructorUsedError;
+  int? get aggregateLikes =>
+      throw _privateConstructorUsedError; // double? spoonacularScore,
+  double? get healthScore => throw _privateConstructorUsedError;
+  String? get creditsText => throw _privateConstructorUsedError;
+  String? get license => throw _privateConstructorUsedError;
+  String? get sourceName =>
+      throw _privateConstructorUsedError; // double? pricePerServing,
   List<ExtendedIngredient> get extendedIngredients =>
       throw _privateConstructorUsedError;
-  int get id => throw _privateConstructorUsedError;
-  String get title => throw _privateConstructorUsedError;
-  int get readyInMinutes => throw _privateConstructorUsedError;
-  int get servings => throw _privateConstructorUsedError;
-  String get sourceUrl => throw _privateConstructorUsedError;
-  String get image => throw _privateConstructorUsedError;
-  String get imageType => throw _privateConstructorUsedError;
-  String get summary => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
+  String? get title => throw _privateConstructorUsedError;
+  int? get readyInMinutes => throw _privateConstructorUsedError;
+  int? get servings => throw _privateConstructorUsedError;
+  String? get sourceUrl => throw _privateConstructorUsedError;
+  String? get image => throw _privateConstructorUsedError;
+  String? get imageType => throw _privateConstructorUsedError;
+  String? get summary => throw _privateConstructorUsedError;
   List<dynamic> get cuisines => throw _privateConstructorUsedError;
   List<String> get dishTypes => throw _privateConstructorUsedError;
   List<String> get diets => throw _privateConstructorUsedError;
   List<dynamic> get occasions => throw _privateConstructorUsedError;
-  String get instructions => throw _privateConstructorUsedError;
+  String? get instructions => throw _privateConstructorUsedError;
   List<AnalysedInstructions> get analyzedInstructions =>
       throw _privateConstructorUsedError;
-  dynamic get originalId => throw _privateConstructorUsedError;
-  String get spoonacularSourceUrl => throw _privateConstructorUsedError;
+  dynamic? get originalId => throw _privateConstructorUsedError;
+  String? get spoonacularSourceUrl => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -152,39 +152,39 @@ abstract class $ResRecipeInfoCopyWith<$Res> {
           ResRecipeInfo value, $Res Function(ResRecipeInfo) then) =
       _$ResRecipeInfoCopyWithImpl<$Res>;
   $Res call(
-      {bool vegetarian,
-      bool vegan,
-      bool glutenFree,
-      bool dairyFree,
-      bool veryHealthy,
-      bool cheap,
-      bool veryPopular,
-      bool sustainable,
-      int weightWatcherSmartPoints,
-      String gaps,
-      bool lowFodmap,
-      int aggregateLikes,
-      double healthScore,
-      String creditsText,
-      String license,
-      String sourceName,
+      {bool? vegetarian,
+      bool? vegan,
+      bool? glutenFree,
+      bool? dairyFree,
+      bool? veryHealthy,
+      bool? cheap,
+      bool? veryPopular,
+      bool? sustainable,
+      int? weightWatcherSmartPoints,
+      String? gaps,
+      bool? lowFodmap,
+      int? aggregateLikes,
+      double? healthScore,
+      String? creditsText,
+      String? license,
+      String? sourceName,
       List<ExtendedIngredient> extendedIngredients,
-      int id,
-      String title,
-      int readyInMinutes,
-      int servings,
-      String sourceUrl,
-      String image,
-      String imageType,
-      String summary,
+      int? id,
+      String? title,
+      int? readyInMinutes,
+      int? servings,
+      String? sourceUrl,
+      String? image,
+      String? imageType,
+      String? summary,
       List<dynamic> cuisines,
       List<String> dishTypes,
       List<String> diets,
       List<dynamic> occasions,
-      String instructions,
+      String? instructions,
       List<AnalysedInstructions> analyzedInstructions,
-      dynamic originalId,
-      String spoonacularSourceUrl});
+      dynamic? originalId,
+      String? spoonacularSourceUrl});
 }
 
 /// @nodoc
@@ -236,67 +236,67 @@ class _$ResRecipeInfoCopyWithImpl<$Res>
       vegetarian: vegetarian == freezed
           ? _value.vegetarian
           : vegetarian // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       vegan: vegan == freezed
           ? _value.vegan
           : vegan // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       glutenFree: glutenFree == freezed
           ? _value.glutenFree
           : glutenFree // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       dairyFree: dairyFree == freezed
           ? _value.dairyFree
           : dairyFree // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       veryHealthy: veryHealthy == freezed
           ? _value.veryHealthy
           : veryHealthy // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       cheap: cheap == freezed
           ? _value.cheap
           : cheap // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       veryPopular: veryPopular == freezed
           ? _value.veryPopular
           : veryPopular // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       sustainable: sustainable == freezed
           ? _value.sustainable
           : sustainable // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       weightWatcherSmartPoints: weightWatcherSmartPoints == freezed
           ? _value.weightWatcherSmartPoints
           : weightWatcherSmartPoints // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       gaps: gaps == freezed
           ? _value.gaps
           : gaps // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       lowFodmap: lowFodmap == freezed
           ? _value.lowFodmap
           : lowFodmap // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       aggregateLikes: aggregateLikes == freezed
           ? _value.aggregateLikes
           : aggregateLikes // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       healthScore: healthScore == freezed
           ? _value.healthScore
           : healthScore // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
       creditsText: creditsText == freezed
           ? _value.creditsText
           : creditsText // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       license: license == freezed
           ? _value.license
           : license // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       sourceName: sourceName == freezed
           ? _value.sourceName
           : sourceName // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       extendedIngredients: extendedIngredients == freezed
           ? _value.extendedIngredients
           : extendedIngredients // ignore: cast_nullable_to_non_nullable
@@ -304,35 +304,35 @@ class _$ResRecipeInfoCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       readyInMinutes: readyInMinutes == freezed
           ? _value.readyInMinutes
           : readyInMinutes // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       servings: servings == freezed
           ? _value.servings
           : servings // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       sourceUrl: sourceUrl == freezed
           ? _value.sourceUrl
           : sourceUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       image: image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       imageType: imageType == freezed
           ? _value.imageType
           : imageType // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       summary: summary == freezed
           ? _value.summary
           : summary // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       cuisines: cuisines == freezed
           ? _value.cuisines
           : cuisines // ignore: cast_nullable_to_non_nullable
@@ -352,7 +352,7 @@ class _$ResRecipeInfoCopyWithImpl<$Res>
       instructions: instructions == freezed
           ? _value.instructions
           : instructions // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       analyzedInstructions: analyzedInstructions == freezed
           ? _value.analyzedInstructions
           : analyzedInstructions // ignore: cast_nullable_to_non_nullable
@@ -360,11 +360,11 @@ class _$ResRecipeInfoCopyWithImpl<$Res>
       originalId: originalId == freezed
           ? _value.originalId
           : originalId // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as dynamic?,
       spoonacularSourceUrl: spoonacularSourceUrl == freezed
           ? _value.spoonacularSourceUrl
           : spoonacularSourceUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -377,39 +377,39 @@ abstract class _$ResRecipeInfoCopyWith<$Res>
       __$ResRecipeInfoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool vegetarian,
-      bool vegan,
-      bool glutenFree,
-      bool dairyFree,
-      bool veryHealthy,
-      bool cheap,
-      bool veryPopular,
-      bool sustainable,
-      int weightWatcherSmartPoints,
-      String gaps,
-      bool lowFodmap,
-      int aggregateLikes,
-      double healthScore,
-      String creditsText,
-      String license,
-      String sourceName,
+      {bool? vegetarian,
+      bool? vegan,
+      bool? glutenFree,
+      bool? dairyFree,
+      bool? veryHealthy,
+      bool? cheap,
+      bool? veryPopular,
+      bool? sustainable,
+      int? weightWatcherSmartPoints,
+      String? gaps,
+      bool? lowFodmap,
+      int? aggregateLikes,
+      double? healthScore,
+      String? creditsText,
+      String? license,
+      String? sourceName,
       List<ExtendedIngredient> extendedIngredients,
-      int id,
-      String title,
-      int readyInMinutes,
-      int servings,
-      String sourceUrl,
-      String image,
-      String imageType,
-      String summary,
+      int? id,
+      String? title,
+      int? readyInMinutes,
+      int? servings,
+      String? sourceUrl,
+      String? image,
+      String? imageType,
+      String? summary,
       List<dynamic> cuisines,
       List<String> dishTypes,
       List<String> diets,
       List<dynamic> occasions,
-      String instructions,
+      String? instructions,
       List<AnalysedInstructions> analyzedInstructions,
-      dynamic originalId,
-      String spoonacularSourceUrl});
+      dynamic? originalId,
+      String? spoonacularSourceUrl});
 }
 
 /// @nodoc
@@ -463,67 +463,67 @@ class __$ResRecipeInfoCopyWithImpl<$Res>
       vegetarian: vegetarian == freezed
           ? _value.vegetarian
           : vegetarian // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       vegan: vegan == freezed
           ? _value.vegan
           : vegan // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       glutenFree: glutenFree == freezed
           ? _value.glutenFree
           : glutenFree // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       dairyFree: dairyFree == freezed
           ? _value.dairyFree
           : dairyFree // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       veryHealthy: veryHealthy == freezed
           ? _value.veryHealthy
           : veryHealthy // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       cheap: cheap == freezed
           ? _value.cheap
           : cheap // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       veryPopular: veryPopular == freezed
           ? _value.veryPopular
           : veryPopular // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       sustainable: sustainable == freezed
           ? _value.sustainable
           : sustainable // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       weightWatcherSmartPoints: weightWatcherSmartPoints == freezed
           ? _value.weightWatcherSmartPoints
           : weightWatcherSmartPoints // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       gaps: gaps == freezed
           ? _value.gaps
           : gaps // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       lowFodmap: lowFodmap == freezed
           ? _value.lowFodmap
           : lowFodmap // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       aggregateLikes: aggregateLikes == freezed
           ? _value.aggregateLikes
           : aggregateLikes // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       healthScore: healthScore == freezed
           ? _value.healthScore
           : healthScore // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
       creditsText: creditsText == freezed
           ? _value.creditsText
           : creditsText // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       license: license == freezed
           ? _value.license
           : license // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       sourceName: sourceName == freezed
           ? _value.sourceName
           : sourceName // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       extendedIngredients: extendedIngredients == freezed
           ? _value.extendedIngredients
           : extendedIngredients // ignore: cast_nullable_to_non_nullable
@@ -531,35 +531,35 @@ class __$ResRecipeInfoCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       readyInMinutes: readyInMinutes == freezed
           ? _value.readyInMinutes
           : readyInMinutes // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       servings: servings == freezed
           ? _value.servings
           : servings // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       sourceUrl: sourceUrl == freezed
           ? _value.sourceUrl
           : sourceUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       image: image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       imageType: imageType == freezed
           ? _value.imageType
           : imageType // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       summary: summary == freezed
           ? _value.summary
           : summary // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       cuisines: cuisines == freezed
           ? _value.cuisines
           : cuisines // ignore: cast_nullable_to_non_nullable
@@ -579,7 +579,7 @@ class __$ResRecipeInfoCopyWithImpl<$Res>
       instructions: instructions == freezed
           ? _value.instructions
           : instructions // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       analyzedInstructions: analyzedInstructions == freezed
           ? _value.analyzedInstructions
           : analyzedInstructions // ignore: cast_nullable_to_non_nullable
@@ -587,11 +587,11 @@ class __$ResRecipeInfoCopyWithImpl<$Res>
       originalId: originalId == freezed
           ? _value.originalId
           : originalId // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as dynamic?,
       spoonacularSourceUrl: spoonacularSourceUrl == freezed
           ? _value.spoonacularSourceUrl
           : spoonacularSourceUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -600,93 +600,93 @@ class __$ResRecipeInfoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ResRecipeInfo implements _ResRecipeInfo {
   const _$_ResRecipeInfo(
-      {required this.vegetarian,
-      required this.vegan,
-      required this.glutenFree,
-      required this.dairyFree,
-      required this.veryHealthy,
-      required this.cheap,
-      required this.veryPopular,
-      required this.sustainable,
-      required this.weightWatcherSmartPoints,
-      required this.gaps,
-      required this.lowFodmap,
-      required this.aggregateLikes,
-      required this.healthScore,
-      required this.creditsText,
-      required this.license,
-      required this.sourceName,
+      {this.vegetarian,
+      this.vegan,
+      this.glutenFree,
+      this.dairyFree,
+      this.veryHealthy,
+      this.cheap,
+      this.veryPopular,
+      this.sustainable,
+      this.weightWatcherSmartPoints,
+      this.gaps,
+      this.lowFodmap,
+      this.aggregateLikes,
+      this.healthScore,
+      this.creditsText,
+      this.license,
+      this.sourceName,
       required this.extendedIngredients,
-      required this.id,
-      required this.title,
-      required this.readyInMinutes,
-      required this.servings,
-      required this.sourceUrl,
-      required this.image,
-      required this.imageType,
-      required this.summary,
+      this.id,
+      this.title,
+      this.readyInMinutes,
+      this.servings,
+      this.sourceUrl,
+      this.image,
+      this.imageType,
+      this.summary,
       required this.cuisines,
       required this.dishTypes,
       required this.diets,
       required this.occasions,
-      required this.instructions,
+      this.instructions,
       required this.analyzedInstructions,
-      required this.originalId,
-      required this.spoonacularSourceUrl});
+      this.originalId,
+      this.spoonacularSourceUrl});
 
   factory _$_ResRecipeInfo.fromJson(Map<String, dynamic> json) =>
       _$$_ResRecipeInfoFromJson(json);
 
   @override
-  final bool vegetarian;
+  final bool? vegetarian;
   @override
-  final bool vegan;
+  final bool? vegan;
   @override
-  final bool glutenFree;
+  final bool? glutenFree;
   @override
-  final bool dairyFree;
+  final bool? dairyFree;
   @override
-  final bool veryHealthy;
+  final bool? veryHealthy;
   @override
-  final bool cheap;
+  final bool? cheap;
   @override
-  final bool veryPopular;
+  final bool? veryPopular;
   @override
-  final bool sustainable;
+  final bool? sustainable;
   @override
-  final int weightWatcherSmartPoints;
+  final int? weightWatcherSmartPoints;
   @override
-  final String gaps;
+  final String? gaps;
   @override
-  final bool lowFodmap;
+  final bool? lowFodmap;
   @override
-  final int aggregateLikes;
-  @override // required double spoonacularScore,
-  final double healthScore;
+  final int? aggregateLikes;
+  @override // double? spoonacularScore,
+  final double? healthScore;
   @override
-  final String creditsText;
+  final String? creditsText;
   @override
-  final String license;
+  final String? license;
   @override
-  final String sourceName;
-  @override // required double pricePerServing,
+  final String? sourceName;
+  @override // double? pricePerServing,
   final List<ExtendedIngredient> extendedIngredients;
   @override
-  final int id;
+  final int? id;
   @override
-  final String title;
+  final String? title;
   @override
-  final int readyInMinutes;
+  final int? readyInMinutes;
   @override
-  final int servings;
+  final int? servings;
   @override
-  final String sourceUrl;
+  final String? sourceUrl;
   @override
-  final String image;
+  final String? image;
   @override
-  final String imageType;
+  final String? imageType;
   @override
-  final String summary;
+  final String? summary;
   @override
   final List<dynamic> cuisines;
   @override
@@ -696,13 +696,13 @@ class _$_ResRecipeInfo implements _ResRecipeInfo {
   @override
   final List<dynamic> occasions;
   @override
-  final String instructions;
+  final String? instructions;
   @override
   final List<AnalysedInstructions> analyzedInstructions;
   @override
-  final dynamic originalId;
+  final dynamic? originalId;
   @override
-  final String spoonacularSourceUrl;
+  final String? spoonacularSourceUrl;
 
   @override
   String toString() {
@@ -835,94 +835,94 @@ class _$_ResRecipeInfo implements _ResRecipeInfo {
 
 abstract class _ResRecipeInfo implements ResRecipeInfo {
   const factory _ResRecipeInfo(
-      {required bool vegetarian,
-      required bool vegan,
-      required bool glutenFree,
-      required bool dairyFree,
-      required bool veryHealthy,
-      required bool cheap,
-      required bool veryPopular,
-      required bool sustainable,
-      required int weightWatcherSmartPoints,
-      required String gaps,
-      required bool lowFodmap,
-      required int aggregateLikes,
-      required double healthScore,
-      required String creditsText,
-      required String license,
-      required String sourceName,
+      {bool? vegetarian,
+      bool? vegan,
+      bool? glutenFree,
+      bool? dairyFree,
+      bool? veryHealthy,
+      bool? cheap,
+      bool? veryPopular,
+      bool? sustainable,
+      int? weightWatcherSmartPoints,
+      String? gaps,
+      bool? lowFodmap,
+      int? aggregateLikes,
+      double? healthScore,
+      String? creditsText,
+      String? license,
+      String? sourceName,
       required List<ExtendedIngredient> extendedIngredients,
-      required int id,
-      required String title,
-      required int readyInMinutes,
-      required int servings,
-      required String sourceUrl,
-      required String image,
-      required String imageType,
-      required String summary,
+      int? id,
+      String? title,
+      int? readyInMinutes,
+      int? servings,
+      String? sourceUrl,
+      String? image,
+      String? imageType,
+      String? summary,
       required List<dynamic> cuisines,
       required List<String> dishTypes,
       required List<String> diets,
       required List<dynamic> occasions,
-      required String instructions,
+      String? instructions,
       required List<AnalysedInstructions> analyzedInstructions,
-      required dynamic originalId,
-      required String spoonacularSourceUrl}) = _$_ResRecipeInfo;
+      dynamic? originalId,
+      String? spoonacularSourceUrl}) = _$_ResRecipeInfo;
 
   factory _ResRecipeInfo.fromJson(Map<String, dynamic> json) =
       _$_ResRecipeInfo.fromJson;
 
   @override
-  bool get vegetarian => throw _privateConstructorUsedError;
+  bool? get vegetarian => throw _privateConstructorUsedError;
   @override
-  bool get vegan => throw _privateConstructorUsedError;
+  bool? get vegan => throw _privateConstructorUsedError;
   @override
-  bool get glutenFree => throw _privateConstructorUsedError;
+  bool? get glutenFree => throw _privateConstructorUsedError;
   @override
-  bool get dairyFree => throw _privateConstructorUsedError;
+  bool? get dairyFree => throw _privateConstructorUsedError;
   @override
-  bool get veryHealthy => throw _privateConstructorUsedError;
+  bool? get veryHealthy => throw _privateConstructorUsedError;
   @override
-  bool get cheap => throw _privateConstructorUsedError;
+  bool? get cheap => throw _privateConstructorUsedError;
   @override
-  bool get veryPopular => throw _privateConstructorUsedError;
+  bool? get veryPopular => throw _privateConstructorUsedError;
   @override
-  bool get sustainable => throw _privateConstructorUsedError;
+  bool? get sustainable => throw _privateConstructorUsedError;
   @override
-  int get weightWatcherSmartPoints => throw _privateConstructorUsedError;
+  int? get weightWatcherSmartPoints => throw _privateConstructorUsedError;
   @override
-  String get gaps => throw _privateConstructorUsedError;
+  String? get gaps => throw _privateConstructorUsedError;
   @override
-  bool get lowFodmap => throw _privateConstructorUsedError;
+  bool? get lowFodmap => throw _privateConstructorUsedError;
   @override
-  int get aggregateLikes => throw _privateConstructorUsedError;
-  @override // required double spoonacularScore,
-  double get healthScore => throw _privateConstructorUsedError;
+  int? get aggregateLikes => throw _privateConstructorUsedError;
+  @override // double? spoonacularScore,
+  double? get healthScore => throw _privateConstructorUsedError;
   @override
-  String get creditsText => throw _privateConstructorUsedError;
+  String? get creditsText => throw _privateConstructorUsedError;
   @override
-  String get license => throw _privateConstructorUsedError;
+  String? get license => throw _privateConstructorUsedError;
   @override
-  String get sourceName => throw _privateConstructorUsedError;
-  @override // required double pricePerServing,
+  String? get sourceName => throw _privateConstructorUsedError;
+  @override // double? pricePerServing,
   List<ExtendedIngredient> get extendedIngredients =>
       throw _privateConstructorUsedError;
   @override
-  int get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   @override
-  String get title => throw _privateConstructorUsedError;
+  String? get title => throw _privateConstructorUsedError;
   @override
-  int get readyInMinutes => throw _privateConstructorUsedError;
+  int? get readyInMinutes => throw _privateConstructorUsedError;
   @override
-  int get servings => throw _privateConstructorUsedError;
+  int? get servings => throw _privateConstructorUsedError;
   @override
-  String get sourceUrl => throw _privateConstructorUsedError;
+  String? get sourceUrl => throw _privateConstructorUsedError;
   @override
-  String get image => throw _privateConstructorUsedError;
+  String? get image => throw _privateConstructorUsedError;
   @override
-  String get imageType => throw _privateConstructorUsedError;
+  String? get imageType => throw _privateConstructorUsedError;
   @override
-  String get summary => throw _privateConstructorUsedError;
+  String? get summary => throw _privateConstructorUsedError;
   @override
   List<dynamic> get cuisines => throw _privateConstructorUsedError;
   @override
@@ -932,14 +932,14 @@ abstract class _ResRecipeInfo implements ResRecipeInfo {
   @override
   List<dynamic> get occasions => throw _privateConstructorUsedError;
   @override
-  String get instructions => throw _privateConstructorUsedError;
+  String? get instructions => throw _privateConstructorUsedError;
   @override
   List<AnalysedInstructions> get analyzedInstructions =>
       throw _privateConstructorUsedError;
   @override
-  dynamic get originalId => throw _privateConstructorUsedError;
+  dynamic? get originalId => throw _privateConstructorUsedError;
   @override
-  String get spoonacularSourceUrl => throw _privateConstructorUsedError;
+  String? get spoonacularSourceUrl => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ResRecipeInfoCopyWith<_ResRecipeInfo> get copyWith =>
@@ -955,17 +955,17 @@ class _$ExtendedIngredientTearOff {
   const _$ExtendedIngredientTearOff();
 
   _ExtendedIngredient call(
-      {required int id,
-      required String aisle,
-      required String image,
-      required String consistency,
-      required String name,
-      required String nameClean,
-      required String original,
-      required String originalString,
-      required String originalName,
-      required double amount,
-      required String unit,
+      {int? id,
+      String? aisle,
+      String? image,
+      String? consistency,
+      String? name,
+      String? nameClean,
+      String? original,
+      String? originalString,
+      String? originalName,
+      double? amount,
+      String? unit,
       required List<String> meta,
       required List<String> metaInformation}) {
     return _ExtendedIngredient(
@@ -995,17 +995,17 @@ const $ExtendedIngredient = _$ExtendedIngredientTearOff();
 
 /// @nodoc
 mixin _$ExtendedIngredient {
-  int get id => throw _privateConstructorUsedError;
-  String get aisle => throw _privateConstructorUsedError;
-  String get image => throw _privateConstructorUsedError;
-  String get consistency => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get nameClean => throw _privateConstructorUsedError;
-  String get original => throw _privateConstructorUsedError;
-  String get originalString => throw _privateConstructorUsedError;
-  String get originalName => throw _privateConstructorUsedError;
-  double get amount => throw _privateConstructorUsedError;
-  String get unit => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
+  String? get aisle => throw _privateConstructorUsedError;
+  String? get image => throw _privateConstructorUsedError;
+  String? get consistency => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get nameClean => throw _privateConstructorUsedError;
+  String? get original => throw _privateConstructorUsedError;
+  String? get originalString => throw _privateConstructorUsedError;
+  String? get originalName => throw _privateConstructorUsedError;
+  double? get amount => throw _privateConstructorUsedError;
+  String? get unit => throw _privateConstructorUsedError;
   List<String> get meta => throw _privateConstructorUsedError;
   List<String> get metaInformation => throw _privateConstructorUsedError;
 
@@ -1021,17 +1021,17 @@ abstract class $ExtendedIngredientCopyWith<$Res> {
           ExtendedIngredient value, $Res Function(ExtendedIngredient) then) =
       _$ExtendedIngredientCopyWithImpl<$Res>;
   $Res call(
-      {int id,
-      String aisle,
-      String image,
-      String consistency,
-      String name,
-      String nameClean,
-      String original,
-      String originalString,
-      String originalName,
-      double amount,
-      String unit,
+      {int? id,
+      String? aisle,
+      String? image,
+      String? consistency,
+      String? name,
+      String? nameClean,
+      String? original,
+      String? originalString,
+      String? originalName,
+      double? amount,
+      String? unit,
       List<String> meta,
       List<String> metaInformation});
 }
@@ -1065,47 +1065,47 @@ class _$ExtendedIngredientCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       aisle: aisle == freezed
           ? _value.aisle
           : aisle // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       image: image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       consistency: consistency == freezed
           ? _value.consistency
           : consistency // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       nameClean: nameClean == freezed
           ? _value.nameClean
           : nameClean // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       original: original == freezed
           ? _value.original
           : original // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       originalString: originalString == freezed
           ? _value.originalString
           : originalString // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       originalName: originalName == freezed
           ? _value.originalName
           : originalName // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       amount: amount == freezed
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
       unit: unit == freezed
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       meta: meta == freezed
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -1126,17 +1126,17 @@ abstract class _$ExtendedIngredientCopyWith<$Res>
       __$ExtendedIngredientCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int id,
-      String aisle,
-      String image,
-      String consistency,
-      String name,
-      String nameClean,
-      String original,
-      String originalString,
-      String originalName,
-      double amount,
-      String unit,
+      {int? id,
+      String? aisle,
+      String? image,
+      String? consistency,
+      String? name,
+      String? nameClean,
+      String? original,
+      String? originalString,
+      String? originalName,
+      double? amount,
+      String? unit,
       List<String> meta,
       List<String> metaInformation});
 }
@@ -1172,47 +1172,47 @@ class __$ExtendedIngredientCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       aisle: aisle == freezed
           ? _value.aisle
           : aisle // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       image: image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       consistency: consistency == freezed
           ? _value.consistency
           : consistency // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       nameClean: nameClean == freezed
           ? _value.nameClean
           : nameClean // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       original: original == freezed
           ? _value.original
           : original // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       originalString: originalString == freezed
           ? _value.originalString
           : originalString // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       originalName: originalName == freezed
           ? _value.originalName
           : originalName // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       amount: amount == freezed
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
-              as double,
+              as double?,
       unit: unit == freezed
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       meta: meta == freezed
           ? _value.meta
           : meta // ignore: cast_nullable_to_non_nullable
@@ -1229,17 +1229,17 @@ class __$ExtendedIngredientCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ExtendedIngredient implements _ExtendedIngredient {
   const _$_ExtendedIngredient(
-      {required this.id,
-      required this.aisle,
-      required this.image,
-      required this.consistency,
-      required this.name,
-      required this.nameClean,
-      required this.original,
-      required this.originalString,
-      required this.originalName,
-      required this.amount,
-      required this.unit,
+      {this.id,
+      this.aisle,
+      this.image,
+      this.consistency,
+      this.name,
+      this.nameClean,
+      this.original,
+      this.originalString,
+      this.originalName,
+      this.amount,
+      this.unit,
       required this.meta,
       required this.metaInformation});
 
@@ -1247,27 +1247,27 @@ class _$_ExtendedIngredient implements _ExtendedIngredient {
       _$$_ExtendedIngredientFromJson(json);
 
   @override
-  final int id;
+  final int? id;
   @override
-  final String aisle;
+  final String? aisle;
   @override
-  final String image;
+  final String? image;
   @override
-  final String consistency;
+  final String? consistency;
   @override
-  final String name;
+  final String? name;
   @override
-  final String nameClean;
+  final String? nameClean;
   @override
-  final String original;
+  final String? original;
   @override
-  final String originalString;
+  final String? originalString;
   @override
-  final String originalName;
+  final String? originalName;
   @override
-  final double amount;
+  final double? amount;
   @override
-  final String unit;
+  final String? unit;
   @override
   final List<String> meta;
   @override
@@ -1346,17 +1346,17 @@ class _$_ExtendedIngredient implements _ExtendedIngredient {
 
 abstract class _ExtendedIngredient implements ExtendedIngredient {
   const factory _ExtendedIngredient(
-      {required int id,
-      required String aisle,
-      required String image,
-      required String consistency,
-      required String name,
-      required String nameClean,
-      required String original,
-      required String originalString,
-      required String originalName,
-      required double amount,
-      required String unit,
+      {int? id,
+      String? aisle,
+      String? image,
+      String? consistency,
+      String? name,
+      String? nameClean,
+      String? original,
+      String? originalString,
+      String? originalName,
+      double? amount,
+      String? unit,
       required List<String> meta,
       required List<String> metaInformation}) = _$_ExtendedIngredient;
 
@@ -1364,27 +1364,27 @@ abstract class _ExtendedIngredient implements ExtendedIngredient {
       _$_ExtendedIngredient.fromJson;
 
   @override
-  int get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   @override
-  String get aisle => throw _privateConstructorUsedError;
+  String? get aisle => throw _privateConstructorUsedError;
   @override
-  String get image => throw _privateConstructorUsedError;
+  String? get image => throw _privateConstructorUsedError;
   @override
-  String get consistency => throw _privateConstructorUsedError;
+  String? get consistency => throw _privateConstructorUsedError;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   @override
-  String get nameClean => throw _privateConstructorUsedError;
+  String? get nameClean => throw _privateConstructorUsedError;
   @override
-  String get original => throw _privateConstructorUsedError;
+  String? get original => throw _privateConstructorUsedError;
   @override
-  String get originalString => throw _privateConstructorUsedError;
+  String? get originalString => throw _privateConstructorUsedError;
   @override
-  String get originalName => throw _privateConstructorUsedError;
+  String? get originalName => throw _privateConstructorUsedError;
   @override
-  double get amount => throw _privateConstructorUsedError;
+  double? get amount => throw _privateConstructorUsedError;
   @override
-  String get unit => throw _privateConstructorUsedError;
+  String? get unit => throw _privateConstructorUsedError;
   @override
   List<String> get meta => throw _privateConstructorUsedError;
   @override
@@ -1403,8 +1403,7 @@ AnalysedInstructions _$AnalysedInstructionsFromJson(Map<String, dynamic> json) {
 class _$AnalysedInstructionsTearOff {
   const _$AnalysedInstructionsTearOff();
 
-  _AnalysedInstructions call(
-      {required String name, required List<Step> steps}) {
+  _AnalysedInstructions call({String? name, required List<Step> steps}) {
     return _AnalysedInstructions(
       name: name,
       steps: steps,
@@ -1421,7 +1420,7 @@ const $AnalysedInstructions = _$AnalysedInstructionsTearOff();
 
 /// @nodoc
 mixin _$AnalysedInstructions {
-  String get name => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   List<Step> get steps => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -1435,7 +1434,7 @@ abstract class $AnalysedInstructionsCopyWith<$Res> {
   factory $AnalysedInstructionsCopyWith(AnalysedInstructions value,
           $Res Function(AnalysedInstructions) then) =
       _$AnalysedInstructionsCopyWithImpl<$Res>;
-  $Res call({String name, List<Step> steps});
+  $Res call({String? name, List<Step> steps});
 }
 
 /// @nodoc
@@ -1456,7 +1455,7 @@ class _$AnalysedInstructionsCopyWithImpl<$Res>
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       steps: steps == freezed
           ? _value.steps
           : steps // ignore: cast_nullable_to_non_nullable
@@ -1472,7 +1471,7 @@ abstract class _$AnalysedInstructionsCopyWith<$Res>
           $Res Function(_AnalysedInstructions) then) =
       __$AnalysedInstructionsCopyWithImpl<$Res>;
   @override
-  $Res call({String name, List<Step> steps});
+  $Res call({String? name, List<Step> steps});
 }
 
 /// @nodoc
@@ -1495,7 +1494,7 @@ class __$AnalysedInstructionsCopyWithImpl<$Res>
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       steps: steps == freezed
           ? _value.steps
           : steps // ignore: cast_nullable_to_non_nullable
@@ -1507,13 +1506,13 @@ class __$AnalysedInstructionsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_AnalysedInstructions implements _AnalysedInstructions {
-  const _$_AnalysedInstructions({required this.name, required this.steps});
+  const _$_AnalysedInstructions({this.name, required this.steps});
 
   factory _$_AnalysedInstructions.fromJson(Map<String, dynamic> json) =>
       _$$_AnalysedInstructionsFromJson(json);
 
   @override
-  final String name;
+  final String? name;
   @override
   final List<Step> steps;
 
@@ -1552,14 +1551,13 @@ class _$_AnalysedInstructions implements _AnalysedInstructions {
 
 abstract class _AnalysedInstructions implements AnalysedInstructions {
   const factory _AnalysedInstructions(
-      {required String name,
-      required List<Step> steps}) = _$_AnalysedInstructions;
+      {String? name, required List<Step> steps}) = _$_AnalysedInstructions;
 
   factory _AnalysedInstructions.fromJson(Map<String, dynamic> json) =
       _$_AnalysedInstructions.fromJson;
 
   @override
-  String get name => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   @override
   List<Step> get steps => throw _privateConstructorUsedError;
   @override
@@ -1577,17 +1575,15 @@ class _$StepTearOff {
   const _$StepTearOff();
 
   _Step call(
-      {required int number,
-      required String step,
+      {int? number,
+      String? step,
       required List<Ent> ingredients,
-      required List<Ent> equipment,
-      required Length length}) {
+      required List<Ent> equipment}) {
     return _Step(
       number: number,
       step: step,
       ingredients: ingredients,
       equipment: equipment,
-      length: length,
     );
   }
 
@@ -1601,11 +1597,10 @@ const $Step = _$StepTearOff();
 
 /// @nodoc
 mixin _$Step {
-  int get number => throw _privateConstructorUsedError;
-  String get step => throw _privateConstructorUsedError;
+  int? get number => throw _privateConstructorUsedError;
+  String? get step => throw _privateConstructorUsedError;
   List<Ent> get ingredients => throw _privateConstructorUsedError;
   List<Ent> get equipment => throw _privateConstructorUsedError;
-  Length get length => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1617,13 +1612,7 @@ abstract class $StepCopyWith<$Res> {
   factory $StepCopyWith(Step value, $Res Function(Step) then) =
       _$StepCopyWithImpl<$Res>;
   $Res call(
-      {int number,
-      String step,
-      List<Ent> ingredients,
-      List<Ent> equipment,
-      Length length});
-
-  $LengthCopyWith<$Res> get length;
+      {int? number, String? step, List<Ent> ingredients, List<Ent> equipment});
 }
 
 /// @nodoc
@@ -1640,17 +1629,16 @@ class _$StepCopyWithImpl<$Res> implements $StepCopyWith<$Res> {
     Object? step = freezed,
     Object? ingredients = freezed,
     Object? equipment = freezed,
-    Object? length = freezed,
   }) {
     return _then(_value.copyWith(
       number: number == freezed
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       step: step == freezed
           ? _value.step
           : step // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       ingredients: ingredients == freezed
           ? _value.ingredients
           : ingredients // ignore: cast_nullable_to_non_nullable
@@ -1659,18 +1647,7 @@ class _$StepCopyWithImpl<$Res> implements $StepCopyWith<$Res> {
           ? _value.equipment
           : equipment // ignore: cast_nullable_to_non_nullable
               as List<Ent>,
-      length: length == freezed
-          ? _value.length
-          : length // ignore: cast_nullable_to_non_nullable
-              as Length,
     ));
-  }
-
-  @override
-  $LengthCopyWith<$Res> get length {
-    return $LengthCopyWith<$Res>(_value.length, (value) {
-      return _then(_value.copyWith(length: value));
-    });
   }
 }
 
@@ -1680,14 +1657,7 @@ abstract class _$StepCopyWith<$Res> implements $StepCopyWith<$Res> {
       __$StepCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int number,
-      String step,
-      List<Ent> ingredients,
-      List<Ent> equipment,
-      Length length});
-
-  @override
-  $LengthCopyWith<$Res> get length;
+      {int? number, String? step, List<Ent> ingredients, List<Ent> equipment});
 }
 
 /// @nodoc
@@ -1705,17 +1675,16 @@ class __$StepCopyWithImpl<$Res> extends _$StepCopyWithImpl<$Res>
     Object? step = freezed,
     Object? ingredients = freezed,
     Object? equipment = freezed,
-    Object? length = freezed,
   }) {
     return _then(_Step(
       number: number == freezed
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       step: step == freezed
           ? _value.step
           : step // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       ingredients: ingredients == freezed
           ? _value.ingredients
           : ingredients // ignore: cast_nullable_to_non_nullable
@@ -1724,10 +1693,6 @@ class __$StepCopyWithImpl<$Res> extends _$StepCopyWithImpl<$Res>
           ? _value.equipment
           : equipment // ignore: cast_nullable_to_non_nullable
               as List<Ent>,
-      length: length == freezed
-          ? _value.length
-          : length // ignore: cast_nullable_to_non_nullable
-              as Length,
     ));
   }
 }
@@ -1736,28 +1701,25 @@ class __$StepCopyWithImpl<$Res> extends _$StepCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Step implements _Step {
   const _$_Step(
-      {required this.number,
-      required this.step,
+      {this.number,
+      this.step,
       required this.ingredients,
-      required this.equipment,
-      required this.length});
+      required this.equipment});
 
   factory _$_Step.fromJson(Map<String, dynamic> json) => _$$_StepFromJson(json);
 
   @override
-  final int number;
+  final int? number;
   @override
-  final String step;
+  final String? step;
   @override
   final List<Ent> ingredients;
   @override
   final List<Ent> equipment;
-  @override
-  final Length length;
 
   @override
   String toString() {
-    return 'Step(number: $number, step: $step, ingredients: $ingredients, equipment: $equipment, length: $length)';
+    return 'Step(number: $number, step: $step, ingredients: $ingredients, equipment: $equipment)';
   }
 
   @override
@@ -1773,9 +1735,7 @@ class _$_Step implements _Step {
                     .equals(other.ingredients, ingredients)) &&
             (identical(other.equipment, equipment) ||
                 const DeepCollectionEquality()
-                    .equals(other.equipment, equipment)) &&
-            (identical(other.length, length) ||
-                const DeepCollectionEquality().equals(other.length, length)));
+                    .equals(other.equipment, equipment)));
   }
 
   @override
@@ -1784,8 +1744,7 @@ class _$_Step implements _Step {
       const DeepCollectionEquality().hash(number) ^
       const DeepCollectionEquality().hash(step) ^
       const DeepCollectionEquality().hash(ingredients) ^
-      const DeepCollectionEquality().hash(equipment) ^
-      const DeepCollectionEquality().hash(length);
+      const DeepCollectionEquality().hash(equipment);
 
   @JsonKey(ignore: true)
   @override
@@ -1800,24 +1759,21 @@ class _$_Step implements _Step {
 
 abstract class _Step implements Step {
   const factory _Step(
-      {required int number,
-      required String step,
+      {int? number,
+      String? step,
       required List<Ent> ingredients,
-      required List<Ent> equipment,
-      required Length length}) = _$_Step;
+      required List<Ent> equipment}) = _$_Step;
 
   factory _Step.fromJson(Map<String, dynamic> json) = _$_Step.fromJson;
 
   @override
-  int get number => throw _privateConstructorUsedError;
+  int? get number => throw _privateConstructorUsedError;
   @override
-  String get step => throw _privateConstructorUsedError;
+  String? get step => throw _privateConstructorUsedError;
   @override
   List<Ent> get ingredients => throw _privateConstructorUsedError;
   @override
   List<Ent> get equipment => throw _privateConstructorUsedError;
-  @override
-  Length get length => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$StepCopyWith<_Step> get copyWith => throw _privateConstructorUsedError;
@@ -1831,11 +1787,7 @@ Ent _$EntFromJson(Map<String, dynamic> json) {
 class _$EntTearOff {
   const _$EntTearOff();
 
-  _Ent call(
-      {required int id,
-      required String name,
-      required String localizedName,
-      required String image}) {
+  _Ent call({int? id, String? name, String? localizedName, String? image}) {
     return _Ent(
       id: id,
       name: name,
@@ -1854,10 +1806,10 @@ const $Ent = _$EntTearOff();
 
 /// @nodoc
 mixin _$Ent {
-  int get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get localizedName => throw _privateConstructorUsedError;
-  String get image => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get localizedName => throw _privateConstructorUsedError;
+  String? get image => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -1868,7 +1820,7 @@ mixin _$Ent {
 abstract class $EntCopyWith<$Res> {
   factory $EntCopyWith(Ent value, $Res Function(Ent) then) =
       _$EntCopyWithImpl<$Res>;
-  $Res call({int id, String name, String localizedName, String image});
+  $Res call({int? id, String? name, String? localizedName, String? image});
 }
 
 /// @nodoc
@@ -1890,19 +1842,19 @@ class _$EntCopyWithImpl<$Res> implements $EntCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       localizedName: localizedName == freezed
           ? _value.localizedName
           : localizedName // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       image: image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -1912,7 +1864,7 @@ abstract class _$EntCopyWith<$Res> implements $EntCopyWith<$Res> {
   factory _$EntCopyWith(_Ent value, $Res Function(_Ent) then) =
       __$EntCopyWithImpl<$Res>;
   @override
-  $Res call({int id, String name, String localizedName, String image});
+  $Res call({int? id, String? name, String? localizedName, String? image});
 }
 
 /// @nodoc
@@ -1935,19 +1887,19 @@ class __$EntCopyWithImpl<$Res> extends _$EntCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       localizedName: localizedName == freezed
           ? _value.localizedName
           : localizedName // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       image: image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -1955,22 +1907,18 @@ class __$EntCopyWithImpl<$Res> extends _$EntCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Ent implements _Ent {
-  const _$_Ent(
-      {required this.id,
-      required this.name,
-      required this.localizedName,
-      required this.image});
+  const _$_Ent({this.id, this.name, this.localizedName, this.image});
 
   factory _$_Ent.fromJson(Map<String, dynamic> json) => _$$_EntFromJson(json);
 
   @override
-  final int id;
+  final int? id;
   @override
-  final String name;
+  final String? name;
   @override
-  final String localizedName;
+  final String? localizedName;
   @override
-  final String image;
+  final String? image;
 
   @override
   String toString() {
@@ -2013,21 +1961,18 @@ class _$_Ent implements _Ent {
 
 abstract class _Ent implements Ent {
   const factory _Ent(
-      {required int id,
-      required String name,
-      required String localizedName,
-      required String image}) = _$_Ent;
+      {int? id, String? name, String? localizedName, String? image}) = _$_Ent;
 
   factory _Ent.fromJson(Map<String, dynamic> json) = _$_Ent.fromJson;
 
   @override
-  int get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   @override
-  String get name => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   @override
-  String get localizedName => throw _privateConstructorUsedError;
+  String? get localizedName => throw _privateConstructorUsedError;
   @override
-  String get image => throw _privateConstructorUsedError;
+  String? get image => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$EntCopyWith<_Ent> get copyWith => throw _privateConstructorUsedError;
@@ -2041,7 +1986,7 @@ Length _$LengthFromJson(Map<String, dynamic> json) {
 class _$LengthTearOff {
   const _$LengthTearOff();
 
-  _Length call({required int number, required String unit}) {
+  _Length call({int? number, String? unit}) {
     return _Length(
       number: number,
       unit: unit,
@@ -2058,8 +2003,8 @@ const $Length = _$LengthTearOff();
 
 /// @nodoc
 mixin _$Length {
-  int get number => throw _privateConstructorUsedError;
-  String get unit => throw _privateConstructorUsedError;
+  int? get number => throw _privateConstructorUsedError;
+  String? get unit => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -2070,7 +2015,7 @@ mixin _$Length {
 abstract class $LengthCopyWith<$Res> {
   factory $LengthCopyWith(Length value, $Res Function(Length) then) =
       _$LengthCopyWithImpl<$Res>;
-  $Res call({int number, String unit});
+  $Res call({int? number, String? unit});
 }
 
 /// @nodoc
@@ -2090,11 +2035,11 @@ class _$LengthCopyWithImpl<$Res> implements $LengthCopyWith<$Res> {
       number: number == freezed
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       unit: unit == freezed
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -2104,7 +2049,7 @@ abstract class _$LengthCopyWith<$Res> implements $LengthCopyWith<$Res> {
   factory _$LengthCopyWith(_Length value, $Res Function(_Length) then) =
       __$LengthCopyWithImpl<$Res>;
   @override
-  $Res call({int number, String unit});
+  $Res call({int? number, String? unit});
 }
 
 /// @nodoc
@@ -2125,11 +2070,11 @@ class __$LengthCopyWithImpl<$Res> extends _$LengthCopyWithImpl<$Res>
       number: number == freezed
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       unit: unit == freezed
           ? _value.unit
           : unit // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -2137,15 +2082,15 @@ class __$LengthCopyWithImpl<$Res> extends _$LengthCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Length implements _Length {
-  const _$_Length({required this.number, required this.unit});
+  const _$_Length({this.number, this.unit});
 
   factory _$_Length.fromJson(Map<String, dynamic> json) =>
       _$$_LengthFromJson(json);
 
   @override
-  final int number;
+  final int? number;
   @override
-  final String unit;
+  final String? unit;
 
   @override
   String toString() {
@@ -2180,15 +2125,14 @@ class _$_Length implements _Length {
 }
 
 abstract class _Length implements Length {
-  const factory _Length({required int number, required String unit}) =
-      _$_Length;
+  const factory _Length({int? number, String? unit}) = _$_Length;
 
   factory _Length.fromJson(Map<String, dynamic> json) = _$_Length.fromJson;
 
   @override
-  int get number => throw _privateConstructorUsedError;
+  int? get number => throw _privateConstructorUsedError;
   @override
-  String get unit => throw _privateConstructorUsedError;
+  String? get unit => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$LengthCopyWith<_Length> get copyWith => throw _privateConstructorUsedError;

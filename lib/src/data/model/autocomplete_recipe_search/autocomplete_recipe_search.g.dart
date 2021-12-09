@@ -6,7 +6,8 @@ part of 'autocomplete_recipe_search.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_AutocompleteRecipeSearch _$$_AutocompleteRecipeSearchFromJson(Map json) =>
+_$_AutocompleteRecipeSearch _$$_AutocompleteRecipeSearchFromJson(
+        Map<String, dynamic> json) =>
     _$_AutocompleteRecipeSearch(
       id: json['id'] as int,
       title: json['title'] as String,
