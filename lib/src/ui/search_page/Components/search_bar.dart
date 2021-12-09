@@ -9,9 +9,11 @@ class SearchBar extends HookWidget {
     required this.readOnly,
     required this.autofocus,
     required this.onClick,
+    this.onSubitted,
     this.searchController
   }) : super(key: key);
   final bool readOnly, autofocus;
+  final void Function(String value)? onSubitted;
   final void Function() onClick;
   final TextEditingController? searchController;
 
@@ -27,6 +29,8 @@ class SearchBar extends HookWidget {
         autofocus: autofocus,
         readOnly: readOnly,
         keyboardType: TextInputType.text,
+        textInputAction: TextInputAction.search,
+        onSubmitted: onSubitted??(_){},
         decoration: kTextFieldDecoration.copyWith(
           fillColor: Theme.of(context).canvasColor,
           hintText: hintText,

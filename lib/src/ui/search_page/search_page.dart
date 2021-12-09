@@ -7,6 +7,7 @@ import 'package:food_stuff/src/ui/search_page/Components/chips_list.dart';
 import 'package:food_stuff/src/ui/search_page/Components/popular_search.dart';
 import 'package:food_stuff/src/ui/search_page/Components/search_bar.dart';
 import 'package:food_stuff/src/ui/search_page/search_viewmodel.dart';
+import 'package:food_stuff/src/ui/search_result_page/search_result_page.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class SearchPage extends HookConsumerWidget {
@@ -18,7 +19,7 @@ class SearchPage extends HookConsumerWidget {
     final update = useValueListenable(searchController);
     final ValueNotifier<List<AutocompleteRecipeSearch>> listOfAutoComplete =
         useState(List.empty());
-        
+
     useEffect(() {
       ref
           .read(searchProvider.notifier)
@@ -49,6 +50,16 @@ class SearchPage extends HookConsumerWidget {
                       readOnly: false,
                       autofocus: true,
                       onClick: () {},
+                      onSubitted: (value) {
+                        if(value.isNotEmpty) {
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) {
+                            return SearchResultPage(userSearch: value,);
+                          }),
+                        );
+                        }
+                      },
                       searchController: searchController,
                     )),
                   ],

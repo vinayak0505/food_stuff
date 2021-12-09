@@ -19,7 +19,7 @@ class SearchResultPage extends HookConsumerWidget {
             child: SearchBar(
               readOnly: false,
               autofocus: false,
-              onClick: () {},
+              onClick: () {Navigator.pop(context);},
             ),
           ),
           // flexibleSpace: userSearchByTap ? Chip(
@@ -33,9 +33,7 @@ class SearchResultPage extends HookConsumerWidget {
           //   ) :
           // ),
         ),
-        body: SearchResult(
-          userSearch: userSearch,
-        ),
+        body: SearchResult(userSearch: userSearch),
       ),
     );
   }

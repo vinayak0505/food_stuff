@@ -15,6 +15,18 @@
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
-        }
+        },
+        {
+            "name": "dev_food_stuff",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/src/main.dart",
+            "args": [
+              "--flavor",
+              "development" 
+          ]
+          },
     ]
+
+        
 }

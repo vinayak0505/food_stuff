@@ -61,6 +61,34 @@ class SearchResult extends HookConsumerWidget {
           mainAxisSpacing: 2,
           crossAxisSpacing: 16.0,
         ),
+      child: StaggeredGridView.countBuilder(
+        physics: const ScrollPhysics(),
+        padding: const EdgeInsets.all(16.0),
+        shrinkWrap: true,
+        crossAxisCount: 2,
+        itemCount: listOfFoodItems.value?.length,
+        itemBuilder: (BuildContext context, int index) => Column(
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(kRoundedRectangleRadius),
+              child: Image.network(
+                listOfFoodItems.value?[index].image??"",
+                fit: BoxFit.contain,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 4.0),
+              child: Text(
+                listOfFoodItems.value?[index].title??"",
+                textAlign: TextAlign.center,
+                style: kFoodNameFontStyle,
+              ),
+            ),
+          ],
+        ),
+        staggeredTileBuilder: (index) => const StaggeredTile.fit(1),
+        mainAxisSpacing: 2,
+        crossAxisSpacing: 16.0,
       ),
     );
   }
