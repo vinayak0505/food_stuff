@@ -20,8 +20,8 @@ class _MainPageState extends State<MainPage> {
   }
 
   final _pages = [
-    HomePage(),
-    PersonalPage(),
+    const HomePage(),
+    const PersonalPage(),
   ];
 
   @override

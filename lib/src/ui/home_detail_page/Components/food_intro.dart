@@ -11,14 +11,14 @@ class FoodIntro extends StatelessWidget {
     required this.servingsTitle,
     required this.healthScoreTitle,
     required this.scoreTitle,
-    required this.isVegetarian,
+    required this.foodImage,
   }) : super(key: key);
 
   final String foodTitle;
   final String servingsTitle;
   final String healthScoreTitle;
   final String scoreTitle;
-  final bool isVegetarian;
+  final String foodImage;
 
   @override
   Widget build(BuildContext context) {
@@ -89,32 +89,16 @@ class FoodIntro extends StatelessWidget {
                     borderRadius:
                         BorderRadius.circular(kRoundedRectangleRadius),
                     child: Image.network(
-                      image,
+                      foodImage,
+                      errorBuilder: (_, __, ___) => Container(
+                            height: 150,
+                            alignment: Alignment.center,
+                            child: const Icon(Icons.error),
+                          ),
                       fit: BoxFit.cover,
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 10,
-                ),
-                Container(
-                  width: 25,
-                  height: 25,
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(8)),
-                    color: Colors.white,
-                  ),
-                  alignment: Alignment.center,
-                  child: Container(
-                    alignment: Alignment.center,
-                    width: 15,
-                    height: 15,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.green,
-                    ),
-                  ),
-                )
               ],
             ),
           ),

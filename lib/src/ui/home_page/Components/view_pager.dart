@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:food_stuff/src/data/model/random_recipe/random_recipe.dart';
 import 'package:food_stuff/src/ui/home_page/home_viewmodel.dart';
+import 'package:food_stuff/src/ui/widgets/loading_screen.dart';
 import 'package:food_stuff/src/utils/constants.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -11,7 +12,7 @@ class ViewPager extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final ValueNotifier<List<Recipe>> _listOfFoodItems = useState(List.empty());
+    final ValueNotifier<List<Recipe>?> _listOfFoodItems = useState(null);
 
     useEffect(() {
       ref.read(homeProvider.notifier).getRandomRecipe().then((value) {
@@ -19,25 +20,52 @@ class ViewPager extends HookConsumerWidget {
       });
     }, []);
 
-    String foodTitle = _listOfFoodItems.value[0].title ?? '';
-    return Padding(
-      padding: const EdgeInsets.all(12.0),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(kRoundedRectangleRadius),
-        child: Container(
-          color: Colors.lightBlue,
-          child: Column(
-            children: [
-              Image.network(
-                _listOfFoodItems.value[0].image ?? '',
-                fit: BoxFit.scaleDown,
-              ),
-              Text(
-                foodTitle,
-                textAlign: TextAlign.center,
-                style: kTitleFontsStyle,
-              ),
-            ],
+    return LoadingScreen(
+      data: _listOfFoodItems.value,
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(kRoundedRectangleRadius),
+          child: Container(
+            color: Colors.lightBlue,
+            child: Column(
+              children: [
+                Stack(
+                  alignment: Alignment.bottomLeft,
+                  children: [
+                    Image.network(
+                      _listOfFoodItems.value?[0].image ?? '',
+                      fit: BoxFit.scaleDown,
+                    ),
+                    _listOfFoodItems.value?[0].vegetarian == true ? Container(
+                      padding: const EdgeInsets.all(16),
+                      child: Container(
+                        width: 25,
+                        height: 25,
+                        decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(8)),
+                          color: Colors.white,
+                        ),
+                        alignment: Alignment.center,
+                        child: Container(
+                          width: 15,
+                          height: 15,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.green,
+                          ),
+                        ),
+                      ),
+                    ): const SizedBox(),
+                  ],
+                ),
+                Text(
+                  _listOfFoodItems.value?[0].title ?? '',
+                  textAlign: TextAlign.center,
+                  style: kTitleFontsStyle,
+                ),
+              ],
+            ),
           ),
         ),
       ),

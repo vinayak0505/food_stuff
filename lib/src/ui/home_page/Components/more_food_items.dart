@@ -9,7 +9,6 @@ import 'package:food_stuff/src/ui/widgets/loading_screen.dart';
 import 'package:food_stuff/src/utils/constants.dart';
 import 'package:food_stuff/src/utils/strings.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-
 import '../home_viewmodel.dart';
 
 class MoreFoodItems extends HookConsumerWidget {
@@ -76,25 +75,27 @@ class MoreFoodItems extends HookConsumerWidget {
                   curve: Curves.fastOutSlowIn,
                   child: Column(
                     children: [
-                      Image.network(
-                        listOfFoodItems.value?[index].image ?? "",
-                        errorBuilder: (_, __, ___) => Container(
-                          height: 150,
-                          alignment: Alignment.center,
-                          child: const Icon(Icons.error),
-                        ),
-                        loadingBuilder: (BuildContext context, Widget child,
-                            ImageChunkEvent? loadingProgress) {
-                          if (loadingProgress == null) {
-                            return child;
-                          }
-                          return Container(
+                      AspectRatio(
+                        aspectRatio: 1.48, //todo: may be Not correct solution
+                        child: Image.network(
+                          listOfFoodItems.value?[index].image ?? '',
+                          errorBuilder: (_, __, ___) => Container(
                             height: 150,
-                            // alignment: Alignment.center,
-                            // child: const Icon(Icons.error),
-                          );
-                        },
-                        fit: BoxFit.fitWidth,
+                            alignment: Alignment.center,
+                            child: const Icon(Icons.error),
+                          ),
+                          frameBuilder: (BuildContext context, Widget child,
+                              int? frame, bool wasSynchronouslyLoaded) {
+                            if (wasSynchronouslyLoaded) return child;
+                            return AnimatedOpacity(
+                              opacity: frame == null ? 0 : 1,
+                              duration: const Duration(seconds: 2),
+                              curve: Curves.easeOut,
+                              child: child,
+                            );
+                          },
+                          fit: BoxFit.fitWidth,
+                        ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),

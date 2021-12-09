@@ -52,7 +52,7 @@ class _$ResRecipeInfoTearOff {
       required List<String> diets,
       required List<dynamic> occasions,
       required String instructions,
-      required List<dynamic> analyzedInstructions,
+      required List<AnalysedInstructions> analyzedInstructions,
       required dynamic originalId,
       required String spoonacularSourceUrl}) {
     return _ResRecipeInfo(
@@ -135,7 +135,8 @@ mixin _$ResRecipeInfo {
   List<String> get diets => throw _privateConstructorUsedError;
   List<dynamic> get occasions => throw _privateConstructorUsedError;
   String get instructions => throw _privateConstructorUsedError;
-  List<dynamic> get analyzedInstructions => throw _privateConstructorUsedError;
+  List<AnalysedInstructions> get analyzedInstructions =>
+      throw _privateConstructorUsedError;
   dynamic get originalId => throw _privateConstructorUsedError;
   String get spoonacularSourceUrl => throw _privateConstructorUsedError;
 
@@ -181,7 +182,7 @@ abstract class $ResRecipeInfoCopyWith<$Res> {
       List<String> diets,
       List<dynamic> occasions,
       String instructions,
-      List<dynamic> analyzedInstructions,
+      List<AnalysedInstructions> analyzedInstructions,
       dynamic originalId,
       String spoonacularSourceUrl});
 }
@@ -355,7 +356,7 @@ class _$ResRecipeInfoCopyWithImpl<$Res>
       analyzedInstructions: analyzedInstructions == freezed
           ? _value.analyzedInstructions
           : analyzedInstructions // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<AnalysedInstructions>,
       originalId: originalId == freezed
           ? _value.originalId
           : originalId // ignore: cast_nullable_to_non_nullable
@@ -406,7 +407,7 @@ abstract class _$ResRecipeInfoCopyWith<$Res>
       List<String> diets,
       List<dynamic> occasions,
       String instructions,
-      List<dynamic> analyzedInstructions,
+      List<AnalysedInstructions> analyzedInstructions,
       dynamic originalId,
       String spoonacularSourceUrl});
 }
@@ -582,7 +583,7 @@ class __$ResRecipeInfoCopyWithImpl<$Res>
       analyzedInstructions: analyzedInstructions == freezed
           ? _value.analyzedInstructions
           : analyzedInstructions // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>,
+              as List<AnalysedInstructions>,
       originalId: originalId == freezed
           ? _value.originalId
           : originalId // ignore: cast_nullable_to_non_nullable
@@ -697,7 +698,7 @@ class _$_ResRecipeInfo implements _ResRecipeInfo {
   @override
   final String instructions;
   @override
-  final List<dynamic> analyzedInstructions;
+  final List<AnalysedInstructions> analyzedInstructions;
   @override
   final dynamic originalId;
   @override
@@ -864,7 +865,7 @@ abstract class _ResRecipeInfo implements ResRecipeInfo {
       required List<String> diets,
       required List<dynamic> occasions,
       required String instructions,
-      required List<dynamic> analyzedInstructions,
+      required List<AnalysedInstructions> analyzedInstructions,
       required dynamic originalId,
       required String spoonacularSourceUrl}) = _$_ResRecipeInfo;
 
@@ -933,7 +934,8 @@ abstract class _ResRecipeInfo implements ResRecipeInfo {
   @override
   String get instructions => throw _privateConstructorUsedError;
   @override
-  List<dynamic> get analyzedInstructions => throw _privateConstructorUsedError;
+  List<AnalysedInstructions> get analyzedInstructions =>
+      throw _privateConstructorUsedError;
   @override
   dynamic get originalId => throw _privateConstructorUsedError;
   @override
@@ -1391,4 +1393,803 @@ abstract class _ExtendedIngredient implements ExtendedIngredient {
   @JsonKey(ignore: true)
   _$ExtendedIngredientCopyWith<_ExtendedIngredient> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+AnalysedInstructions _$AnalysedInstructionsFromJson(Map<String, dynamic> json) {
+  return _AnalysedInstructions.fromJson(json);
+}
+
+/// @nodoc
+class _$AnalysedInstructionsTearOff {
+  const _$AnalysedInstructionsTearOff();
+
+  _AnalysedInstructions call(
+      {required String name, required List<Step> steps}) {
+    return _AnalysedInstructions(
+      name: name,
+      steps: steps,
+    );
+  }
+
+  AnalysedInstructions fromJson(Map<String, Object> json) {
+    return AnalysedInstructions.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $AnalysedInstructions = _$AnalysedInstructionsTearOff();
+
+/// @nodoc
+mixin _$AnalysedInstructions {
+  String get name => throw _privateConstructorUsedError;
+  List<Step> get steps => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $AnalysedInstructionsCopyWith<AnalysedInstructions> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AnalysedInstructionsCopyWith<$Res> {
+  factory $AnalysedInstructionsCopyWith(AnalysedInstructions value,
+          $Res Function(AnalysedInstructions) then) =
+      _$AnalysedInstructionsCopyWithImpl<$Res>;
+  $Res call({String name, List<Step> steps});
+}
+
+/// @nodoc
+class _$AnalysedInstructionsCopyWithImpl<$Res>
+    implements $AnalysedInstructionsCopyWith<$Res> {
+  _$AnalysedInstructionsCopyWithImpl(this._value, this._then);
+
+  final AnalysedInstructions _value;
+  // ignore: unused_field
+  final $Res Function(AnalysedInstructions) _then;
+
+  @override
+  $Res call({
+    Object? name = freezed,
+    Object? steps = freezed,
+  }) {
+    return _then(_value.copyWith(
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      steps: steps == freezed
+          ? _value.steps
+          : steps // ignore: cast_nullable_to_non_nullable
+              as List<Step>,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$AnalysedInstructionsCopyWith<$Res>
+    implements $AnalysedInstructionsCopyWith<$Res> {
+  factory _$AnalysedInstructionsCopyWith(_AnalysedInstructions value,
+          $Res Function(_AnalysedInstructions) then) =
+      __$AnalysedInstructionsCopyWithImpl<$Res>;
+  @override
+  $Res call({String name, List<Step> steps});
+}
+
+/// @nodoc
+class __$AnalysedInstructionsCopyWithImpl<$Res>
+    extends _$AnalysedInstructionsCopyWithImpl<$Res>
+    implements _$AnalysedInstructionsCopyWith<$Res> {
+  __$AnalysedInstructionsCopyWithImpl(
+      _AnalysedInstructions _value, $Res Function(_AnalysedInstructions) _then)
+      : super(_value, (v) => _then(v as _AnalysedInstructions));
+
+  @override
+  _AnalysedInstructions get _value => super._value as _AnalysedInstructions;
+
+  @override
+  $Res call({
+    Object? name = freezed,
+    Object? steps = freezed,
+  }) {
+    return _then(_AnalysedInstructions(
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      steps: steps == freezed
+          ? _value.steps
+          : steps // ignore: cast_nullable_to_non_nullable
+              as List<Step>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_AnalysedInstructions implements _AnalysedInstructions {
+  const _$_AnalysedInstructions({required this.name, required this.steps});
+
+  factory _$_AnalysedInstructions.fromJson(Map<String, dynamic> json) =>
+      _$$_AnalysedInstructionsFromJson(json);
+
+  @override
+  final String name;
+  @override
+  final List<Step> steps;
+
+  @override
+  String toString() {
+    return 'AnalysedInstructions(name: $name, steps: $steps)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _AnalysedInstructions &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.steps, steps) ||
+                const DeepCollectionEquality().equals(other.steps, steps)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(name) ^
+      const DeepCollectionEquality().hash(steps);
+
+  @JsonKey(ignore: true)
+  @override
+  _$AnalysedInstructionsCopyWith<_AnalysedInstructions> get copyWith =>
+      __$AnalysedInstructionsCopyWithImpl<_AnalysedInstructions>(
+          this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_AnalysedInstructionsToJson(this);
+  }
+}
+
+abstract class _AnalysedInstructions implements AnalysedInstructions {
+  const factory _AnalysedInstructions(
+      {required String name,
+      required List<Step> steps}) = _$_AnalysedInstructions;
+
+  factory _AnalysedInstructions.fromJson(Map<String, dynamic> json) =
+      _$_AnalysedInstructions.fromJson;
+
+  @override
+  String get name => throw _privateConstructorUsedError;
+  @override
+  List<Step> get steps => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$AnalysedInstructionsCopyWith<_AnalysedInstructions> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+Step _$StepFromJson(Map<String, dynamic> json) {
+  return _Step.fromJson(json);
+}
+
+/// @nodoc
+class _$StepTearOff {
+  const _$StepTearOff();
+
+  _Step call(
+      {required int number,
+      required String step,
+      required List<Ent> ingredients,
+      required List<Ent> equipment,
+      required Length length}) {
+    return _Step(
+      number: number,
+      step: step,
+      ingredients: ingredients,
+      equipment: equipment,
+      length: length,
+    );
+  }
+
+  Step fromJson(Map<String, Object> json) {
+    return Step.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $Step = _$StepTearOff();
+
+/// @nodoc
+mixin _$Step {
+  int get number => throw _privateConstructorUsedError;
+  String get step => throw _privateConstructorUsedError;
+  List<Ent> get ingredients => throw _privateConstructorUsedError;
+  List<Ent> get equipment => throw _privateConstructorUsedError;
+  Length get length => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $StepCopyWith<Step> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $StepCopyWith<$Res> {
+  factory $StepCopyWith(Step value, $Res Function(Step) then) =
+      _$StepCopyWithImpl<$Res>;
+  $Res call(
+      {int number,
+      String step,
+      List<Ent> ingredients,
+      List<Ent> equipment,
+      Length length});
+
+  $LengthCopyWith<$Res> get length;
+}
+
+/// @nodoc
+class _$StepCopyWithImpl<$Res> implements $StepCopyWith<$Res> {
+  _$StepCopyWithImpl(this._value, this._then);
+
+  final Step _value;
+  // ignore: unused_field
+  final $Res Function(Step) _then;
+
+  @override
+  $Res call({
+    Object? number = freezed,
+    Object? step = freezed,
+    Object? ingredients = freezed,
+    Object? equipment = freezed,
+    Object? length = freezed,
+  }) {
+    return _then(_value.copyWith(
+      number: number == freezed
+          ? _value.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as int,
+      step: step == freezed
+          ? _value.step
+          : step // ignore: cast_nullable_to_non_nullable
+              as String,
+      ingredients: ingredients == freezed
+          ? _value.ingredients
+          : ingredients // ignore: cast_nullable_to_non_nullable
+              as List<Ent>,
+      equipment: equipment == freezed
+          ? _value.equipment
+          : equipment // ignore: cast_nullable_to_non_nullable
+              as List<Ent>,
+      length: length == freezed
+          ? _value.length
+          : length // ignore: cast_nullable_to_non_nullable
+              as Length,
+    ));
+  }
+
+  @override
+  $LengthCopyWith<$Res> get length {
+    return $LengthCopyWith<$Res>(_value.length, (value) {
+      return _then(_value.copyWith(length: value));
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$StepCopyWith<$Res> implements $StepCopyWith<$Res> {
+  factory _$StepCopyWith(_Step value, $Res Function(_Step) then) =
+      __$StepCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {int number,
+      String step,
+      List<Ent> ingredients,
+      List<Ent> equipment,
+      Length length});
+
+  @override
+  $LengthCopyWith<$Res> get length;
+}
+
+/// @nodoc
+class __$StepCopyWithImpl<$Res> extends _$StepCopyWithImpl<$Res>
+    implements _$StepCopyWith<$Res> {
+  __$StepCopyWithImpl(_Step _value, $Res Function(_Step) _then)
+      : super(_value, (v) => _then(v as _Step));
+
+  @override
+  _Step get _value => super._value as _Step;
+
+  @override
+  $Res call({
+    Object? number = freezed,
+    Object? step = freezed,
+    Object? ingredients = freezed,
+    Object? equipment = freezed,
+    Object? length = freezed,
+  }) {
+    return _then(_Step(
+      number: number == freezed
+          ? _value.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as int,
+      step: step == freezed
+          ? _value.step
+          : step // ignore: cast_nullable_to_non_nullable
+              as String,
+      ingredients: ingredients == freezed
+          ? _value.ingredients
+          : ingredients // ignore: cast_nullable_to_non_nullable
+              as List<Ent>,
+      equipment: equipment == freezed
+          ? _value.equipment
+          : equipment // ignore: cast_nullable_to_non_nullable
+              as List<Ent>,
+      length: length == freezed
+          ? _value.length
+          : length // ignore: cast_nullable_to_non_nullable
+              as Length,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_Step implements _Step {
+  const _$_Step(
+      {required this.number,
+      required this.step,
+      required this.ingredients,
+      required this.equipment,
+      required this.length});
+
+  factory _$_Step.fromJson(Map<String, dynamic> json) => _$$_StepFromJson(json);
+
+  @override
+  final int number;
+  @override
+  final String step;
+  @override
+  final List<Ent> ingredients;
+  @override
+  final List<Ent> equipment;
+  @override
+  final Length length;
+
+  @override
+  String toString() {
+    return 'Step(number: $number, step: $step, ingredients: $ingredients, equipment: $equipment, length: $length)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _Step &&
+            (identical(other.number, number) ||
+                const DeepCollectionEquality().equals(other.number, number)) &&
+            (identical(other.step, step) ||
+                const DeepCollectionEquality().equals(other.step, step)) &&
+            (identical(other.ingredients, ingredients) ||
+                const DeepCollectionEquality()
+                    .equals(other.ingredients, ingredients)) &&
+            (identical(other.equipment, equipment) ||
+                const DeepCollectionEquality()
+                    .equals(other.equipment, equipment)) &&
+            (identical(other.length, length) ||
+                const DeepCollectionEquality().equals(other.length, length)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(number) ^
+      const DeepCollectionEquality().hash(step) ^
+      const DeepCollectionEquality().hash(ingredients) ^
+      const DeepCollectionEquality().hash(equipment) ^
+      const DeepCollectionEquality().hash(length);
+
+  @JsonKey(ignore: true)
+  @override
+  _$StepCopyWith<_Step> get copyWith =>
+      __$StepCopyWithImpl<_Step>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_StepToJson(this);
+  }
+}
+
+abstract class _Step implements Step {
+  const factory _Step(
+      {required int number,
+      required String step,
+      required List<Ent> ingredients,
+      required List<Ent> equipment,
+      required Length length}) = _$_Step;
+
+  factory _Step.fromJson(Map<String, dynamic> json) = _$_Step.fromJson;
+
+  @override
+  int get number => throw _privateConstructorUsedError;
+  @override
+  String get step => throw _privateConstructorUsedError;
+  @override
+  List<Ent> get ingredients => throw _privateConstructorUsedError;
+  @override
+  List<Ent> get equipment => throw _privateConstructorUsedError;
+  @override
+  Length get length => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$StepCopyWith<_Step> get copyWith => throw _privateConstructorUsedError;
+}
+
+Ent _$EntFromJson(Map<String, dynamic> json) {
+  return _Ent.fromJson(json);
+}
+
+/// @nodoc
+class _$EntTearOff {
+  const _$EntTearOff();
+
+  _Ent call(
+      {required int id,
+      required String name,
+      required String localizedName,
+      required String image}) {
+    return _Ent(
+      id: id,
+      name: name,
+      localizedName: localizedName,
+      image: image,
+    );
+  }
+
+  Ent fromJson(Map<String, Object> json) {
+    return Ent.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $Ent = _$EntTearOff();
+
+/// @nodoc
+mixin _$Ent {
+  int get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get localizedName => throw _privateConstructorUsedError;
+  String get image => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $EntCopyWith<Ent> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $EntCopyWith<$Res> {
+  factory $EntCopyWith(Ent value, $Res Function(Ent) then) =
+      _$EntCopyWithImpl<$Res>;
+  $Res call({int id, String name, String localizedName, String image});
+}
+
+/// @nodoc
+class _$EntCopyWithImpl<$Res> implements $EntCopyWith<$Res> {
+  _$EntCopyWithImpl(this._value, this._then);
+
+  final Ent _value;
+  // ignore: unused_field
+  final $Res Function(Ent) _then;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? localizedName = freezed,
+    Object? image = freezed,
+  }) {
+    return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      localizedName: localizedName == freezed
+          ? _value.localizedName
+          : localizedName // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$EntCopyWith<$Res> implements $EntCopyWith<$Res> {
+  factory _$EntCopyWith(_Ent value, $Res Function(_Ent) then) =
+      __$EntCopyWithImpl<$Res>;
+  @override
+  $Res call({int id, String name, String localizedName, String image});
+}
+
+/// @nodoc
+class __$EntCopyWithImpl<$Res> extends _$EntCopyWithImpl<$Res>
+    implements _$EntCopyWith<$Res> {
+  __$EntCopyWithImpl(_Ent _value, $Res Function(_Ent) _then)
+      : super(_value, (v) => _then(v as _Ent));
+
+  @override
+  _Ent get _value => super._value as _Ent;
+
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? name = freezed,
+    Object? localizedName = freezed,
+    Object? image = freezed,
+  }) {
+    return _then(_Ent(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      localizedName: localizedName == freezed
+          ? _value.localizedName
+          : localizedName // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: image == freezed
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_Ent implements _Ent {
+  const _$_Ent(
+      {required this.id,
+      required this.name,
+      required this.localizedName,
+      required this.image});
+
+  factory _$_Ent.fromJson(Map<String, dynamic> json) => _$$_EntFromJson(json);
+
+  @override
+  final int id;
+  @override
+  final String name;
+  @override
+  final String localizedName;
+  @override
+  final String image;
+
+  @override
+  String toString() {
+    return 'Ent(id: $id, name: $name, localizedName: $localizedName, image: $image)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _Ent &&
+            (identical(other.id, id) ||
+                const DeepCollectionEquality().equals(other.id, id)) &&
+            (identical(other.name, name) ||
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.localizedName, localizedName) ||
+                const DeepCollectionEquality()
+                    .equals(other.localizedName, localizedName)) &&
+            (identical(other.image, image) ||
+                const DeepCollectionEquality().equals(other.image, image)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(id) ^
+      const DeepCollectionEquality().hash(name) ^
+      const DeepCollectionEquality().hash(localizedName) ^
+      const DeepCollectionEquality().hash(image);
+
+  @JsonKey(ignore: true)
+  @override
+  _$EntCopyWith<_Ent> get copyWith =>
+      __$EntCopyWithImpl<_Ent>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_EntToJson(this);
+  }
+}
+
+abstract class _Ent implements Ent {
+  const factory _Ent(
+      {required int id,
+      required String name,
+      required String localizedName,
+      required String image}) = _$_Ent;
+
+  factory _Ent.fromJson(Map<String, dynamic> json) = _$_Ent.fromJson;
+
+  @override
+  int get id => throw _privateConstructorUsedError;
+  @override
+  String get name => throw _privateConstructorUsedError;
+  @override
+  String get localizedName => throw _privateConstructorUsedError;
+  @override
+  String get image => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$EntCopyWith<_Ent> get copyWith => throw _privateConstructorUsedError;
+}
+
+Length _$LengthFromJson(Map<String, dynamic> json) {
+  return _Length.fromJson(json);
+}
+
+/// @nodoc
+class _$LengthTearOff {
+  const _$LengthTearOff();
+
+  _Length call({required int number, required String unit}) {
+    return _Length(
+      number: number,
+      unit: unit,
+    );
+  }
+
+  Length fromJson(Map<String, Object> json) {
+    return Length.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $Length = _$LengthTearOff();
+
+/// @nodoc
+mixin _$Length {
+  int get number => throw _privateConstructorUsedError;
+  String get unit => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $LengthCopyWith<Length> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $LengthCopyWith<$Res> {
+  factory $LengthCopyWith(Length value, $Res Function(Length) then) =
+      _$LengthCopyWithImpl<$Res>;
+  $Res call({int number, String unit});
+}
+
+/// @nodoc
+class _$LengthCopyWithImpl<$Res> implements $LengthCopyWith<$Res> {
+  _$LengthCopyWithImpl(this._value, this._then);
+
+  final Length _value;
+  // ignore: unused_field
+  final $Res Function(Length) _then;
+
+  @override
+  $Res call({
+    Object? number = freezed,
+    Object? unit = freezed,
+  }) {
+    return _then(_value.copyWith(
+      number: number == freezed
+          ? _value.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as int,
+      unit: unit == freezed
+          ? _value.unit
+          : unit // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$LengthCopyWith<$Res> implements $LengthCopyWith<$Res> {
+  factory _$LengthCopyWith(_Length value, $Res Function(_Length) then) =
+      __$LengthCopyWithImpl<$Res>;
+  @override
+  $Res call({int number, String unit});
+}
+
+/// @nodoc
+class __$LengthCopyWithImpl<$Res> extends _$LengthCopyWithImpl<$Res>
+    implements _$LengthCopyWith<$Res> {
+  __$LengthCopyWithImpl(_Length _value, $Res Function(_Length) _then)
+      : super(_value, (v) => _then(v as _Length));
+
+  @override
+  _Length get _value => super._value as _Length;
+
+  @override
+  $Res call({
+    Object? number = freezed,
+    Object? unit = freezed,
+  }) {
+    return _then(_Length(
+      number: number == freezed
+          ? _value.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as int,
+      unit: unit == freezed
+          ? _value.unit
+          : unit // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_Length implements _Length {
+  const _$_Length({required this.number, required this.unit});
+
+  factory _$_Length.fromJson(Map<String, dynamic> json) =>
+      _$$_LengthFromJson(json);
+
+  @override
+  final int number;
+  @override
+  final String unit;
+
+  @override
+  String toString() {
+    return 'Length(number: $number, unit: $unit)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _Length &&
+            (identical(other.number, number) ||
+                const DeepCollectionEquality().equals(other.number, number)) &&
+            (identical(other.unit, unit) ||
+                const DeepCollectionEquality().equals(other.unit, unit)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(number) ^
+      const DeepCollectionEquality().hash(unit);
+
+  @JsonKey(ignore: true)
+  @override
+  _$LengthCopyWith<_Length> get copyWith =>
+      __$LengthCopyWithImpl<_Length>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_LengthToJson(this);
+  }
+}
+
+abstract class _Length implements Length {
+  const factory _Length({required int number, required String unit}) =
+      _$_Length;
+
+  factory _Length.fromJson(Map<String, dynamic> json) = _$_Length.fromJson;
+
+  @override
+  int get number => throw _privateConstructorUsedError;
+  @override
+  String get unit => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$LengthCopyWith<_Length> get copyWith => throw _privateConstructorUsedError;
 }
