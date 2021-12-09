@@ -6,9 +6,10 @@ part of 'random_recipe.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_RandomRecipe _$$_RandomRecipeFromJson(Map json) => _$_RandomRecipe(
+_$_RandomRecipe _$$_RandomRecipeFromJson(Map<String, dynamic> json) =>
+    _$_RandomRecipe(
       recipes: (json['recipes'] as List<dynamic>)
-          .map((e) => Recipe.fromJson(Map<String, dynamic>.from(e as Map)))
+          .map((e) => Recipe.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -17,7 +18,7 @@ Map<String, dynamic> _$$_RandomRecipeToJson(_$_RandomRecipe instance) =>
       'recipes': instance.recipes,
     };
 
-_$_Recipe _$$_RecipeFromJson(Map json) => _$_Recipe(
+_$_Recipe _$$_RecipeFromJson(Map<String, dynamic> json) => _$_Recipe(
       vegetarian: json['vegetarian'] as bool,
       vegan: json['vegan'] as bool,
       glutenFree: json['glutenFree'] as bool,
@@ -64,9 +65,9 @@ Map<String, dynamic> _$$_RecipeToJson(_$_Recipe instance) => <String, dynamic>{
       'cookingMinutes': instance.cookingMinutes,
     };
 
-_$_Measures _$$_MeasuresFromJson(Map json) => _$_Measures(
-      us: Metric.fromJson(Map<String, dynamic>.from(json['us'] as Map)),
-      metric: Metric.fromJson(Map<String, dynamic>.from(json['metric'] as Map)),
+_$_Measures _$$_MeasuresFromJson(Map<String, dynamic> json) => _$_Measures(
+      us: Metric.fromJson(json['us'] as Map<String, dynamic>),
+      metric: Metric.fromJson(json['metric'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_MeasuresToJson(_$_Measures instance) =>
@@ -75,7 +76,7 @@ Map<String, dynamic> _$$_MeasuresToJson(_$_Measures instance) =>
       'metric': instance.metric,
     };
 
-_$_Metric _$$_MetricFromJson(Map json) => _$_Metric(
+_$_Metric _$$_MetricFromJson(Map<String, dynamic> json) => _$_Metric(
       amount: (json['amount'] as num).toDouble(),
       unitShort: json['unitShort'] as String,
       unitLong: json['unitLong'] as String,
