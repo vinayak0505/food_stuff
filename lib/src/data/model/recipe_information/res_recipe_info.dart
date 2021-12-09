@@ -44,7 +44,7 @@ abstract class ResRecipeInfo with _$ResRecipeInfo {
     required List<String> diets,
     required List<dynamic> occasions,
     required String instructions,
-    required List<dynamic> analyzedInstructions,
+    required List<AnalysedInstructions> analyzedInstructions,
     required dynamic originalId,
     required String spoonacularSourceUrl,
   }) = _ResRecipeInfo;
@@ -73,4 +73,54 @@ abstract class ExtendedIngredient with _$ExtendedIngredient {
 
   factory ExtendedIngredient.fromJson(Map<String, dynamic> json) =>
       _$ExtendedIngredientFromJson(json);
+}
+
+
+List<AnalysedInstructions> analysedInstructionsFromJson(String str) => List<AnalysedInstructions>.from(json.decode(str).map((x) => AnalysedInstructions.fromJson(x)));
+
+String analysedInstructionsToJson(List<AnalysedInstructions> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+
+@freezed
+abstract class AnalysedInstructions with _$AnalysedInstructions {
+    const factory AnalysedInstructions({
+        required String name,
+        required List<Step> steps,
+    }) = _AnalysedInstructions;
+
+    factory AnalysedInstructions.fromJson(Map<String, dynamic> json) => _$AnalysedInstructionsFromJson(json);
+}
+
+@freezed
+abstract class Step with _$Step {
+    const factory Step({
+        required int number,
+        required String step,
+        required List<Ent> ingredients,
+        required List<Ent> equipment,
+        required Length length,
+    }) = _Step;
+
+    factory Step.fromJson(Map<String, dynamic> json) => _$StepFromJson(json);
+}
+
+@freezed
+abstract class Ent with _$Ent {
+    const factory Ent({
+        required int id,
+        required String name,
+        required String localizedName,
+        required String image,
+    }) = _Ent;
+
+    factory Ent.fromJson(Map<String, dynamic> json) => _$EntFromJson(json);
+}
+
+@freezed
+abstract class Length with _$Length {
+    const factory Length({
+        required int number,
+        required String unit,
+    }) = _Length;
+
+    factory Length.fromJson(Map<String, dynamic> json) => _$LengthFromJson(json);
 }

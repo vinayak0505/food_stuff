@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_stuff/src/ui/search_result_page/search_result_page.dart';
 import 'package:food_stuff/src/utils/constants.dart';
 
 class PopularSearch extends StatelessWidget {
@@ -12,12 +13,12 @@ class PopularSearch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List<String> popularSearchList = [
-      'Easy Dinner',
-      '5 ingredients or less',
-      'Under 30 minutes',
-      'Chicken',
-      'Breakfast',
-      'Dessert'
+      'breakfast',
+      'lunch',
+      'dinner',
+      'chicken',
+      'dessert',
+      'christmas'
     ];
     return GridView.count(
       physics: const ScrollPhysics(),
@@ -27,7 +28,14 @@ class PopularSearch extends StatelessWidget {
       scrollDirection: Axis.vertical,
       children: popularSearchList.map((String value) {
         return InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) {
+                            return SearchResultPage(userSearch: value,);
+                          }),
+                        );
+          },
           child: Container(
             decoration: BoxDecoration(
               color: Theme.of(context).canvasColor,
@@ -37,9 +45,7 @@ class PopularSearch extends StatelessWidget {
             ),
             margin: const EdgeInsets.all(5.0),
             child: Center(
-              child: Text(
-                value,
-              ),
+              child: Text(value),
             ),
           ),
         );

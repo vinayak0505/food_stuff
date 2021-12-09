@@ -23,13 +23,12 @@ class MyApp extends StatelessWidget {
       theme: MyTheme.lightTheme(context),
       darkTheme: MyTheme.darkTheme(context),
       debugShowCheckedModeBanner: false,
-      initialRoute: MyRoutes.searchRoute,
+      initialRoute: MyRoutes.homeRoute,
       routes: {
         MyRoutes.mainPageRoute: (context) => const MainPage(),
         MyRoutes.personalRoute: (context) => const PersonalPage(),
         MyRoutes.loginRoute: (context) => const LoginPage(),
         MyRoutes.homeRoute: (context) => const HomePage(),
-        MyRoutes.homeDetailRoute: (context) => const HomeDetailPage(),
         MyRoutes.searchRoute: (context) => const SearchPage(),
       },
     );

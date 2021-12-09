@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -10,7 +9,6 @@ import 'package:food_stuff/src/ui/widgets/loading_screen.dart';
 import 'package:food_stuff/src/utils/constants.dart';
 import 'package:food_stuff/src/utils/strings.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-
 import '../home_viewmodel.dart';
 
 class MoreFoodItems extends HookConsumerWidget {
@@ -78,7 +76,7 @@ class MoreFoodItems extends HookConsumerWidget {
                   child: Column(
                     children: [
                       AspectRatio(
-                        aspectRatio: 1.48,//todo: may be Not correct solution
+                        aspectRatio: 1.48, //todo: may be Not correct solution
                         child: Image.network(
                           listOfFoodItems.value?[index].image ?? '',
                           errorBuilder: (_, __, ___) => Container(

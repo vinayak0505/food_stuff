@@ -41,7 +41,10 @@ _$_ResRecipeInfo _$$_ResRecipeInfoFromJson(Map json) => _$_ResRecipeInfo(
       diets: (json['diets'] as List<dynamic>).map((e) => e as String).toList(),
       occasions: json['occasions'] as List<dynamic>,
       instructions: json['instructions'] as String,
-      analyzedInstructions: json['analyzedInstructions'] as List<dynamic>,
+      analyzedInstructions: (json['analyzedInstructions'] as List<dynamic>)
+          .map((e) => AnalysedInstructions.fromJson(
+              Map<String, dynamic>.from(e as Map)))
+          .toList(),
       originalId: json['originalId'],
       spoonacularSourceUrl: json['spoonacularSourceUrl'] as String,
     );
@@ -118,4 +121,63 @@ Map<String, dynamic> _$$_ExtendedIngredientToJson(
       'unit': instance.unit,
       'meta': instance.meta,
       'metaInformation': instance.metaInformation,
+    };
+
+_$_AnalysedInstructions _$$_AnalysedInstructionsFromJson(Map json) =>
+    _$_AnalysedInstructions(
+      name: json['name'] as String,
+      steps: (json['steps'] as List<dynamic>)
+          .map((e) => Step.fromJson(Map<String, dynamic>.from(e as Map)))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$_AnalysedInstructionsToJson(
+        _$_AnalysedInstructions instance) =>
+    <String, dynamic>{
+      'name': instance.name,
+      'steps': instance.steps,
+    };
+
+_$_Step _$$_StepFromJson(Map json) => _$_Step(
+      number: json['number'] as int,
+      step: json['step'] as String,
+      ingredients: (json['ingredients'] as List<dynamic>)
+          .map((e) => Ent.fromJson(Map<String, dynamic>.from(e as Map)))
+          .toList(),
+      equipment: (json['equipment'] as List<dynamic>)
+          .map((e) => Ent.fromJson(Map<String, dynamic>.from(e as Map)))
+          .toList(),
+      length: Length.fromJson(Map<String, dynamic>.from(json['length'] as Map)),
+    );
+
+Map<String, dynamic> _$$_StepToJson(_$_Step instance) => <String, dynamic>{
+      'number': instance.number,
+      'step': instance.step,
+      'ingredients': instance.ingredients,
+      'equipment': instance.equipment,
+      'length': instance.length,
+    };
+
+_$_Ent _$$_EntFromJson(Map json) => _$_Ent(
+      id: json['id'] as int,
+      name: json['name'] as String,
+      localizedName: json['localizedName'] as String,
+      image: json['image'] as String,
+    );
+
+Map<String, dynamic> _$$_EntToJson(_$_Ent instance) => <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'localizedName': instance.localizedName,
+      'image': instance.image,
+    };
+
+_$_Length _$$_LengthFromJson(Map json) => _$_Length(
+      number: json['number'] as int,
+      unit: json['unit'] as String,
+    );
+
+Map<String, dynamic> _$$_LengthToJson(_$_Length instance) => <String, dynamic>{
+      'number': instance.number,
+      'unit': instance.unit,
     };
