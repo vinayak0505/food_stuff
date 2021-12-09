@@ -29,30 +29,33 @@ class SearchResult extends HookConsumerWidget {
     return LoadingScreen(
       data: listOfFoodItems.value,
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16),
         child: StaggeredGridView.countBuilder(
           physics: const ScrollPhysics(),
           shrinkWrap: true,
           crossAxisCount: 2,
           itemCount: listOfFoodItems.value?.length,
-          itemBuilder: (BuildContext context, int index) => Column(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(kRoundedRectangleRadius),
-                child: Image.network(
-                  listOfFoodItems.value?[index].image??"",
-                  fit: BoxFit.contain,
+          itemBuilder: (BuildContext context, int index) => Padding(
+            padding: const EdgeInsets.symmetric(vertical: 6.0),
+            child: Column(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(kRoundedRectangleRadius),
+                  child: Image.network(
+                    listOfFoodItems.value?[index].image ?? "",
+                    fit: BoxFit.contain,
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 4.0),
-                child: Text(
-                  listOfFoodItems.value?[index].title??"",
-                  textAlign: TextAlign.center,
-                  style: kFoodNameFontStyle,
+                Padding(
+                  padding: const EdgeInsets.only(top: 4.0),
+                  child: Text(
+                    listOfFoodItems.value?[index].title ?? "",
+                    textAlign: TextAlign.center,
+                    style: kFoodNameFontStyle,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
           staggeredTileBuilder: (index) => const StaggeredTile.fit(1),
           mainAxisSpacing: 2,
