@@ -42,6 +42,8 @@ const scaffoldColorDarkTheme = Color(0xFF363636);
 
 /// Text Style
 
+const kPointerStyle = TextStyle(fontSize: 14.0);
+
 const kTitleFontsStyle = TextStyle(fontSize: 38.0, fontWeight: FontWeight.bold);
 const kSubtitleFontStyle =
     TextStyle(fontSize: 24.0, fontWeight: FontWeight.w600);
@@ -52,6 +54,7 @@ const kCategoryUnselectedStyle =
 const kCategorySelectedStyle =
     TextStyle(fontSize: 24.0, fontWeight: FontWeight.w600);
 const kTextButtonStyle = TextStyle(color: Colors.deepPurpleAccent);
+
 
 /// Text Field Style
 

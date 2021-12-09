@@ -25,9 +25,9 @@ class HomeDetailPage extends HookConsumerWidget {
     useEffect(() {
       ref
           .read(homeDetailProvider.notifier)
-          .getRecipeInformation()
+          .getRecipeInformation(id: id)
           .then((value) {
-        _details.value = value;
+        _details.value = value; 
       });
     }, []);
 
@@ -61,8 +61,11 @@ class HomeDetailPage extends HookConsumerWidget {
                 padding: EdgeInsets.symmetric(horizontal: 16.0),
                 child: Text(ingredients, style: kSubtitleFontStyle),
               ),
-              IngredientsTable(
-                ingredientList: _details.value?.extendedIngredients ?? [],
+              Padding(
+                padding: const EdgeInsets.only(left:12.0, right: 6),
+                child: IngredientsTable(
+                  ingredientList: _details.value?.extendedIngredients ?? [],
+                ),
               ),
 
               const Padding(
@@ -72,10 +75,10 @@ class HomeDetailPage extends HookConsumerWidget {
                   style: kSubtitleFontStyle,
                 ),
               ),
-              // Instructions(
-              //   instructionList: _details
-              //     .value?.analyzedInstructions[id ?? 0] ?? const AnalysedInstructions(name: '', steps: []),
-              // ),
+              Instructions(
+                instructionList: _details
+                  .value?.analyzedInstructions[0] ?? const AnalysedInstructions(name: '', steps: []),
+              ),
               const SizedBox(
                 height: 16,
               ),
