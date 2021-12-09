@@ -19,7 +19,9 @@ class SearchResultPage extends HookConsumerWidget {
             child: SearchBar(
               readOnly: false,
               autofocus: false,
-              onClick: () {Navigator.pop(context);},
+              onClick: () {
+                Navigator.pop(context);
+              },
             ),
           ),
           // flexibleSpace: userSearchByTap ? Chip(
