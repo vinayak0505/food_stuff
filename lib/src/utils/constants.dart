@@ -44,7 +44,7 @@ const scaffoldColorDarkTheme = Color(0xFF363636);
 
 const kPointerStyle = TextStyle(fontSize: 14.0);
 
-const kTitleFontsStyle = TextStyle(fontSize: 38.0, fontWeight: FontWeight.bold);
+const kTitleFontsStyle = TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold);
 const kSubtitleFontStyle =
     TextStyle(fontSize: 24.0, fontWeight: FontWeight.w600);
 const kFoodNameFontStyle =

@@ -37,7 +37,7 @@ class _IngredientsTableState extends State<IngredientsTable> {
       shrinkWrap: true,
       childAspectRatio: ((kScreenWidth(context) / 1) / 100),
       crossAxisCount: 2,
-      children: List.generate((myIngredientList.length / 2).toInt(), (index) {
+      children: List.generate(myIngredientList.length ~/ 2, (index) {
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8),
           child: Row(

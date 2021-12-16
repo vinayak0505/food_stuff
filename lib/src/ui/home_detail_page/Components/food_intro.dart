@@ -1,109 +1,131 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_html/flutter_html.dart';
+import 'package:food_stuff/src/ui/widgets/image.dart';
+import 'package:food_stuff/src/ui/widgets/responsive.dart';
 import 'package:food_stuff/src/utils/constants.dart';
 import 'package:food_stuff/src/utils/strings.dart';
 
 class FoodIntro extends StatelessWidget {
-  const FoodIntro({
-    Key? key,
-    required this.foodTitle,
-    required this.servingsTitle,
-    required this.healthScoreTitle,
-    required this.scoreTitle,
-    required this.foodImage,
-  }) : super(key: key);
+  const FoodIntro(
+      {required BuildContext context,
+      required this.servingsTitle,
+      required this.healthScoreTitle,
+      required this.cookingTime,
+      required this.heading,
+      required this.imageUrl,
+      required this.foodInfo,
+      Key? key})
+      : super(key: key);
 
-  final String foodTitle;
   final String servingsTitle;
   final String healthScoreTitle;
-  final String scoreTitle;
-  final String foodImage;
+  final String cookingTime;
+  final String heading;
+  final String imageUrl;
+  final String foodInfo;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: Stack(
-        fit: StackFit.loose,
-        clipBehavior: Clip.hardEdge,
-        children: [
-          Container(
-            width: kScreenWidth(context),
-            alignment: Alignment.topLeft,
-            child: Text(
-              foodTitle,
-              style: kTitleFontsStyle,
+    return Responsive(
+      mobile: Column(children: [
+        _foodTitle(heading),
+        const SizedBox(height: 16),
+        Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            Expanded(child: _foodImage(imageUrl)),
+            Expanded(
+        child: _foodColumn(
+            servingsTitle: servingsTitle,
+            healthScoreTitle: healthScoreTitle,
+            cookingTime: cookingTime),
             ),
-          ),
-          Container(
-            width: kScreenWidth(context) / 2 - 20,
-            margin: const EdgeInsets.only(top: 150),
-            alignment: Alignment.centerLeft,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: Row(
-                    children: [
-                      const Icon(Icons.fastfood),
-                      const SizedBox(width: 8),
-                      Text('$servings $servingsTitle'),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: Row(
-                    children: [
-                      const Icon(Icons.health_and_safety),
-                      const SizedBox(width: 8),
-                      Text('$healthScore $healthScoreTitle'),
-                    ],
-                  ),
-                ),
-                Container(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: Row(
-                    children: [
-                      const Icon(Icons.score),
-                      const SizedBox(width: 8),
-                      Flexible(
-                          child: Text('$weightWatcherSmartPoints $scoreTitle')),
-                    ],
-                  ),
-                ),
-              ],
+          ]),
+        _foodDescription(foodInfo)
+      ]),
+      desktop: Column(children: [
+        _foodTitle(heading),
+        const SizedBox(height: 24),
+        Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            Expanded(child: _foodImage(imageUrl)),
+            Expanded(
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _foodColumn(
+                  servingsTitle: servingsTitle,
+                  healthScoreTitle: healthScoreTitle,
+                  cookingTime: cookingTime),
+              const SizedBox(height: 8),
+              _foodDescription(foodInfo)
+            ]),
             ),
-          ),
-          Container(
-            margin: const EdgeInsets.only(left: 50, top: 130),
-            alignment: Alignment.bottomRight,
-            child: Column(
-              children: [
-                SizedBox(
-                  width: kImageSize,
-                  height: kImageSize,
-                  child: ClipRRect(
-                    borderRadius:
-                        BorderRadius.circular(kRoundedRectangleRadius),
-                    child: Image.network(
-                      foodImage,
-                      errorBuilder: (_, __, ___) => Container(
-                            height: 150,
-                            alignment: Alignment.center,
-                            child: const Icon(Icons.error),
-                          ),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
+          ]),
+      ]),
     );
   }
+}
+
+Widget _foodDescription(String description) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+    child: Html(data: description),
+  );
+}
+
+Widget _foodImage(String image) {
+  return ClipRRect(
+    borderRadius: BorderRadius.circular(kRoundedRectangleRadius),
+    child: Container(
+      constraints: const BoxConstraints(
+        minWidth: 250,
+        maxWidth: 600,
+      ),
+      child: CustomImage(imageUrl: image, fit: BoxFit.fill),
+    ),
+  );
+}
+
+Widget _foodTitle(String title) {
+  return Text(title, style: kTitleFontsStyle);
+}
+
+Widget _foodColumn({
+  required String servingsTitle,
+  required String healthScoreTitle,
+  required String cookingTime,
+}) {
+  return Padding(
+    padding: const EdgeInsets.all(16.0),
+    child: Flexible(
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          child: Row(
+            children: [
+              const Icon(Icons.fastfood),
+              const SizedBox(width: 8),
+              Text('$servings $servingsTitle'),
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          child: Row(
+            children: [
+              const Icon(Icons.health_and_safety),
+              const SizedBox(width: 8),
+              Text('$healthScore $healthScoreTitle'),
+            ],
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          child: Row(children: [
+            const Icon(Icons.score),
+            const SizedBox(width: 8),
+            Text('$timeForCooking $cookingTime min'),
+          ]),
+        ),
+      ]),
+    ),
+  );
 }

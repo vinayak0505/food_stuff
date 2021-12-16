@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:food_stuff/src/ui/home_page/Components/category_view.dart';
 import 'package:food_stuff/src/ui/home_page/Components/more_food_items.dart';
 import 'package:food_stuff/src/ui/home_page/Components/view_pager.dart';
@@ -35,13 +33,13 @@ class HomePage extends HookConsumerWidget {
               padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
               child: Text(sweets, style: kSubtitleFontStyle),
             ),
-            const CategoryHorizontalView(tag: "sweets"),
+            // const CategoryHorizontalView(tag: "sweets"),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
               child: Text(healthyFoods, style: kSubtitleFontStyle),
             ),
-            const CategoryHorizontalView(tag: "vegetables"),
-            const MoreFoodItems(),
+            // const CategoryHorizontalView(tag: "vegetables"),
+            // const MoreFoodItems(),
           ],
         ),
       )),

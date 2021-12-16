@@ -6,7 +6,8 @@ part of 'res_recipe_info.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_ResRecipeInfo _$$_ResRecipeInfoFromJson(Map json) => _$_ResRecipeInfo(
+_$_ResRecipeInfo _$$_ResRecipeInfoFromJson(Map<String, dynamic> json) =>
+    _$_ResRecipeInfo(
       vegetarian: json['vegetarian'] as bool?,
       vegan: json['vegan'] as bool?,
       glutenFree: json['glutenFree'] as bool?,
@@ -24,8 +25,7 @@ _$_ResRecipeInfo _$$_ResRecipeInfoFromJson(Map json) => _$_ResRecipeInfo(
       license: json['license'] as String?,
       sourceName: json['sourceName'] as String?,
       extendedIngredients: (json['extendedIngredients'] as List<dynamic>)
-          .map((e) =>
-              ExtendedIngredient.fromJson(Map<String, dynamic>.from(e as Map)))
+          .map((e) => ExtendedIngredient.fromJson(e as Map<String, dynamic>))
           .toList(),
       id: json['id'] as int?,
       title: json['title'] as String?,
@@ -42,8 +42,7 @@ _$_ResRecipeInfo _$$_ResRecipeInfoFromJson(Map json) => _$_ResRecipeInfo(
       occasions: json['occasions'] as List<dynamic>,
       instructions: json['instructions'] as String?,
       analyzedInstructions: (json['analyzedInstructions'] as List<dynamic>)
-          .map((e) => AnalysedInstructions.fromJson(
-              Map<String, dynamic>.from(e as Map)))
+          .map((e) => AnalysedInstructions.fromJson(e as Map<String, dynamic>))
           .toList(),
       originalId: json['originalId'],
       spoonacularSourceUrl: json['spoonacularSourceUrl'] as String?,
@@ -86,7 +85,8 @@ Map<String, dynamic> _$$_ResRecipeInfoToJson(_$_ResRecipeInfo instance) =>
       'spoonacularSourceUrl': instance.spoonacularSourceUrl,
     };
 
-_$_ExtendedIngredient _$$_ExtendedIngredientFromJson(Map json) =>
+_$_ExtendedIngredient _$$_ExtendedIngredientFromJson(
+        Map<String, dynamic> json) =>
     _$_ExtendedIngredient(
       id: json['id'] as int?,
       aisle: json['aisle'] as String?,
@@ -123,11 +123,12 @@ Map<String, dynamic> _$$_ExtendedIngredientToJson(
       'metaInformation': instance.metaInformation,
     };
 
-_$_AnalysedInstructions _$$_AnalysedInstructionsFromJson(Map json) =>
+_$_AnalysedInstructions _$$_AnalysedInstructionsFromJson(
+        Map<String, dynamic> json) =>
     _$_AnalysedInstructions(
       name: json['name'] as String?,
       steps: (json['steps'] as List<dynamic>)
-          .map((e) => Step.fromJson(Map<String, dynamic>.from(e as Map)))
+          .map((e) => Step.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -138,14 +139,14 @@ Map<String, dynamic> _$$_AnalysedInstructionsToJson(
       'steps': instance.steps,
     };
 
-_$_Step _$$_StepFromJson(Map json) => _$_Step(
+_$_Step _$$_StepFromJson(Map<String, dynamic> json) => _$_Step(
       number: json['number'] as int?,
       step: json['step'] as String?,
       ingredients: (json['ingredients'] as List<dynamic>)
-          .map((e) => Ent.fromJson(Map<String, dynamic>.from(e as Map)))
+          .map((e) => Ent.fromJson(e as Map<String, dynamic>))
           .toList(),
       equipment: (json['equipment'] as List<dynamic>)
-          .map((e) => Ent.fromJson(Map<String, dynamic>.from(e as Map)))
+          .map((e) => Ent.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
@@ -156,7 +157,7 @@ Map<String, dynamic> _$$_StepToJson(_$_Step instance) => <String, dynamic>{
       'equipment': instance.equipment,
     };
 
-_$_Ent _$$_EntFromJson(Map json) => _$_Ent(
+_$_Ent _$$_EntFromJson(Map<String, dynamic> json) => _$_Ent(
       id: json['id'] as int?,
       name: json['name'] as String?,
       localizedName: json['localizedName'] as String?,
@@ -170,7 +171,7 @@ Map<String, dynamic> _$$_EntToJson(_$_Ent instance) => <String, dynamic>{
       'image': instance.image,
     };
 
-_$_Length _$$_LengthFromJson(Map json) => _$_Length(
+_$_Length _$$_LengthFromJson(Map<String, dynamic> json) => _$_Length(
       number: json['number'] as int?,
       unit: json['unit'] as String?,
     );

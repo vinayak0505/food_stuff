@@ -21,20 +21,23 @@ class SearchBar extends HookWidget {
   @override
   Widget build(BuildContext context) {
    
-    return Container(
-      padding: const EdgeInsets.all(16.0),
-      child: TextField(
-        controller: searchController,
-        onTap: onClick,
-        autofocus: autofocus,
-        readOnly: readOnly,
-        keyboardType: TextInputType.text,
-        textInputAction: TextInputAction.search,
-        onSubmitted: onSubitted??(_){},
-        decoration: kTextFieldDecoration.copyWith(
-          fillColor: Theme.of(context).canvasColor,
-          hintText: hintText,
-          prefixIcon: const Icon(Icons.search),
+    return Center(
+      child: Container(
+        padding: const EdgeInsets.all(16.0),
+        constraints: const BoxConstraints(maxWidth: 1000, maxHeight: 140),
+        child: TextField(
+          controller: searchController,
+          onTap: onClick,
+          autofocus: autofocus,
+          readOnly: readOnly,
+          keyboardType: TextInputType.text,
+          textInputAction: TextInputAction.search,
+          onSubmitted: onSubitted??(_){},
+          decoration: kTextFieldDecoration.copyWith(
+            fillColor: Theme.of(context).canvasColor,
+            hintText: hintText,
+            prefixIcon:const Icon(Icons.search),
+          ),
         ),
       ),
     );

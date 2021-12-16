@@ -1,9 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:food_stuff/src/data/model/autocomplete_recipe_search/autocomplete_recipe_search.dart';
 import 'package:food_stuff/src/ui/search_page/Components/auto_complete_list.dart';
-import 'package:food_stuff/src/ui/search_page/Components/chips_list.dart';
 import 'package:food_stuff/src/ui/search_page/Components/popular_search.dart';
 import 'package:food_stuff/src/ui/search_page/Components/search_bar.dart';
 import 'package:food_stuff/src/ui/search_page/search_viewmodel.dart';
@@ -11,11 +9,13 @@ import 'package:food_stuff/src/ui/search_result_page/search_result_page.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class SearchPage extends HookConsumerWidget {
-  const SearchPage({Key? key}) : super(key: key);
+  const SearchPage({this.userSearch, Key? key}) : super(key: key);
+
+  final String? userSearch;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final searchController = useTextEditingController();
+    final searchController = useTextEditingController(text: userSearch);
     final update = useValueListenable(searchController);
     final ValueNotifier<List<AutocompleteRecipeSearch>> listOfAutoComplete =
         useState(List.empty());
@@ -48,13 +48,15 @@ class SearchPage extends HookConsumerWidget {
                       autofocus: true,
                       onClick: () {},
                       onSubitted: (value) {
-                        if(value.isNotEmpty) {
-                          Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) {
-                            return SearchResultPage(userSearch: value,);
-                          }),
-                        );
+                        if (value.isNotEmpty) {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (context) {
+                              return SearchResultPage(
+                                userSearch: value,
+                              );
+                            }),
+                          );
                         }
                       },
                       searchController: searchController,
@@ -65,10 +67,6 @@ class SearchPage extends HookConsumerWidget {
                     autoCompleteSearchList: listOfAutoComplete.value),
                 const SizedBox(height: 16),
                 PopularSearch(context: context),
-                // const SizedBox(height: 16),
-                // ChipsList(title: 'Difficulty'),
-                // ChipsList(title: 'Meal'),
-                // ChipsList(title: 'Occasion'),
               ],
             ),
           ),

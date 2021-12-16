@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:food_stuff/src/ui/search_page/Components/search_bar.dart';
+import 'package:food_stuff/src/ui/search_page/search_page.dart';
 import 'package:food_stuff/src/ui/search_result_page/Components/search_result.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -31,7 +32,12 @@ class SearchResultPage extends HookConsumerWidget {
                     readOnly: false,
                     autofocus: false,
                     onClick: () {
-                      Navigator.pop(context);
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) {
+                            return SearchPage(userSearch: userSearch);
+                          }),
+                        );
                     },
                     searchController: searchResultController
                   )),

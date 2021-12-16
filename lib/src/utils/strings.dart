@@ -8,7 +8,7 @@ const String otherFoods = 'Other Dishes :';
 
 const String servings = 'Servings :';
 const String healthScore = 'Health Score :';
-const String weightWatcherSmartPoints = 'Weight Watcher Smart Points :';
+const String timeForCooking = 'Cooking Time :';
 const String ingredients = 'Ingredients';
 const String similarRecipies = 'Similar Recipies';
 

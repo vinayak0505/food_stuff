@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:food_stuff/src/ui/home_detail_page/home_detail_page.dart';
 import 'package:food_stuff/src/ui/home_page/home_page.dart';
-import 'package:food_stuff/src/ui/authentication/login_page.dart';
-import 'package:food_stuff/src/ui/personal_page/personal_page.dart';
 import 'package:food_stuff/src/ui/search_page/search_page.dart';
-import 'package:food_stuff/src/ui/widgets/main_page.dart';
+import 'package:url_strategy/url_strategy.dart';
 import 'package:food_stuff/src/ui/widgets/theme.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:food_stuff/src/utils/routes.dart';
 
 void main() {
+  setPathUrlStrategy();
   runApp(const ProviderScope(child: MyApp()));
 }
 
@@ -25,9 +23,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: MyRoutes.homeRoute,
       routes: {
-        MyRoutes.mainPageRoute: (context) => const MainPage(),
-        MyRoutes.personalRoute: (context) => const PersonalPage(),
-        MyRoutes.loginRoute: (context) => const LoginPage(),
         MyRoutes.homeRoute: (context) => const HomePage(),
         MyRoutes.searchRoute: (context) => const SearchPage(),
       },
