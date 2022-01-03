@@ -6,6 +6,7 @@ import 'package:food_stuff/src/ui/home_detail_page/Components/food_intro.dart';
 import 'package:food_stuff/src/ui/home_detail_page/Components/ingredients_table.dart';
 import 'package:food_stuff/src/ui/home_detail_page/Components/instructions.dart';
 import 'package:food_stuff/src/ui/home_detail_page/home_detail_viewmodel.dart';
+import 'package:food_stuff/src/ui/home_page/Components/category_view.dart';
 import 'package:food_stuff/src/ui/widgets/loading_screen.dart';
 import 'package:food_stuff/src/utils/constants.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -82,7 +83,7 @@ class HomeDetailPage extends HookConsumerWidget {
                   style: kSubtitleFontStyle,
                 ),
               ),
-              // const CategoryHorizontalView(),
+              if(_details.value!=null)CategoryHorizontalView(tag:_details.value!.diets.map((i) => i.toString()).join(",")),
             ],
           ),
         ),
