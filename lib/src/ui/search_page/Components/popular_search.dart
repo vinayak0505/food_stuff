@@ -5,47 +5,39 @@ import 'package:food_stuff/src/utils/constants.dart';
 class PopularSearch extends StatelessWidget {
   const PopularSearch({
     Key? key,
-    required this.context,
-  }) : super(key: key);
+    this.crossAxisCount = 2,
+    required this.context}
+    ) : super(key: key);
 
   final BuildContext context;
+  final int crossAxisCount;
 
   @override
   Widget build(BuildContext context) {
-    final List<String> popularSearchList = [
-      'breakfast',
-      'lunch',
-      'dinner',
-      'chicken',
-      'dessert',
-      'christmas'
-    ];
     return GridView.count(
       physics: const ScrollPhysics(),
-      crossAxisCount: 2,
+      crossAxisCount: crossAxisCount,
       childAspectRatio: ((kScreenWidth(context) / 1.5) / 100),
       shrinkWrap: true,
       scrollDirection: Axis.vertical,
       children: popularSearchList.map((String value) {
-        return InkWell(
-          onTap: () {
-            Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) {
-                            return SearchResultPage(userSearch: value,);
-                          }),
-                        );
-          },
-          child: Container(
-            decoration: BoxDecoration(
-              color: Theme.of(context).canvasColor,
-              borderRadius: const BorderRadius.all(
-                Radius.circular(kRoundedRectangleRadius),
-              ),
+        return Container(
+          margin: const EdgeInsets.all(5.0),
+          child: Material(
+            color: Theme.of(context).canvasColor,
+            borderRadius: const BorderRadius.all(
+              Radius.circular(kRoundedRectangleRadius),
             ),
-            margin: const EdgeInsets.all(5.0),
-            child: Center(
-              child: Text(value),
+            child: InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) {
+                    return SearchResultPage(userSearch: value);
+                  }));
+              },
+              child: Center(
+                child: Text(value)),
             ),
           ),
         );

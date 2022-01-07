@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:food_stuff/src/data/model/recipe_information/res_recipe_info.dart';
@@ -40,9 +39,7 @@ class HomeDetailPage extends HookConsumerWidget {
             children: [
               IconButton(
                 icon: const Icon(Icons.arrow_back),
-                onPressed: () => Navigator.pop(context),
-              ),
-            
+                onPressed: () => Navigator.pop(context)),
               FoodIntro(
                 context: context,
                 foodInfo: _details.value?.summary ?? "",
@@ -50,44 +47,36 @@ class HomeDetailPage extends HookConsumerWidget {
                 heading: _details.value?.title ?? "",
                 servingsTitle: _details.value?.servings.toString() ?? "",
                 healthScoreTitle: _details.value?.healthScore.toString() ?? "",
-                cookingTime: _details.value?.readyInMinutes.toString() ?? "",
-              ),
-
+                cookingTime: _details.value?.readyInMinutes.toString() ?? ""),
+              const SizedBox(height: 16),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.0),
-                child: Text(ingredients, style: kSubtitleFontStyle),
-              ),
+                child: Text(ingredients, style: kSubtitleFontStyle)),
               Padding(
                 padding: const EdgeInsets.only(left:12.0, right: 6),
                 child: IngredientsTable(
                   ingredientList: _details.value?.extendedIngredients ?? [],
-                ),
-              ),
-
+                )),
+                const SizedBox(height: 16),
               const Padding(
                 padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
                 child: Text(
                   preparation,
                   style: kSubtitleFontStyle,
-                ),
-              ),
+                )),
+                const SizedBox(height: 16),
               Instructions(
                 instructionList: _details
-                  .value?.analyzedInstructions[0] ?? const AnalysedInstructions(name: '', steps: [])
-              ),
+                  .value?.analyzedInstructions[0] ?? const AnalysedInstructions(name: '', steps: [])),
               const SizedBox(height: 16),
               const Padding(
                 padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
                 child: Text(
                   similarRecipies,
                   style: kSubtitleFontStyle,
-                ),
-              ),
+                )),
               if(_details.value!=null)CategoryHorizontalView(tag:_details.value!.diets.map((i) => i.toString()).join(",")),
-            ],
-          ),
-        ),
-      )),
-    );
+            ]),
+        ))));
   }
 }

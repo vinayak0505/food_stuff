@@ -3,16 +3,17 @@ import 'package:flutter/material.dart';
 /// Image
 // to be removed
 
-const List foodImageList = [
-  'https://media.smallbiztrends.com/2021/05/fast-food-restaurants.png',
-  'https://www.qsrmagazine.com/sites/default/files/styles/slideshow_image/public/slideshow-images/slides/mcdonaldsglobal.jpg?itok=X8uup3iY',
-  'https://st.depositphotos.com/1005682/2476/i/600/depositphotos_24762569-stock-photo-fast-food-hamburger-hot-dog.jpg',
-  'https://upload.wikimedia.org/wikipedia/commons/7/7a/Domino%27s_Pizza_-_20191105.jpg',
-  'https://res.cloudinary.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/pjyrruezbzofdtomlzpi',
-];
-const String image = 'https://en.pimg.jp/062/142/310/1/62142310.jpg';
-const String smileyImage =
-    'https://media.istockphoto.com/vectors/emoji-smiley-with-medical-doctor-mask-and-thumbs-up-vector-symbol-vector-id1227454658?k=20&m=1227454658&s=612x612&w=0&h=ilUr8lw_5PVlkDXn-e3nqBPm--Wsylv8GTKmcAk-xjY=';
+final List<String> popularSearchList = [
+      'breakfast',
+      'lunch',
+      'dinner',
+      'chicken',
+      'burger',
+      'dessert',
+      'valentine',
+      'halloween',
+      'christmas'
+    ];
 
 /// Screen configuration
 
@@ -45,6 +46,8 @@ const scaffoldColorDarkTheme = Color(0xFF363636);
 const kPointerStyle = TextStyle(fontSize: 14.0);
 
 const kTitleFontsStyle = TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold);
+const kTabletTitleFontsStyle = TextStyle(fontSize: 36.0, fontWeight: FontWeight.bold);
+const kDesktopTitleFontsStyle = TextStyle(fontSize: 48.0, fontWeight: FontWeight.bold);
 const kSubtitleFontStyle =
     TextStyle(fontSize: 24.0, fontWeight: FontWeight.w600);
 const kFoodNameFontStyle =

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_stuff/src/ui/home_page/home_page.dart';
 import 'package:food_stuff/src/ui/search_page/search_page.dart';
+import 'package:food_stuff/src/ui/widgets/scroll_behaviour.dart';
 import 'package:url_strategy/url_strategy.dart';
 import 'package:food_stuff/src/ui/widgets/theme.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      scrollBehavior: MyCustomScrollBehavior(),
       themeMode: ThemeMode.system,
       theme: MyTheme.lightTheme(context),
       darkTheme: MyTheme.darkTheme(context),

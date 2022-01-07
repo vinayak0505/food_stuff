@@ -63,7 +63,7 @@ class _FoodItemGrid extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
+          SizedBox(
             width: 1.5 * kScreenWidth(context) / aspectRation,
             height: kScreenWidth(context) / aspectRation,
             child: Padding(

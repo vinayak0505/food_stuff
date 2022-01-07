@@ -6,6 +6,7 @@ import 'package:food_stuff/src/ui/search_page/Components/popular_search.dart';
 import 'package:food_stuff/src/ui/search_page/Components/search_bar.dart';
 import 'package:food_stuff/src/ui/search_page/search_viewmodel.dart';
 import 'package:food_stuff/src/ui/search_result_page/search_result_page.dart';
+import 'package:food_stuff/src/ui/widgets/responsive.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class SearchPage extends HookConsumerWidget {
@@ -55,20 +56,20 @@ class SearchPage extends HookConsumerWidget {
                               return SearchResultPage(
                                 userSearch: value,
                               );
-                            }),
-                          );
+                            }));
                         }
                       },
                       searchController: searchController,
                     )),
-                  ],
-                ),
+                  ]),
                 AutoCompleteList(
                     autoCompleteSearchList: listOfAutoComplete.value),
                 const SizedBox(height: 16),
-                PopularSearch(context: context),
-              ],
-            ),
+                Responsive(
+                  mobile: PopularSearch(context: context), 
+                  desktop: PopularSearch(context: context, crossAxisCount: 3)),
+                  
+              ]),
           ),
         ),
       ),

@@ -27,39 +27,47 @@ class FoodIntro extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Responsive(
-      mobile: Column(children: [
-        _foodTitle(heading),
-        const SizedBox(height: 16),
-        Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-            Expanded(child: _foodImage(imageUrl)),
-            Expanded(
-        child: _foodColumn(
-            servingsTitle: servingsTitle,
-            healthScoreTitle: healthScoreTitle,
-            cookingTime: cookingTime),
-            ),
-          ]),
-        _foodDescription(foodInfo)
-      ]),
-      desktop: Column(children: [
-        _foodTitle(heading),
-        const SizedBox(height: 24),
-        Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-            Expanded(child: _foodImage(imageUrl)),
-            Expanded(
-        child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _foodColumn(
-                  servingsTitle: servingsTitle,
-                  healthScoreTitle: healthScoreTitle,
-                  cookingTime: cookingTime),
-              const SizedBox(height: 8),
-              _foodDescription(foodInfo)
+      mobile: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Column(children: [
+          _foodTitle(heading),
+          const SizedBox(height: 16),
+          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+              Expanded(child: _foodImage(imageUrl)),
+              Expanded(
+          child: _foodColumn(
+              servingsTitle: servingsTitle,
+              healthScoreTitle: healthScoreTitle,
+              cookingTime: cookingTime),
+              ),
             ]),
-            ),
-          ]),
-      ]),
+          _foodDescription(foodInfo)
+        ]),
+      ),
+      desktop: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+          _foodTitle(heading),
+          const SizedBox(height: 24),
+          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+              Expanded(child: _foodImage(imageUrl)),
+              Expanded(
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _foodColumn(
+                    servingsTitle: servingsTitle,
+                    healthScoreTitle: healthScoreTitle,
+                    cookingTime: cookingTime),
+                const SizedBox(height: 8),
+                _foodDescription(foodInfo)
+              ]),
+              ),
+            ]),
+        ]),
+      ),
     );
   }
 }
@@ -85,7 +93,10 @@ Widget _foodImage(String image) {
 }
 
 Widget _foodTitle(String title) {
-  return Text(title, style: kTitleFontsStyle);
+  return Responsive(
+    mobile: Text(title, style: kTitleFontsStyle),
+    tablet: Text(title,textAlign: TextAlign.start, style: kTabletTitleFontsStyle),
+    desktop: Text(title,textAlign: TextAlign.start, style: kDesktopTitleFontsStyle));
 }
 
 Widget _foodColumn({
@@ -104,8 +115,7 @@ Widget _foodColumn({
               const Icon(Icons.fastfood),
               const SizedBox(width: 8),
               Text('$servings $servingsTitle'),
-            ],
-          ),
+            ]),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -114,8 +124,7 @@ Widget _foodColumn({
               const Icon(Icons.health_and_safety),
               const SizedBox(width: 8),
               Text('$healthScore $healthScoreTitle'),
-            ],
-          ),
+            ]),
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0),

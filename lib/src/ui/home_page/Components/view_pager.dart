@@ -37,9 +37,7 @@ class ViewPager extends HookConsumerWidget {
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: SizedBox(
-          child: Stack(
-            children: cardList.value,
-          ),
+          child: Stack(children: cardList.value),
         ),
       ),
     );
@@ -98,8 +96,7 @@ class HomeCard extends StatelessWidget {
                     maxLines: 1,
                     style: kTitleFontsStyle),
                 ),
-              ],
-            ),
+              ]),
           ),
         ),
         onTap: () {
