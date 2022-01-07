@@ -26,8 +26,7 @@ class PopularSearch extends StatelessWidget {
           child: Material(
             color: Theme.of(context).canvasColor,
             borderRadius: const BorderRadius.all(
-              Radius.circular(kRoundedRectangleRadius),
-            ),
+              Radius.circular(kRoundedRectangleRadius)),
             child: InkWell(
               onTap: () {
                 Navigator.push(

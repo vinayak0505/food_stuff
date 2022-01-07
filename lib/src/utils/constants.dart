@@ -7,12 +7,15 @@ final List<String> popularSearchList = [
       'breakfast',
       'lunch',
       'dinner',
-      'chicken',
+      'hotdog',
+      'sandwitch',
       'burger',
+      'chicken',
+      'soup',
       'dessert',
-      'valentine',
-      'halloween',
-      'christmas'
+      'drink',
+      'snacks',
+      'chocolate',
     ];
 
 /// Screen configuration

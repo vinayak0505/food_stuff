@@ -36,9 +36,7 @@ class ViewPager extends HookConsumerWidget {
       data: _listOfFoodItems.value,
       child: Padding(
         padding: const EdgeInsets.all(12.0),
-        child: SizedBox(
-          child: Stack(children: cardList.value),
-        ),
+        child: SizedBox(child: Stack(children: cardList.value)),
       ),
     );
   }
@@ -59,7 +57,6 @@ class ViewPager extends HookConsumerWidget {
         ),
       ));
     }
-
     return cardList;
   }
 }
@@ -80,15 +77,18 @@ class HomeCard extends StatelessWidget {
       child: GestureDetector(
         child: ClipRRect(
           borderRadius: BorderRadius.circular(kRoundedRectangleRadius),
-          child: Container(
-            constraints: const BoxConstraints(maxWidth:600, minWidth: 320),
-            width: (isDragging) ? 320 : double.infinity,
-            color: Colors.black,
-            child: Column(
-              children: [
-                CustomImage(imageUrl: listOfFoodItems.image ?? '', fit: BoxFit.fill),
-                Container(
-                  width: 300,
+          child: Column(
+            children: [
+              SizedBox(
+                width: (isDragging) ? 320 : 600,
+                child: CustomImage(imageUrl: listOfFoodItems.image ?? '', fit: BoxFit.fill)),
+              Material(
+                  color: Colors.black,
+                  borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(kRoundedRectangleRadius),
+                    bottomRight: Radius.circular(kRoundedRectangleRadius)),
+                child: Container(
+                  width: (isDragging) ? 320 : 600,
                   padding: const EdgeInsets.all(8.0),
                   child: Text(listOfFoodItems.title ?? '',
                     textAlign: TextAlign.center,
@@ -96,16 +96,15 @@ class HomeCard extends StatelessWidget {
                     maxLines: 1,
                     style: kTitleFontsStyle),
                 ),
-              ]),
-          ),
+              ),
+            ]),
         ),
         onTap: () {
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) {
               return HomeDetailPage(
-                id: listOfFoodItems.id,
-              );
+                id: listOfFoodItems.id);
             }));
         },
       ),
