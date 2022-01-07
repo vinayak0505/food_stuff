@@ -31,8 +31,7 @@ class HomePage extends HookConsumerWidget {
             const ViewPager(),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-              child: Text(sweets, style: kSubtitleFontStyle),
-            ),
+              child: Text(sweets, style: kSubtitleFontStyle)),
             // const CategoryHorizontalView(tag: "sweets"),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
@@ -41,7 +40,8 @@ class HomePage extends HookConsumerWidget {
             // const MoreFoodItems(),
           ],
         ),
-      )),
+      ),
+      ),
     );
   }
 }
