@@ -76,6 +76,7 @@ class HomeDetailPage extends HookConsumerWidget {
                   style: kSubtitleFontStyle,
                 )),
               if(_details.value!=null)CategoryHorizontalView(tag:_details.value!.diets.map((i) => i.toString()).join(",")),
+              const SizedBox(height: 18)
             ]),
         ))));
   }

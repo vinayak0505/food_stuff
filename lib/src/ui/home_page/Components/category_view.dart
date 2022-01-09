@@ -26,7 +26,7 @@ class CategoryHorizontalView extends HookConsumerWidget {
     return LoadingScreen(
       data: _listOfFoodItems.value,
       child: SizedBox(
-        height: kScreenWidth(context) / 5 + 40,
+        height: kScreenWidth(context) / 4 + 40,
         child: ListView.builder(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
           shrinkWrap: true,
@@ -34,10 +34,10 @@ class CategoryHorizontalView extends HookConsumerWidget {
           itemCount: _listOfFoodItems.value?.length,
           itemBuilder: (context, index) => Responsive(
             mobile:
-                _FoodItemGrid(listOfFoodItems: _listOfFoodItems, index: index, aspectRation: 5,),
-                tablet:  _FoodItemGrid(listOfFoodItems: _listOfFoodItems, index: index,aspectRation: 6,),
+                _FoodItemGrid(listOfFoodItems: _listOfFoodItems, index: index, aspectRation: 4),
+                tablet:  _FoodItemGrid(listOfFoodItems: _listOfFoodItems, index: index,aspectRation: 6),
             desktop:
-                _FoodItemGrid(listOfFoodItems: _listOfFoodItems, index: index,aspectRation: 7,),
+                _FoodItemGrid(listOfFoodItems: _listOfFoodItems, index: index,aspectRation: 7),
           ),
         ),
       ),
@@ -55,7 +55,7 @@ class _FoodItemGrid extends StatelessWidget {
 
   final ValueNotifier<List<Recipe>?> _listOfFoodItems;
   final int index;
-  final int aspectRation;
+  final double aspectRation;
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +76,7 @@ class _FoodItemGrid extends StatelessWidget {
           ),
           const SizedBox(height: 4),
           SizedBox(
-            width: 140,
+            width: 1.5 * kScreenWidth(context) / aspectRation,
             child: Text(
               _listOfFoodItems.value?[index].title ?? "",
               textAlign: TextAlign.center,

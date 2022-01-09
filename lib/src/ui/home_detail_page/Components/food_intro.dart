@@ -32,9 +32,9 @@ class FoodIntro extends StatelessWidget {
         child: Column(children: [
           _foodTitle(heading),
           const SizedBox(height: 16),
-          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+          Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,  children: [
               Expanded(child: _foodImage(imageUrl)),
-              Expanded(
+              Flexible(
           child: _foodColumn(
               servingsTitle: servingsTitle,
               healthScoreTitle: healthScoreTitle,
@@ -73,10 +73,7 @@ class FoodIntro extends StatelessWidget {
 }
 
 Widget _foodDescription(String description) {
-  return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-    child: Html(data: description),
-  );
+  return Html(data: description);
 }
 
 Widget _foodImage(String image) {
@@ -84,10 +81,10 @@ Widget _foodImage(String image) {
     borderRadius: BorderRadius.circular(kRoundedRectangleRadius),
     child: Container(
       constraints: const BoxConstraints(
-        minWidth: 250,
+        minWidth: 100,
         maxWidth: 600,
       ),
-      child: CustomImage(imageUrl: image, fit: BoxFit.fill),
+      child: CustomImage(imageUrl: image, fit: BoxFit.scaleDown),
     ),
   );
 }
@@ -105,36 +102,34 @@ Widget _foodColumn({
   required String cookingTime,
 }) {
   return Padding(
-    padding: const EdgeInsets.all(16.0),
-    child: Flexible(
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: Row(
-            children: [
-              const Icon(Icons.fastfood),
-              const SizedBox(width: 8),
-              Text('$servings $servingsTitle'),
-            ]),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: Row(
-            children: [
-              const Icon(Icons.health_and_safety),
-              const SizedBox(width: 8),
-              Text('$healthScore $healthScoreTitle'),
-            ]),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: Row(children: [
-            const Icon(Icons.score),
+    padding: const EdgeInsets.all(4.0),
+    child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
+        child: Row(
+          children: [
+            const Icon(Icons.fastfood),
             const SizedBox(width: 8),
-            Text('$timeForCooking $cookingTime min'),
+            Text('$servings $servingsTitle'),
           ]),
-        ),
-      ]),
-    ),
+      ),
+      Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
+        child: Row(
+          children: [
+            const Icon(Icons.health_and_safety),
+            const SizedBox(width: 8),
+            Text('$healthScore $healthScoreTitle'),
+          ]),
+      ),
+      Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
+        child: Row(children: [
+          const Icon(Icons.score),
+          const SizedBox(width: 8),
+          Text('$timeForCooking $cookingTime min'),
+        ]),
+      ),
+    ]),
   );
 }
