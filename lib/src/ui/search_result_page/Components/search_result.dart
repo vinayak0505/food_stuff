@@ -10,7 +10,9 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../search_result_viewmodel.dart';
 
 class SearchResult extends HookConsumerWidget {
-  const SearchResult({Key? key, this.crossAxisCount = 2, required this.userSearch}) : super(key: key);
+  const SearchResult(
+      {Key? key, this.crossAxisCount = 2, required this.userSearch})
+      : super(key: key);
   final String userSearch;
   final int crossAxisCount;
 

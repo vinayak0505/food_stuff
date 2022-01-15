@@ -14,41 +14,39 @@ class SearchResultPage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-
     final searchResultController = useTextEditingController(text: userSearch);
 
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
-          child: Column(
-            children: [
-              Row(
-                children: <Widget>[
-                  IconButton(
-                    icon: const Icon(Icons.arrow_back),
-                    onPressed: () => Navigator.pop(context),
-                  ),
-                  Expanded(
-                      child: SearchBar(
-                    readOnly: false,
-                    autofocus: false,
-                    onClick: () {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(builder: (context) {
-                            return SearchPage(userSearch: userSearch);
-                          }),
-                        );
-                    },
-                    searchController: searchResultController
-                  )),
-                ],
-              ),
-              Responsive(
+          child: Column(children: [
+            Row(
+              children: <Widget>[
+                IconButton(
+                  icon: const Icon(Icons.arrow_back),
+                  onPressed: () => Navigator.pop(context),
+                ),
+                Expanded(
+                    child: SearchBar(
+                        readOnly: false,
+                        autofocus: false,
+                        onClick: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(builder: (context) {
+                              return SearchPage(userSearch: userSearch);
+                            }),
+                          );
+                        },
+                        searchController: searchResultController)),
+              ],
+            ),
+            Responsive(
                 mobile: SearchResult(userSearch: userSearch),
                 tablet: SearchResult(userSearch: userSearch, crossAxisCount: 3),
-                desktop: SearchResult(userSearch: userSearch, crossAxisCount: 4)),
-            ]),
+                desktop:
+                    SearchResult(userSearch: userSearch, crossAxisCount: 4)),
+          ]),
         ),
       ),
     );

@@ -95,47 +95,45 @@ class HomeCard extends StatelessWidget {
         },
         child: ClipRRect(
           borderRadius: BorderRadius.circular(kRoundedRectangleRadius),
-          child: Stack(
-            alignment: Alignment.bottomRight,
-            children: [
-              SizedBox(
-                height: 300,
-                width: isDragging ? 300 : double.infinity,
-                child: Column(children: [
-                  Flexible(
-                    child: SizedBox(
-                      width: double.infinity,
-                      child: CustomImage(
-                          imageUrl: listOfFoodItems.image ?? '',
-                          fit: BoxFit.cover),
-                    ),
-                  ),
-                  SizedBox(
+          child: Stack(alignment: Alignment.bottomRight, children: [
+            SizedBox(
+              height: 300,
+              width: isDragging ? 300 : double.infinity,
+              child: Column(children: [
+                Flexible(
+                  child: SizedBox(
                     width: double.infinity,
-                    child: Material(
-                      color: Theme.of(context).primaryColor,
-                      borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(kRoundedRectangleRadius),
-                          bottomRight:
-                              Radius.circular(kRoundedRectangleRadius)),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(listOfFoodItems.title ?? '',
-                            textAlign: TextAlign.center,
-                            overflow: TextOverflow.ellipsis,
-                            maxLines: 1,
-                            style: kTitleFontsStyle),
-                      ),
+                    child: CustomImage(
+                        imageUrl: listOfFoodItems.image ?? '',
+                        fit: BoxFit.cover),
+                  ),
+                ),
+                SizedBox(
+                  width: double.infinity,
+                  child: Material(
+                    color: viewPagerColorDarkTheme,
+                    borderRadius: const BorderRadius.only(
+                        bottomLeft: Radius.circular(kRoundedRectangleRadius),
+                        bottomRight: Radius.circular(kRoundedRectangleRadius)),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(listOfFoodItems.title ?? '',
+                          textAlign: TextAlign.center,
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 1,
+                          style: kViewPagerTitleFontsStyle),
                     ),
                   ),
-                ]),
-              ),
-              if(kIsWeb)
+                ),
+              ]),
+            ),
+            if (kIsWeb)
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 8),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 32, horizontal: 8),
                 child: ClipOval(
                   child: Material(
-                    color: MyTheme.darkTheme(context).cardColor, // Button 
+                    color: MyTheme.darkTheme(context).cardColor, // Button
                     child: SizedBox(
                       height: 40,
                       width: 40,
@@ -148,7 +146,7 @@ class HomeCard extends StatelessWidget {
                   ),
                 ),
               )
-            ]),
+          ]),
         ),
       ),
     );

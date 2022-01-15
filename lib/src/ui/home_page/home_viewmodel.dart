@@ -15,7 +15,6 @@ class HomeViewModel extends StateNotifier<AsyncValue<RandomRecipe>> {
 
   Future<RandomRecipe> getRandomRecipe(
       {int number = 10, String tag = '', bool isVegetarian = false}) {
-
     if (isVegetarian) tag = tag + ", vegetarian";
     return _idRepository
         .getRecipeInformation(number: number, tag: tag)

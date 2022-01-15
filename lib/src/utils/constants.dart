@@ -4,19 +4,19 @@ import 'package:flutter/material.dart';
 // to be removed
 
 final List<String> popularSearchList = [
-      'breakfast',
-      'lunch',
-      'dinner',
-      'hotdog',
-      'sandwitch',
-      'burger',
-      'chicken',
-      'soup',
-      'dessert',
-      'drink',
-      'snacks',
-      'chocolate',
-    ];
+  'breakfast',
+  'lunch',
+  'dinner',
+  'hotdog',
+  'sandwitch',
+  'burger',
+  'chicken',
+  'soup',
+  'dessert',
+  'drink',
+  'snacks',
+  'chocolate',
+];
 
 /// Screen configuration
 
@@ -44,13 +44,19 @@ const textFieldColorDarkTheme = Color(0xff362e3e);
 const bottomNavigationDarkTheme = Color(0xFF1A1A1F); //Bottom Navigation
 const scaffoldColorDarkTheme = Color(0xFF363636);
 
+
+const viewPagerColorDarkTheme = Colors.blueGrey;
+
 /// Text Style
 
 const kPointerStyle = TextStyle(fontSize: 14.0);
 
+const kViewPagerTitleFontsStyle = TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold, color: Colors.white);
 const kTitleFontsStyle = TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold);
-const kTabletTitleFontsStyle = TextStyle(fontSize: 36.0, fontWeight: FontWeight.bold);
-const kDesktopTitleFontsStyle = TextStyle(fontSize: 48.0, fontWeight: FontWeight.bold);
+const kTabletTitleFontsStyle =
+    TextStyle(fontSize: 36.0, fontWeight: FontWeight.bold);
+const kDesktopTitleFontsStyle =
+    TextStyle(fontSize: 48.0, fontWeight: FontWeight.bold);
 const kSubtitleFontStyle =
     TextStyle(fontSize: 24.0, fontWeight: FontWeight.w600);
 const kFoodNameFontStyle =
@@ -60,7 +66,6 @@ const kCategoryUnselectedStyle =
 const kCategorySelectedStyle =
     TextStyle(fontSize: 24.0, fontWeight: FontWeight.w600);
 const kTextButtonStyle = TextStyle(color: Colors.deepPurpleAccent);
-
 
 /// Text Field Style
 

@@ -32,40 +32,38 @@ class FoodIntro extends StatelessWidget {
         child: Column(children: [
           _foodTitle(heading),
           const SizedBox(height: 16),
-          Row( mainAxisAlignment: MainAxisAlignment.spaceEvenly,  children: [
-              Expanded(child: _foodImage(imageUrl)),
-              Flexible(
-          child: _foodColumn(
-              servingsTitle: servingsTitle,
-              healthScoreTitle: healthScoreTitle,
-              cookingTime: cookingTime),
-              ),
-            ]),
+          Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            Expanded(child: _foodImage(imageUrl)),
+            Flexible(
+              child: _foodColumn(
+                  servingsTitle: servingsTitle,
+                  healthScoreTitle: healthScoreTitle,
+                  cookingTime: cookingTime),
+            ),
+          ]),
           _foodDescription(foodInfo)
         ]),
       ),
       desktop: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           _foodTitle(heading),
           const SizedBox(height: 24),
           Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-              Expanded(child: _foodImage(imageUrl)),
-              Expanded(
-          child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _foodColumn(
-                    servingsTitle: servingsTitle,
-                    healthScoreTitle: healthScoreTitle,
-                    cookingTime: cookingTime),
-                const SizedBox(height: 8),
-                _foodDescription(foodInfo)
-              ]),
-              ),
-            ]),
+            Expanded(child: _foodImage(imageUrl)),
+            Expanded(
+              child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _foodColumn(
+                        servingsTitle: servingsTitle,
+                        healthScoreTitle: healthScoreTitle,
+                        cookingTime: cookingTime),
+                    const SizedBox(height: 8),
+                    _foodDescription(foodInfo)
+                  ]),
+            ),
+          ]),
         ]),
       ),
     );
@@ -91,9 +89,11 @@ Widget _foodImage(String image) {
 
 Widget _foodTitle(String title) {
   return Responsive(
-    mobile: Text(title, style: kTitleFontsStyle),
-    tablet: Text(title,textAlign: TextAlign.start, style: kTabletTitleFontsStyle),
-    desktop: Text(title,textAlign: TextAlign.start, style: kDesktopTitleFontsStyle));
+      mobile: Text(title, style: kTitleFontsStyle),
+      tablet: Text(title,
+          textAlign: TextAlign.start, style: kTabletTitleFontsStyle),
+      desktop: Text(title,
+          textAlign: TextAlign.start, style: kDesktopTitleFontsStyle));
 }
 
 Widget _foodColumn({
@@ -106,21 +106,19 @@ Widget _foodColumn({
     child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0),
-        child: Row(
-          children: [
-            const Icon(Icons.fastfood),
-            const SizedBox(width: 8),
-            Text('$servings $servingsTitle'),
-          ]),
+        child: Row(children: [
+          const Icon(Icons.fastfood),
+          const SizedBox(width: 8),
+          Text('$servings $servingsTitle'),
+        ]),
       ),
       Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0),
-        child: Row(
-          children: [
-            const Icon(Icons.health_and_safety),
-            const SizedBox(width: 8),
-            Text('$healthScore $healthScoreTitle'),
-          ]),
+        child: Row(children: [
+          const Icon(Icons.health_and_safety),
+          const SizedBox(width: 8),
+          Text('$healthScore $healthScoreTitle'),
+        ]),
       ),
       Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0),

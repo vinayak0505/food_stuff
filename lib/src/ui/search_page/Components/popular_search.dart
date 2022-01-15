@@ -3,11 +3,9 @@ import 'package:food_stuff/src/ui/search_result_page/search_result_page.dart';
 import 'package:food_stuff/src/utils/constants.dart';
 
 class PopularSearch extends StatelessWidget {
-  const PopularSearch({
-    Key? key,
-    this.crossAxisCount = 2,
-    required this.context}
-    ) : super(key: key);
+  const PopularSearch(
+      {Key? key, this.crossAxisCount = 2, required this.context})
+      : super(key: key);
 
   final BuildContext context;
   final int crossAxisCount;
@@ -26,17 +24,14 @@ class PopularSearch extends StatelessWidget {
           child: Material(
             color: Theme.of(context).canvasColor,
             borderRadius: const BorderRadius.all(
-              Radius.circular(kRoundedRectangleRadius)),
+                Radius.circular(kRoundedRectangleRadius)),
             child: InkWell(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) {
-                    return SearchResultPage(userSearch: value);
-                  }));
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return SearchResultPage(userSearch: value);
+                }));
               },
-              child: Center(
-                child: Text(value)),
+              child: Center(child: Text(value)),
             ),
           ),
         );

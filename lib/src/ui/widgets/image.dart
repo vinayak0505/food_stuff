@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 
 class CustomImage extends StatelessWidget {
   const CustomImage(
-      {Key? key, required this.imageUrl, required this.fit, this.needFrameBuilder = false})
+      {Key? key,
+      required this.imageUrl,
+      required this.fit,
+      this.needFrameBuilder = false})
       : super(key: key);
   final String imageUrl;
   final BoxFit fit;

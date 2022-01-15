@@ -58,9 +58,12 @@ class MoreFoodItems extends HookConsumerWidget {
           ),
         ),
         Responsive(
-          mobile: _FoodItemsGrid(listOfFoodItems: _listOfFoodItems, crossAxisCount: 2), 
-          tablet: _FoodItemsGrid(listOfFoodItems: _listOfFoodItems, crossAxisCount: 3),
-          desktop: _FoodItemsGrid(listOfFoodItems: _listOfFoodItems, crossAxisCount: 4)),
+            mobile: _FoodItemsGrid(
+                listOfFoodItems: _listOfFoodItems, crossAxisCount: 2),
+            tablet: _FoodItemsGrid(
+                listOfFoodItems: _listOfFoodItems, crossAxisCount: 3),
+            desktop: _FoodItemsGrid(
+                listOfFoodItems: _listOfFoodItems, crossAxisCount: 4)),
       ],
     );
   }
@@ -69,14 +72,13 @@ class MoreFoodItems extends HookConsumerWidget {
 class _FoodItemsGrid extends HookWidget {
   const _FoodItemsGrid({
     Key? key,
-    required ValueNotifier<List<Recipe>?> listOfFoodItems, required this.crossAxisCount,
+    required ValueNotifier<List<Recipe>?> listOfFoodItems,
+    required this.crossAxisCount,
   })  : _listOfFoodItems = listOfFoodItems,
         super(key: key);
 
   final ValueNotifier<List<Recipe>?> _listOfFoodItems;
   final int crossAxisCount;
-  
-
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +105,8 @@ class _FoodItemsGrid extends HookWidget {
                       aspectRatio: 1.5, //todo: may be Not correct solution
                       child: CustomImage(
                         imageUrl: _listOfFoodItems.value?[index].image ?? '',
-                        fit: BoxFit.fitWidth,needFrameBuilder: true,
+                        fit: BoxFit.fitWidth,
+                        needFrameBuilder: true,
                       ),
                     ),
                     Padding(
@@ -112,11 +115,13 @@ class _FoodItemsGrid extends HookWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(_listOfFoodItems.value![index].readyInMinutes
-                                  .toString() + " "),
+                                  .toString() +
+                              " "),
                           const Icon(Icons.alarm, size: 16.0),
                           const Spacer(),
                           Text(_listOfFoodItems.value![index].servings
-                                  .toString() + " "),
+                                  .toString() +
+                              " "),
                           const Icon(Icons.star, size: 16.0),
                         ],
                       ),
@@ -134,11 +139,9 @@ class _FoodItemsGrid extends HookWidget {
               ),
             ),
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) {
-                  return HomeDetailPage(id: _listOfFoodItems.value![index].id );
-                }));
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return HomeDetailPage(id: _listOfFoodItems.value![index].id);
+              }));
             },
           ),
           staggeredTileBuilder: (index) => const StaggeredTile.fit(1),

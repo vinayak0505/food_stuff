@@ -36,11 +36,11 @@ class SearchPage extends HookConsumerWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Wrap(
-                  direction: Axis.horizontal,
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     IconButton(
                       icon: const Icon(Icons.arrow_back),
@@ -53,36 +53,34 @@ class SearchPage extends HookConsumerWidget {
                       onClick: () {},
                       onSubitted: (value) {
                         if (value.isNotEmpty) {
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(builder: (context) {
-                              return SearchResultPage(
-                                userSearch: value,
-                              );
-                            }));
+                          Navigator.pushReplacement(context,
+                              MaterialPageRoute(builder: (context) {
+                            return SearchResultPage(
+                              userSearch: value,
+                            );
+                          }));
                         }
                       },
                       searchController: searchController,
                     )),
                   ]),
-                AutoCompleteList(
-                    autoCompleteSearchList: listOfAutoComplete.value),
-                const SizedBox(height: 16),
-                Responsive(
+              AutoCompleteList(
+                  autoCompleteSearchList: listOfAutoComplete.value),
+              const SizedBox(height: 16),
+              Responsive(
                   mobile: PopularSearch(context: context),
-                  tablet: PopularSearch(context: context, crossAxisCount: 3), 
+                  tablet: PopularSearch(context: context, crossAxisCount: 3),
                   desktop: PopularSearch(context: context, crossAxisCount: 3)),
-                if(kIsWeb)
-                const SizedBox(height: 16),
-                if(kIsWeb)
+              if (kIsWeb) const SizedBox(height: 16),
+              if (kIsWeb)
                 const Center(
                   child: Responsive(
-                    mobile: FestivalSpecial(direction: false),
-                    tablet: FestivalSpecial(direction: true), 
-                    desktop: FestivalSpecial(direction: true)),
+                      mobile: FestivalSpecial(direction: false),
+                      tablet: FestivalSpecial(direction: true),
+                      desktop: FestivalSpecial(direction: true)),
                 ),
-                const SizedBox(height: 18),
-              ]),
+              const SizedBox(height: 18),
+            ]),
           ),
         ),
       ),
