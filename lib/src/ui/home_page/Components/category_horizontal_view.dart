@@ -36,6 +36,7 @@ class _ListFoodItems extends HookConsumerWidget {
       ref.read(homeProvider.notifier).getRandomRecipe(tag: tag).then((value) {
         _listOfFoodItems.value = value.recipes;
       });
+      return null;
     }, []);
 
     return LoadingScreen(

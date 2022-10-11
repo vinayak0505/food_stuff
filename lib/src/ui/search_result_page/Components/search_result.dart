@@ -21,12 +21,12 @@ class SearchResult extends HookConsumerWidget {
     final ValueNotifier<List<Result>?> listOfFoodItems = useState(null);
 
     useEffect(() {
-      ref
-          .read(searchResultProvider.notifier)
+      ref.read(searchResultProvider.notifier)
           .getItems(query: userSearch)
           .then((value) {
         listOfFoodItems.value = value.results;
       });
+      return null;
     }, []);
 
     return LoadingScreen(

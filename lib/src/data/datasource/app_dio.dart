@@ -5,8 +5,8 @@ import 'dio_adapter_stub.dart'
     if (dart.library.io) 'default_adapter.dart'
     if (dart.library.js) 'broswer_adapter.dart';
 
-// const token = "64c5e1aa89104e91933a83f22489ea51";
-const token = "7c1ab1867bac4b92967bf573f6d23534";
+const token = "64c5e1aa89104e91933a83f22489ea51";
+// const token = "7c1ab1867bac4b92967bf573f6d23534";
 // const token = "b40791fe8531482c8fb53873b69f1dda";
 const key = "apiKey";
 const apiBaseUrl = "https://api.spoonacular.com";
@@ -28,7 +28,7 @@ class DioClient with DioMixin implements Dio {
     httpClientAdapter = getAdapter();
   }
 
-  Future<Response> getApi(
+  Future<Response> c(
     String endUrl, {
     Map<String, dynamic>? params,
     Options? options,

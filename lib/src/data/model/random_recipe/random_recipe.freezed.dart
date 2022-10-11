@@ -226,21 +226,8 @@ mixin _$Recipe {
   bool get vegan => throw _privateConstructorUsedError;
   bool get glutenFree => throw _privateConstructorUsedError;
   bool get dairyFree => throw _privateConstructorUsedError;
-  bool get veryHealthy =>
-      throw _privateConstructorUsedError; // required bool cheap,
-// required bool veryPopular,
-// required bool sustainable,
-// required int weightWatcherSmartPoints,
-// required Gaps gaps,
-// required bool lowFodmap,
-// required int aggregateLikes,
-// required int spoonacularScore,
-// required int healthScore,
-// CreditsText? creditsText,
-// required String license,
-// SourceName? sourceName,
-  double get pricePerServing =>
-      throw _privateConstructorUsedError; // required List<ExtendedIngredient> extendedIngredients,
+  bool get veryHealthy => throw _privateConstructorUsedError;
+  double get pricePerServing => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
   int get readyInMinutes => throw _privateConstructorUsedError;
@@ -252,11 +239,7 @@ mixin _$Recipe {
   List<String> get dishTypes => throw _privateConstructorUsedError;
   List<String> get diets => throw _privateConstructorUsedError;
   List<String> get occasions => throw _privateConstructorUsedError;
-  String get instructions =>
-      throw _privateConstructorUsedError; // required List<AnalyzedInstruction> analyzedInstructions,
-// required dynamic originalId,
-// required String spoonacularSourceUrl,
-// required int preparationMinutes,
+  String get instructions => throw _privateConstructorUsedError;
   int? get cookingMinutes => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -577,20 +560,9 @@ class _$_Recipe implements _Recipe {
   final bool dairyFree;
   @override
   final bool veryHealthy;
-  @override // required bool cheap,
-// required bool veryPopular,
-// required bool sustainable,
-// required int weightWatcherSmartPoints,
-// required Gaps gaps,
-// required bool lowFodmap,
-// required int aggregateLikes,
-// required int spoonacularScore,
-// required int healthScore,
-// CreditsText? creditsText,
-// required String license,
-// SourceName? sourceName,
+  @override
   final double pricePerServing;
-  @override // required List<ExtendedIngredient> extendedIngredients,
+  @override
   final int id;
   @override
   final String? title;
@@ -614,10 +586,7 @@ class _$_Recipe implements _Recipe {
   final List<String> occasions;
   @override
   final String instructions;
-  @override // required List<AnalyzedInstruction> analyzedInstructions,
-// required dynamic originalId,
-// required String spoonacularSourceUrl,
-// required int preparationMinutes,
+  @override
   final int? cookingMinutes;
 
   @override
@@ -751,20 +720,9 @@ abstract class _Recipe implements Recipe {
   bool get dairyFree => throw _privateConstructorUsedError;
   @override
   bool get veryHealthy => throw _privateConstructorUsedError;
-  @override // required bool cheap,
-// required bool veryPopular,
-// required bool sustainable,
-// required int weightWatcherSmartPoints,
-// required Gaps gaps,
-// required bool lowFodmap,
-// required int aggregateLikes,
-// required int spoonacularScore,
-// required int healthScore,
-// CreditsText? creditsText,
-// required String license,
-// SourceName? sourceName,
+  @override
   double get pricePerServing => throw _privateConstructorUsedError;
-  @override // required List<ExtendedIngredient> extendedIngredients,
+  @override
   int get id => throw _privateConstructorUsedError;
   @override
   String? get title => throw _privateConstructorUsedError;
@@ -788,10 +746,7 @@ abstract class _Recipe implements Recipe {
   List<String> get occasions => throw _privateConstructorUsedError;
   @override
   String get instructions => throw _privateConstructorUsedError;
-  @override // required List<AnalyzedInstruction> analyzedInstructions,
-// required dynamic originalId,
-// required String spoonacularSourceUrl,
-// required int preparationMinutes,
+  @override
   int? get cookingMinutes => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

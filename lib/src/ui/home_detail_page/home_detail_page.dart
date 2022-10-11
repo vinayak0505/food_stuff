@@ -27,6 +27,7 @@ class HomeDetailPage extends HookConsumerWidget {
           .then((value) {
         _details.value = value;
       });
+      return null;
     }, []);
 
     return SafeArea(

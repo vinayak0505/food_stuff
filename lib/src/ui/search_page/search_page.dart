@@ -24,12 +24,12 @@ class SearchPage extends HookConsumerWidget {
         useState(List.empty());
 
     useEffect(() {
-      ref
-          .read(searchProvider.notifier)
+      ref.read(searchProvider.notifier)
           .getAutocompleteSearch(query: update.text)
           .then((value) {
         listOfAutoComplete.value = value;
       });
+      return null;
     }, [update]);
     return Scaffold(
       body: SafeArea(

@@ -43,6 +43,7 @@ abstract class ResRecipeInfo with _$ResRecipeInfo {
     required List<dynamic> occasions,
     String? instructions,
     required List<AnalysedInstructions> analyzedInstructions,
+    // ignore: unnecessary_question_mark
     dynamic? originalId,
     String? spoonacularSourceUrl,
   }) = _ResRecipeInfo;

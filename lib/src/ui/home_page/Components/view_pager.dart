@@ -33,6 +33,7 @@ class ViewPager extends HookConsumerWidget {
         _listOfFoodItems.value = value.recipes;
         cardList.value = _getCards(value.recipes, swipeCard);
       });
+      return null;
     }, []);
 
     return LoadingScreen(

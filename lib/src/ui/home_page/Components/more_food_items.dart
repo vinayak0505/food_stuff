@@ -23,6 +23,7 @@ class MoreFoodItems extends HookConsumerWidget {
       ref.read(homeProvider.notifier).getRandomRecipe().then((value) {
         _listOfFoodItems.value = value.recipes;
       });
+      return null;
     }, []);
 
     void onlyVegetarian(bool value) {
