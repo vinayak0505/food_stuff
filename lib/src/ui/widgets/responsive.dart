@@ -13,15 +13,12 @@ class Responsive extends StatelessWidget {
     required this.desktop,
   }) : super(key: key);
 
-  static bool isMobile(BuildContext context) =>
-      kScreenWidth(context) < 850;
+  static bool isMobile(BuildContext context) => kScreenWidth(context) < 850;
 
   static bool isTablet(BuildContext context) =>
-      kScreenWidth(context) < 1100 &&
-      kScreenWidth(context) >= 850;
+      kScreenWidth(context) < 1100 && kScreenWidth(context) >= 850;
 
-  static bool isDesktop(BuildContext context) =>
-      kScreenWidth(context) >= 1100;
+  static bool isDesktop(BuildContext context) => kScreenWidth(context) >= 1100;
 
   @override
   Widget build(BuildContext context) {

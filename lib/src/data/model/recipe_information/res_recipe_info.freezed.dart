@@ -113,13 +113,11 @@ mixin _$ResRecipeInfo {
   int? get weightWatcherSmartPoints => throw _privateConstructorUsedError;
   String? get gaps => throw _privateConstructorUsedError;
   bool? get lowFodmap => throw _privateConstructorUsedError;
-  int? get aggregateLikes =>
-      throw _privateConstructorUsedError; // double? spoonacularScore,
+  int? get aggregateLikes => throw _privateConstructorUsedError;
   double? get healthScore => throw _privateConstructorUsedError;
   String? get creditsText => throw _privateConstructorUsedError;
   String? get license => throw _privateConstructorUsedError;
-  String? get sourceName =>
-      throw _privateConstructorUsedError; // double? pricePerServing,
+  String? get sourceName => throw _privateConstructorUsedError;
   List<ExtendedIngredient> get extendedIngredients =>
       throw _privateConstructorUsedError;
   int? get id => throw _privateConstructorUsedError;
@@ -661,7 +659,7 @@ class _$_ResRecipeInfo implements _ResRecipeInfo {
   final bool? lowFodmap;
   @override
   final int? aggregateLikes;
-  @override // double? spoonacularScore,
+  @override
   final double? healthScore;
   @override
   final String? creditsText;
@@ -669,7 +667,7 @@ class _$_ResRecipeInfo implements _ResRecipeInfo {
   final String? license;
   @override
   final String? sourceName;
-  @override // double? pricePerServing,
+  @override
   final List<ExtendedIngredient> extendedIngredients;
   @override
   final int? id;
@@ -896,7 +894,7 @@ abstract class _ResRecipeInfo implements ResRecipeInfo {
   bool? get lowFodmap => throw _privateConstructorUsedError;
   @override
   int? get aggregateLikes => throw _privateConstructorUsedError;
-  @override // double? spoonacularScore,
+  @override
   double? get healthScore => throw _privateConstructorUsedError;
   @override
   String? get creditsText => throw _privateConstructorUsedError;
@@ -904,7 +902,7 @@ abstract class _ResRecipeInfo implements ResRecipeInfo {
   String? get license => throw _privateConstructorUsedError;
   @override
   String? get sourceName => throw _privateConstructorUsedError;
-  @override // double? pricePerServing,
+  @override
   List<ExtendedIngredient> get extendedIngredients =>
       throw _privateConstructorUsedError;
   @override

@@ -4,7 +4,8 @@ import 'package:food_stuff/src/data/model/autocomplete_recipe_search/autocomplet
 import 'package:food_stuff/src/ui/search_result_page/search_result_page.dart';
 
 class AutoCompleteList extends HookWidget {
-  const AutoCompleteList({required this.autoCompleteSearchList, Key? key}) : super(key: key);
+  const AutoCompleteList({required this.autoCompleteSearchList, Key? key})
+      : super(key: key);
 
   final List<AutocompleteRecipeSearch> autoCompleteSearchList;
   @override
